@@ -1,0 +1,219 @@
+// product-view
+
+// SINGLE PRODUCT PAGE
+.product-view {
+
+  .product-shop {
+    margin-right: 0;
+    padding: 0 2em 2em 2em;
+    flex-basis: 80%;
+  }
+
+  .product-img-column {
+    height: auto;
+    position: relative;
+    min-width: 200px;
+    max-width: 400px;
+    flex-basis: 20%;
+    z-index: 0;
+
+    .product-image {
+      margin-bottom: 0;
+    }
+  }
+
+  .short-description br {
+    // display: none;
+  }
+}
+
+
+/* ------------------- PRODUCT PRICE ----------------------------------- */
+.product-view {
+   // Hide default price box
+  .product-type-data {
+    .price-box {
+      display:none;
+
+      .special-price .price-label { display: none;  }
+    }
+
+    /* Don't hide for selected types and cases */
+    &.is-type-grouped .price-box,
+    &.is-type-bundle .price-box,
+    &.is-out-of-stock .price-box {
+      display:block;
+    }
+  }
+}
+
+
+// TODO OVERIDDING PLUGIN CLASS
+.product-img-column {
+  .slider-arrows3 .owl-controls .owl-buttons > div {
+    @extend %svg_icon;
+    @extend %ic_ui_indicator_next;
+
+    background-color: transparent;
+    display: none;
+    &:hover {
+      background-color: transparent;
+    }
+    &.owl-prev { transform: rotate(90deg);}
+    &.owl-next { transform: rotate(-90deg); }
+
+  }
+}
+
+// DEPRECATED
+// TODO: REMOVE
+.owl-wrapper-outer {
+  overflow: hidden;
+
+  .owl-wrapper{
+    width: 100%;
+    left: 0px;
+    transition: all 600ms ease;
+    transform: translate3d(0px, 0px, 0px);
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+  }
+  .owl-item {
+    width: 100%;
+  }
+  .item-group {
+    display: flex;
+    flex-wrap: wrap;
+    .itemslider-related {
+      flex: 1 0 100%;
+    }
+  }
+}
+
+// SPECIFICATIONS TABLE
+td.label {
+  width: 20%;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.data-table {
+  tbody tr {
+    &.odd,
+    &.even { border-bottom: 1px solid #eee; }
+  },
+  tr.even { background-color: transparent; }
+}
+
+.data-table tr.odd td,
+.data-table tr.odd th,
+.data-table tr.even td
+.data-table tr.even th { border-right:1px solid #eee; }
+.data-table tr td.last { border-right:none; }
+
+
+.product-options {
+  padding-top: 0.8em;
+
+  p.required { text-align: left; }
+}
+
+
+
+// PRODUCT SINGLE PAGE - ADD AREA
+// .box-additional.container2,
+// #product_addtocart_form,
+.product-shop-toolbar {
+
+  @extend .z-depth-2;
+  border-radius: 4px;
+  padding: 1em;
+  background: $white_10;
+  box-shadow: 1px 2px 7px rgb(171, 163, 153);
+  color: $white;
+
+  .product-options-bottom,
+  .add-to-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .add-to-cart {
+      color: $black_15;
+      border: 0;
+      display: flex;
+      padding: 0px;
+      flex: 0 1 auto;
+      align-items: stretch;
+
+      .btn-cart {
+        border-radius: 0px 3px 3px 0px;
+      }
+
+      .qty-wrapper {
+        flex: 0 1 auto;
+        display: flex;
+        padding: 0 0 0 2.5em;
+        margin: 0;
+        position: relative;
+        align-items: center;
+        justify-content: space-around;
+
+        input[name="qty"] {
+          margin: 0 .5rem 0 0;
+          padding: 0 0 0 0;
+          color: $black_10;
+          font-weight: 600;
+          width: 2.5em !important;
+          text-align: center;
+
+          &:active,
+          &:focus,
+          &.active {
+            padding: 0 0 0 0.5em;
+            width: 3em !important;
+            border-bottom: 1px solid $accent_red;
+            box-shadow: 0 1px 0 0 $accent_red;
+            outline-color: $accent_red;
+            text-align: center;
+          }
+        }
+
+        label {
+          color: inherit;
+          font-size: 1em;
+          flex: 0;
+          position: absolute;
+          left: 0;
+          transform: none;
+          height: auto;
+          top: 0.7em;
+          margin: 0;
+        }
+      }
+
+    .paypal-wrapper {display: none; }
+    }
+
+  }
+}
+
+.price-box {
+  flex: 1 1 auto;
+  font-size: 1.5em;
+  color: $black_15;
+  font-weight: 600;
+  padding-left: 0.5em;
+  // .price { }
+}
+
+.badge-container {
+  display: inline-block;
+  flex: 1 1 0;
+  float: right;
+}
+
+.product-shop-toolbar {
+  margin: 1em 0;
+}

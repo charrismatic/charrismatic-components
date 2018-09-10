@@ -1,0 +1,86 @@
+/*---
+title: Buttons 
+section: Controls
+---
+
+User input and control 
+
+<section class="styleguide_section">
+<div class="container">
+  <button>learn more</button>
+  <i class="svg_icon comment-bubbles ic_button">hello</i>
+</div>
+</section>
+
+*/
+
+
+
+
+// @import "../../colors";
+
+
+// DEFAULT BUTTON
+%button {
+  background: $theme_primary;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  font-size: 1.3em;
+  border-radius: 1em;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 200ms linear;
+}
+
+%button-hover {
+  background: #e8a03f;
+  box-shadow: 2px 2px 2px rgb(144, 144, 144);
+  outline: 1px solid #e88a0b;
+  color: rgb(43, 43, 43);
+}
+
+%icon_button {
+  border: 0;
+  cursor: pointer;
+  font-size: 1.3em;
+  background-color: transparent;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 200ms linear, background-color 200ms ease-in;
+}
+
+/// SCOPED BUTTON 
+/// TODO: UPDATE TO RELAVANT CLASS
+button {
+@extend %button;
+
+  &:hover {
+    // background-color: #ffb22c;
+    box-shadow: 0px 0px 2px rgb(144, 144, 144);
+    outline: 1px solid #f79c21;
+    color: #f5f5f5;
+  }
+}
+
+.ic_button {
+  @extend %icon_button;
+  
+  &:hover {
+    background-color: $color_blue;
+    box-shadow: 0px 0px 2px rgb(144, 144, 144);
+    outline: 1px solid #f79c21;
+    color: #f5f5f5;
+  }
+}
+
+// ACCESSORY BUTTON CLASS 
+.btn {
+  @extend %button;
+
+  &:hover{
+    @extend %button-hover;
+  }
+}

@@ -1,0 +1,106 @@
+
+/****************************
+ *   HOME CONTACT FORM      *
+ ****************************/
+
+#home-contact-section {
+  padding-top: 6em;
+  text-align: center;
+
+  .row { max-width: $contact_section_max_w; }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .subtext {
+    margin: 2em auto;
+    font-size: 1em;
+    font-style: italic;
+  }
+
+  .contact-form-container {
+    margin-top: 3em;
+    padding: 2em;
+    background-color: $accent_red;
+    background-image: $home_contact_overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 1.5em 1.5em 0 $black_00;
+
+    > * {
+      color: $white;
+      max-width: $contact_form_inner_max_w;
+      margin: 2em auto;
+      width: 80%;
+      line-height: 1.6em;
+      padding: 0;
+    }
+  }
+
+  .top {
+    @extend %flex;
+
+    justify-content: space-around;
+    margin: 1em auto;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    button {
+      background: transparent;
+      font-weight: bold;
+      text-transform: inherit;
+      font-size: 1.2em;
+      line-height: 1.4em;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      margin: 0;
+      padding: 1.5em 0;
+    }
+
+    @include max_width( $home_contact_break_sm ) {
+      flex-wrap: wrap;
+
+      > button {
+        flex-basis: 100%;
+        margin: 0.5em 0;
+      }
+    }
+  }
+
+  .input-field {
+    &:first-of-type { margin-top: 0; }
+  }
+
+  .form-wrap {
+    position: relative;
+    display: block;
+  }
+
+  button {
+    margin-top: 0.7em;
+    width: 100%;
+  }
+
+  @include placeholder { color: $white_00; }
+}
+
+form.accented {
+  .input-field {
+    input,
+    text-area,
+    label {
+      color: $white;
+      background: transparent;
+    }
+  }
+
+}

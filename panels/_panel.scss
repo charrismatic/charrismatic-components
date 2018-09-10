@@ -1,0 +1,140 @@
+/*---
+title: Panels
+section: components 
+---
+
+
+<section class="styleguide_section">
+<div class="container">
+
+<section class="flex">
+  <!-- START NEWS / ANNOUNCEMENTS -->
+  <div class="flex-weight-2 debug_outline_structure">
+    <!-- TITLEBAR -->
+    <div class="titlebar">
+      <div class="titlebar__marker">
+        <i class="titlebar__icon icon--newspaper">
+        </i>
+      </div>
+      <h3 class="titlebar__title">Latest News</h3>
+    </div>
+    <!-- END TITLEBAR -->
+    <ul>
+      <li>Blog Post Title 1</li>
+      <li>Blog Post Title 2 - Extended Title with longer content</li>
+      <li>Blog Post Title 3</li>
+    </ul>
+    <div class="flex-row fl--spread">
+      <!-- SIGNUP TITLE -->
+      <div>
+        <h3 class="h3 my0 font_style--caps color-accent-dark">SIGN UP FOR OUR NEWSLETTER</h3>
+      </div>
+      <!-- END SIGNUP TITLE -->
+      <!-- SOCIALBAR -->
+      <div class="flex-row social-bar">
+        <i class="svg_icon svg_icon--circle icon--facebook">Facebook</i>
+        <i class="svg_icon svg_icon--circle icon--twitter">Twitter</i>
+        <i class="svg_icon svg_icon--circle icon--linkedin">LinkedIn</i>
+        <i class="svg_icon svg_icon--circle icon--googleplus">Google+</i>
+      </div>
+      <!-- END SOCIALBAR -->
+    </div>
+    <form id="newsletter-signup-form">
+      <p class="font_size--xsmall">Get email updates about our latest shop and special offers</p>
+      <div class="input-field">
+        <input id="newsletter-signup" class="email-input" name="email" type="text" />
+        <label for="newsletter-signup">Email Address</label>
+        <button type="submit" value="">Go</button>
+      </div>
+    </form>
+    <!-- END SIGNUP FORM -->
+  </div>
+  <!-- END NEWS / ANNOUNCEMENTS -->
+  <!-- START CUSTOMER CARE -->
+  <div class="flex-item flex-weight-1 debug_outline_structure">
+    <div class="titlebar">
+      <div class="titlebar__marker">
+        <i class="titlebar__icon icon--cursor">
+        </i>
+      </div>
+      <h3 class="titlebar__title">Customer Care</h3>
+    </div>
+    <p class="font_size--xsmall">Have questions? Not seeing a part you need?</p>
+    <p class="font_size--xsmall">Want to talk with our parts experts? <a href="/contact">Click Here</a>
+    </p>
+    <div class="panel icon-panel color-grey-65">
+      <div class="panel__block">
+        <div class="panel__icon icon--shipping">
+        </div>
+        <div class="panel__content">
+          <div class="panel__title">FREE SHIPPING</div>
+          <div class="panel__subtitle">On orders $75 or more!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END CUSTOMER CARE -->
+</section>
+
+</div>
+</section>
+
+*/
+
+
+
+.panel {
+  display: block;
+  border: 1px solid $grey_50;
+  padding: 1em;
+  max-width: 100%;
+  width: auto;
+  flex-grow: 1;
+
+  &__block {
+    @extend %fl_row;
+    justify-content: center;
+  }
+
+  &__content {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  &__icon {
+    background-color: $grey_15;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    position: relative;
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 10px solid $white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 1px $grey_15;
+    flex: 0 0 auto;
+    margin-right: 0;
+  }
+    
+  &__title {
+    font-weight: bold;
+  }
+  
+  &__subtitle {
+    font-size: .8em;
+  }
+}
+
+.image-panel {
+  color: white;
+  min-width: 100px;
+  background-size: 100% 100%;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

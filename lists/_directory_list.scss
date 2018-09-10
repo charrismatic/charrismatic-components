@@ -1,0 +1,30 @@
+/*
+<div class="directory_list">
+<div class="directory_list__row"><span class="directory_category">Address Changes</span><span class="directory_contact">John Smith</span><span class="directory_extension">226</span></div>
+<div class="directory_list__row"><span class="directory_category">Billing</span><span class="directory_contact">John Smith</span><span class="directory_extension">226</span></div>
+<div class="directory_list__row"><span class="directory_category">Business</span><span class="directory_contact">John Smith</span><span class="directory_extension">219</span></div>
+<div class="directory_list__row"><span class="directory_category">Client Service </span><span class="directory_contact">John Smith</span><span class="directory_extension">219</span></div>
+<div class="directory_list__row"><span class="directory_category">Employment </span><span class="directory_contact">John Smith</span><span class="directory_extension">224</span></div>
+<div class="directory_list__row"><span class="directory_category">Insurance </span><span class="directory_contact">John Smith</span><span class="directory_extension">210</span></div>
+<div class="directory_list__row"><span class="directory_category">Real Estate</span><span class="directory_contact">John Smith </span><span class="directory_extension">216</span></div>
+<div class="directory_list__row"><span class="directory_category">Technology</span><span class="directory_contact">John Smith</span><span class="directory_extension">216</span></div>
+</div>
+*/
+
+.contact_list {}
+.directory_list__row {
+   display: flex;
+   justify-content: flex-end;
+}
+.directory_category {
+    flex: 1 0 0;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+.directory_contact {
+    flex: 0 1 auto;
+    padding: 0 0.5em;
+}
+.directory_extension {
+    font-style: italic;
+}

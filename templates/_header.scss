@@ -1,0 +1,207 @@
+$header_max_width: 1600px;
+
+header {
+  padding: 2em 0 0 0;
+
+  @include max_width($nav_break_md) {
+    padding: 1em 0 0 0;
+  }
+
+  .row {
+    max-width: $header_max_width;
+
+    // WHEN LESS LARGE SCREENS CENTER MENU WITH CONTENT
+    @include min_width(1200px) {
+      padding: 0;
+      width: 100%;
+    }
+
+    // REALIGN ITEMS AFTER HIDING MENUS ON SMALL/MEDIUM SCREENS
+    @include max_width($nav_break_md) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .header-top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include max_width($nav_break_md) {
+      width: 90%;
+      width: calc(100% - 60px);
+    }
+
+    @include min_width(1200px) {
+      padding: 0 5em 1em;
+    }
+
+    .logo-wrapper {
+      display: block;
+      max-width: 300px;
+    }
+
+    .stacked-rows {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @include max_width($nav_break_md) {
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .banner-contact-phone {
+      color: $accent_orange;
+      font-size: 1.1em;
+      font-weight: bold;
+
+      @include max_width($nav_break_md){
+
+        .nav-phone-title {
+          display: none;
+        }
+      }
+    }
+
+    .top-links {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @include max_width($nav_break_md) {
+        display: none;
+      }
+
+      li a {
+        padding: 1em;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  // DEFAULT LINKS COLOR IS DARK
+  .top-links a { color: $font_color_base; }
+
+  // LANDING PAGE LINKS ARE WHITE
+  &.home {
+    .top-links a { color: $white_00; }
+  }
+
+
+}
+
+button {
+  &.search {
+    @extend .icon;
+    @extend %ic-search;
+  }
+}
+
+.home {
+  button.search {
+    @extend %ic-search--white;
+  }
+}
+
+.form-search {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.input-text {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  display: inline-block;
+  height: 2em;
+  line-height: inherit;
+  overflow: hidden;
+  padding: 0 0 0 0.5em;
+  position: relative;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+
+$s_tran_bg : background 550ms ease-in-out 50ms;
+$s_tran_wd : width      450ms ease-in-out 0ms;
+$s_tran_bg : color      550ms ease-in-out 0ms;
+$s_tran_bdr: border     500ms ease-in-out 0ms;
+
+$search_transition: $s_tran_bg, $s_tran_wd, $s_tran_bg, $s_tran_bdr;
+
+.form-search{
+  .input-text {
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid;
+    border-color: rgba(187, 187, 255, 0);
+    border-bottom-color:  rgba(187, 187, 255, 0);
+    color: rgba(255, 255, 255, 0);
+    width: 2rem;
+    @include transition($search_transition);
+
+    &:focus,
+    &.active {
+      width: 100%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07) inset;
+    }
+  }
+}
+
+header{
+  &.content {
+    .form-search{
+      .input-text.active,
+      .input-text:focus {
+        background: $white_05;
+        border-color: $white_10;
+        border-bottom-color: $white_15;
+        color: $black_25;
+      }
+    }
+  }
+
+  &.home {
+    .form-search{
+      .input-text.active,
+      .input-text:focus {
+        background: $black_30;
+        border-color: $black_25;
+        border-bottom-color: $white_40;
+        color: $white_05;
+      }
+    }
+  }
+}
+
+
+button.search {
+  background-color: transparent;
+  height: 1.6rem;
+  margin: 0;
+  outline-color: transparent;
+  outline-width: 0;
+  padding: 0;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.2rem;
+  transition: 0.5s;
+  width: 1.6rem;
+  border:0;
+  transform-origin: center;
+
+  .input-text:focus &,
+  &.active {
+    transform: scale(0.8, 0.8) translate(0.3rem, 0);
+  }
+}

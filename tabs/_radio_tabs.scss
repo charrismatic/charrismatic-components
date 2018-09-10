@@ -1,0 +1,100 @@
+/*---
+title: radio-tabs
+section: controls 
+---
+
+Use radio inputs to toggle between tab setctions for javascript free interactions 
+
+```example:html
+<div id="tabs" class="css_tabs">
+  <input type="radio" name="tabs" id="css_tab_1" class="css_tabs__input" checked="checked" />
+  <label class="css_tabs__selector" for="css_tab_1">Tab 1</label>
+  <input type="radio" name="tabs" id="css_tab_2" class="css_tabs__input" />
+  <label class="css_tabs__selector" for="css_tab_2">Tab 2</label>
+  <input type="radio" name="tabs" id="css_tab_3" class="css_tabs__input" />
+  <label class="css_tabs__selector" for="css_tab_3">Tab 3</label>
+
+  <div id="css_tab_1__content" class="css_tabs__content">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </div>
+  <div id="css_tab_2__content" class="css_tabs__content">
+    Donec venenatis quam sit amet neque gravida, at commodo lacus gravida.
+  </div>
+  <div id="css_tab_3__content" class="css_tabs__content">
+    Suspendisse volutpat risus faucibus, luctus sem id, egestas risus.
+  </div>
+</div>
+```
+ */
+
+$tab_padding: .7em;
+$tab_color: $grey_80;
+$tab_background: $grey_30;
+$tab_disabled_color_offset: 15%;
+$tab_border_radius: 3px;
+
+.css_tabs {
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: $tab_border_radius;
+}
+
+label.css_tabs__selector {
+  background-color: lighten( $tab_background, $tab_disabled_color_offset);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: $tab_border_radius;
+  border-top-left-radius: $tab_border_radius;
+  border-top: 4px solid lighten( $tab_background, $tab_disabled_color_offset);
+  color: lighten( $tab_color, $tab_disabled_color_offset);
+  cursor: pointer;
+  display: inline-block;
+  font-size: .9em;
+  font-weight: 500;
+  padding: $tab_padding*1 $tab_padding*1.4;
+  margin: 0 .4rem 0 0;
+  @include material_transition(background-color);
+  
+  &:hover {
+    background: $tab_background;
+    color: #707070;
+  }
+}
+
+.css_tabs__content {
+  display:none;
+  min-height: 300px;
+	background: $tab_background;
+	padding: $tab_padding * 1; 
+  color: $tab_color;
+}
+
+
+input.css_tabs__input[type="radio"]  {
+	display:none;
+}
+.css_tabs__content {
+  display: none;
+}
+
+#css_tab_1:checked ~ #css_tab_1__content,
+#css_tab_2:checked ~ #css_tab_2__content,
+#css_tab_3:checked ~ #css_tab_3__content,
+#css_tab_4:checked ~ #css_tab_4__content,
+#css_tab_5:checked ~ #css_tab_5__content {
+  display:block;
+}
+
+#css_tab_1:checked ~ label[for="css_tab_1"],
+#css_tab_2:checked ~ label[for="css_tab_2"],
+#css_tab_3:checked ~ label[for="css_tab_3"],
+#css_tab_4:checked ~ label[for="css_tab_4"],
+#css_tab_5:checked ~ label[for="css_tab_5"] {
+  background: $tab_background;
+  border-top: 4px solid $theme_primary;
+  color: $tab_color;
+  cursor:default;
+  font-weight: 600;
+  padding: $tab_padding*1 $tab_padding*1.4;
+}

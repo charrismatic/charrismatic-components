@@ -1,0 +1,107 @@
+// REFERENCE: MATERIALZE.CSS
+
+
+$carousel-height: 70px;
+$carousel-item-height: $carousel-height / 1.5;
+$carousel-item-width: $carousel-item-height;
+
+
+.carousel {
+  &.carousel-slider {
+    top: 0;
+    left: 0;
+
+    .carousel-fixed-item {
+      &.with-indicators {
+        bottom: 68px;
+      }
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      z-index: 1;
+    }
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+      min-height: $carousel-height;
+      position: absolute;
+      top: -10px;
+      left: 0;
+
+      h2 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 2em;
+  width: 100%;
+  height: $carousel-height;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+
+  .carousel-item {
+    display: none;
+    width: $carousel-item-width;
+    height: $carousel-item-height;
+    position: absolute;
+    top: -10px;
+    left: 0;
+
+    & > img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    border-top: 1px solid $white_10;
+    padding-top: .6em;
+
+    .indicator-item {
+      &.active {
+        background-color: rgb(177,177,177);
+        border: 1px solid rgba(124,124,124,1);
+      }
+
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      height: 8px;
+      width: 8px;
+      margin: 0 4px;
+      border: 1px solid rgba(124,124,124,1);
+      background-color: rgba(255,255,255,.5);
+
+      transition: background-color .3s;
+      border-radius: 50%;
+    }
+  }
+
+  // Materialbox compatibility
+  &.scrolling .carousel-item .materialboxed,
+  .carousel-item:not(.active) .materialboxed {
+    pointer-events: none;
+  }
+}

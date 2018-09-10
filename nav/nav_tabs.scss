@@ -1,0 +1,54 @@
+/*---
+title: Nav-Tabs
+name: nav_tabs
+section: components 
+---
+
+
+
+```example:html 
+ <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"><a href="#databases" data-toggle="tab">Databases</a></li>
+    <li class="nav-item"><a href="#queue" data-toggle="tab">Queue</a></li>
+    <li class="nav-item"><a href="#console" data-toggle="tab">Console</a></li>
+    <li class="nav-item"><a href="#tools" data-toggle="tab">Tools</a></li>
+ </ul>
+```
+
+*/
+
+.nav-tabs {
+  padding-left: 0em;
+  list-style: none;
+  margin-bottom: 1em;
+  background: #efefef;
+  border-bottom: 1px solid lighten($theme_primary, 20%);
+  display: flex;
+  color: $theme_primary;
+
+  > .nav-item > a {
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    display: block;
+    padding: 10px 15px;
+    margin:0 0;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: darken( $theme_primary ,15%);
+    }
+  }
+
+  > .nav-item.active > a,
+  > .nav-item.active > a:hover,
+  > .nav-item.active > a:focus {
+    background-color: $theme_primary;
+    color: #ffffff;
+    border: 0;
+    cursor: default;
+    font-weight: bold;
+  }
+}

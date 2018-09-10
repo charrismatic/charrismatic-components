@@ -1,0 +1,70 @@
+
+// COLOR
+@import '../../../web_components/base/color_variables';
+@import '../../theme/theme_color_variables';
+
+// SCALE
+@import '../../../web_components/layouts/responsive_mixins';
+@import '../../../web_components/base/responsive_definitions';
+@import '../../theme/theme_responsive';
+
+// FORM
+@import '../../../web_components/layouts/flex';
+@import '../../../web_components/effects/depth';
+
+// FUNCTION
+@import '../../theme/theme_overrides';
+
+body {
+  overflow-x: hidden;
+}
+
+.shell {
+  @extend %z_depth_3;
+  max-width: $page_max_width;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+// PREFIXING ID FOR SEPERATION
+#landing-page {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  position: relative;
+
+  @import '../../theme/theme_typography';
+
+
+  // TODO: MOVE TO THEME MAIN
+  .lp-section-content-wrap {
+    .green-btn {
+      display: inline-block;
+
+      @include max_width($desktop_size) {
+        display: block;
+        width: 270px;
+        margin: auto;
+      }
+    }
+  }
+
+  .green-btn {
+    &.blue { background: #186192; }
+    &.thin { padding: 0.5rem .7em; }
+  }
+
+  @import 'layouts/layouts';
+  @import 'components/components';
+
+  @import 'features/features';
+
+
+  @import 'helpers/utilities';
+  @import '../../theme/theme_utilities';
+}
+@import 'templates/templates';
+
+@import '../../../web_components/base/helpers';
+@import '../../icons/green_icons';
+
+@import "../styleguide/styleguide";

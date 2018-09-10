@@ -1,0 +1,242 @@
+
+
+%branch_overlay_section {
+  position: relative;
+  overflow:visible;
+
+  .page-wrap {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+
+%branch_overlay_image {
+  content: "";
+  width: 50%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  transition: 320ms;
+  overflow: visible;
+}
+
+// OLD NAMING CONVENTION
+.overlay_branches {
+  &--left,
+  &--minor-left,
+  &--single-left {
+    @extend %branch_overlay_section;
+    &::before { @extend %branch_overlay_image; }
+  }
+
+  &--right,
+  &--minor-right,
+  &--single-right {
+    @extend %branch_overlay_section;
+    &::after { @extend %branch_overlay_image; }
+  }
+}
+
+// NEW NAMING CONVENTION
+.overlay_branches {
+  &--left,
+  &--minor-left,
+  &--single-left {
+    @extend %branch_overlay_section;
+    &::before { @extend %branch_overlay_image; }
+  }
+
+  &--right,
+  &--minor-right,
+  &--single-right {
+    @extend %branch_overlay_section;
+    &::after { @extend %branch_overlay_image; }
+  }
+}
+
+.branch_box {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.branch_box__design-guide {
+  h3 {
+    color: inherit;
+    font-weight: normal;
+    font-size: 1em;
+    text-shadow: none !important;
+  }
+
+}
+
+%moneytree_branch__bg-image {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-image: url('/images/landing-pages/money-tree/moneytree_branch.svg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  transition: 320ms;
+  overflow: visible;
+}
+
+
+//SVG AS BACKGROUND CSS
+
+.moneytree_branch {
+  @extend %branch_overlay_section;
+  border: 1px solid #ddd;
+  width: 50%;
+  padding-bottom: 20%;
+  height: auto;
+
+
+  &::before {
+    @extend %moneytree_branch__bg-image;
+    left: 0;
+    background-position: right;
+    transform-origin: bottom left;
+  }
+
+  &__right-up {
+    transform: scale(-1,-1) rotate(0deg) translate(0);
+  }
+
+  &__right-down {
+    transform: scale(-1,1) rotate(0deg) translate(0);
+  }
+
+
+  &__left-down {
+    transform: scale(1,1) rotate(0deg) translate(0);
+  }
+  &__left-up {
+    transform: scale(1,-1) rotate(0deg) translate(0);
+  }
+}
+
+
+
+// INLINE IMAGE
+
+.moneytree_bg_branch {
+
+
+}
+.moneytree__leaves {
+
+}
+
+
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Buzz */
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  0% {
+
+    transform: translateX(3px) rotate(2deg);
+  }
+  10% {
+
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  20% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(3px) rotate(2deg);
+  }
+}
+
+svg #dollar_1,
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transform-origin: 20% 60%;
+}
+
+svg #dollar_1,
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  animation-name: hvr-buzz;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 100;
+  animation-delay: 3s;
+}
+
+
+
+
+
+.overlay_branches--left::before {
+  left: 0;
+  background-position: right;
+  background-image: url('/images/landing-pages/money-tree/branches_dual_left.svg');
+  transform: scale(1) rotate(0deg) translate(-50%);
+  transform-origin: bottom left;
+}
+
+
+.overlay_branches--minor-left::before {
+  left: 0;
+  background-image: url('/images/landing-pages/money-tree/branches_left--short.png');
+  background-position: right;
+  transform: scale(1) rotate(0deg) translate(-50%);
+  transform-origin: bottom left;
+}
+
+
+.overlay_branches--right:after {
+  right: 0;
+  background-image: url('/images/landing-pages/money-tree/branches_large_right.svg');
+  background-position: center left;
+  transform: scale(1,-1) rotate(3deg) translate(547px,135%);
+  transform-origin: bottom right;
+  z-index: 1000;
+  height: 540px;
+}
+
+
+.overlay_branches--minor-right::after {
+  right: 0;
+  background-image: url('/images/landing-pages/money-tree/branches_short_right.png');
+  background-position: center left;
+  transform: scale(1) rotate(0deg) translate(120px,0%);
+  transform-origin: bottom right;
+  max-width: 400px;
+}
+
+.overlay_branches--single-right::after {
+  right: 0;
+  background-image: url('/images/landing-pages/money-tree/branches_single_1.svg');
+  background-position: top left;
+  transform: scaleY(-1) rotate(-16deg) translate(202px,107%);
+  transform-origin: bottom right;
+}

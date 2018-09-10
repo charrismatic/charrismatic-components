@@ -1,0 +1,81 @@
+/**
+ *
+ *  - SET ICON STYLE + THE ICON IMAGE
+ *  -- OPTIONAL ACCESSIBILITY/SEMANTIC TEXT
+  <i class="green-icon icon--clock">
+    <span class="icon__assist-text">Percent icon</span>
+  </i>
+ *
+ */
+
+
+// FIB GREEN ICON SET
+i.green-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  font-size: 16px !important;
+  width: 3em;
+  height: 3em;
+
+  .icon__assist-text,
+  .icon-title {
+    @extend %screen_assist_text;
+  }
+
+  &.icon_size {
+    &--1 { width: 1em; height: 1em; }
+    &--2 { width: 2em; height: 2em; }
+    &--3 { width: 3em; height: 3em; }
+    &--4 { width: 4em; height: 4em; }
+    &--5 { width: 5em; height: 5em; }
+    &--6 { width: 6em; height: 6em; }
+    &--7 { width: 7em; height: 7em; }
+    &--8 { width: 8em; height: 8em; }
+    &--9 { width: 9em; height: 9em; }
+    &--10 { width: 10em; height: 10em; }
+  }
+}
+
+.icon {
+  &--awards { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/awards-icon.png'); }
+  &--business-capital { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/business-capital-icon.png'); }
+  &--calculators { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/calculators-icon.png'); }
+  &--card { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/card-icon.png'); }
+  &--cds { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/cds-icon.png'); }
+  &--check-rates { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/check-rates-icon.png'); }
+  &--checking { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/checking-icon.png'); }
+  &--clock { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/clock-icon.png'); }
+  &--commercial-deposit { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/commercial-deposit-icon.png'); }
+  &--commercial-lending { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/commercial-lending-icon.png'); }
+  &--commercial-real-estate { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/commercial-real-estate-icon.png'); }
+  &--credit-card { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/credit-card-icon.png'); }
+  &--credit-tenant { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/credit-tenant-icon.png'); }
+  &--five-stars { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/five-stars-icon.png'); }
+  &--free { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/free-icon.png'); }
+  &--help { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/help-icon.png'); }
+  &--house { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/house-icon.png'); }
+  &--icon-video { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/icon-video.png'); }
+  &--iras { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/iras-icon.png'); }
+  &--live-chat { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/live-chat-icon.png'); }
+  &--mail { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/mail-icon.png'); }
+  &--monthly-maintenance { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/monthly-maintenance-icon.png'); }
+  &--mortgage-terms { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/mortgage-terms-icon.png'); }
+  &--online-banking { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/online-banking-icon.png'); }
+  &--percent { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/percent-icon.png'); }
+  &--person { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/person-icon.png'); }
+  &--personal-loans { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/personal-loans-icon.png'); }
+  &--phone { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/phone-icon.png'); }
+  &--rate-watch { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/rate-watch-icon.png'); }
+  &--savings-for-kids { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/savings-for-kids-icon.png'); }
+  &--savings-money-market { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/savings-money-market-icon.png'); }
+  &--speech { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/speech-icon.png'); }
+  &--student-loans { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/student-loans-icon.png'); }
+  &--treasury { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/treasury-icon.png'); }
+  &--trending { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/trending-icon.png'); }
+  &--trophy { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/trophy-icon.png'); }
+  &--unlimited-deposits { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/unlimited-deposits-icon.png'); }
+  &--vehicle-loan { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/vehicle-loan-icon.png'); }
+  &--withdrawals-transfers { background-image: url('/wp-content/themes/firstib_childtheme/images/green-icons/withdrawals-transfers-icon.png'); }
+}

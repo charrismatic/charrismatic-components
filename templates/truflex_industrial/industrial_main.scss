@@ -1,0 +1,299 @@
+// @author Matt Harris
+// @content Base theme for wordpress with custom elements
+
+@import 'colors';
+@import 'fonts';
+@import 'mixin-functions';
+@import 'responsive';
+@import 'misc';
+
+
+html,
+body,
+.wrapper {
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+a,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: inherit;
+}
+
+.header-base {
+  @include fntStyl( $fnt-plus, normal, $fnt-size * 2.0, $black-20 );
+
+  display: block;
+  margin: 0;
+  line-height: 100%;
+  padding: 25px 0 15px;
+}
+
+body {
+  @include fntStyl($fnt-body, normal, 16px , $black-50);
+  min-width: 340px;
+
+  @include max_width( 500px ){
+    font-size: 13px;
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+.industrial {
+
+  p  { @include fntStyl( $fnt-body, normal, $fnt-size * 1.0, $black-50); margin: 10px 0;}
+  h1 { @include fntStyl( $fnt-head, bold,   $fnt-size * 2.5, $black-30); display: block; margin: 0;}
+  h2 { @extend .header-base; }
+  h3 { @extend .header-base; font-size: $fnt-size * 1.8; }
+  h4 { @extend .header-base; font-size: $fnt-size * 1.5; }
+  h5 { @extend .header-base; font-size: $fnt-size * 1.0; }
+  h6 { @extend .header-base; font-size: $fnt-size * 0.8; }
+
+  .banner {
+    width: 100%;
+    height: 56vw;
+    min-height: 400px;
+    max-height: 680px;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner.video {
+    min-height: 400px;
+    max-height: 800px;
+    max-height: 85vh;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      width: 100%;
+      height: 100%;
+      z-index: -100;
+      background: url(/assets/img/industrial-banner-workshop.jpg) no-repeat;
+      background-size: cover;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+
+  .banner::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(169, 169, 169, 0.3);
+    top: 0;
+    left: 0;
+  }
+
+  .banner.video::before {
+    background: rgba(190, 190, 190, 0.3);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .content-main {
+    .content-inner {
+      position: relative;
+      max-width: 1200px;
+      padding: 40px;
+      margin: auto;
+      text-align: left;
+      @include max_width( 500px ){
+        padding: 20px;
+      }
+    }
+
+    ul {
+      margin-left: 20px;
+
+      li {
+        display: list-item;
+        padding: 5px 0;
+        list-style-type: disc;
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  @import "nav";
+  @import "industrial-tables";
+
+  /* INDUSTRIAL LANDING PAGE */
+  .archive-featured-img {
+    display: inline-block;
+    width: 20%;
+    margin-right: 40px;
+
+    a {
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 3px 3px 9px rgba(10, 10, 10, 0.7);
+      }
+    }
+  }
+
+  .archive-featured-content {
+    width: 100%;
+    display: inline-block;
+
+    h2 {
+      padding: 0;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    p { text-align: justify; }
+  }
+
+  .learn-more {
+    display: inline;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+.archive-post-wrapper.list {
+  .archive-post-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    .archive-featured-content { width: 80%; }
+  }
+}
+
+.archive-post-wrapper.grid {
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  .archive-post-container {
+    width: 25%;
+    padding: 4%;
+
+    @include max_width($grid_tablet) {
+      width: 40%;
+      padding: 5%;
+    }
+
+    @include max_width($grid_mobile) {
+      width: 100%;
+      padding: 5%;
+    }
+
+    .archive-featured-img {
+      width: 100%;
+    }
+
+    .archive-featured-content {
+      width: 100%;
+
+      h2 {
+        margin: 20px 0;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.img-group-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  @include max_width( 500px ){
+   display: block;
+  }
+
+  .img-group-1-2{
+    width: 40%;
+    padding: 5%;
+    @include max_width( 500px ){
+      width: 100%;
+      padding: 0;
+      display: block;
+    }
+
+  }
+  img{
+    width: 100%;
+    @include max_width( 500px ){
+      width: 60%;
+      margin: 10% auto;
+      display: block;
+    }
+    @include max_width( 480px ){
+      width: 80%;
+    }
+  }
+}
+
+input.clear_button,
+a.clear_button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+input.clear_button:hover,
+a.clear_button:hover {
+  background-color: #fff;
+  color: #404040;
+  border-color: #fff;
+  text-shadow: none;
+}
+
+a.clear_button.orange {
+  border-color: #fa4c06;
+  color: #fa4c06;
+  display: inline-block;
+}
+
+a.clear_button.orange:hover {
+  border-color: transparent;
+  color: #fff;
+  background-color: #fa4c06;
+}

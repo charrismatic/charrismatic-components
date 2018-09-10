@@ -1,0 +1,83 @@
+
+// PRODUCT SELECT PAGE
+.brand-sorter {
+  margin-bottom: 2em;
+
+
+  // TOOD: EXTEND FROM FLEX
+  ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1em 1.4em;
+
+    li {
+      cursor: pointer;
+      display: block;
+      filter: grayscale(100%);
+      flex: 1 1 auto;
+      margin: 0 1em;
+      padding: 2em;
+      transition: transform 250ms cubic-bezier(0.34, 1.08, 0.41, 1.16) 0ms, filter 250ms  cubic-bezier(0.34, 1.08, 0.41, 1.16) 0ms;
+
+      @extend %crisp-img;
+      &:hover {
+        filter: grayscale(0);
+        transform: scale(1.1);
+      }
+
+      &.active {
+        border-bottom: 2px solid $accent_red;
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+
+#product-brand-selector {
+  .products-grid {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+
+    // TODO: MERGE WITH GENERAL GRID;
+    &.grid4 {
+      justify-content: flex-start;
+
+      .item {
+        margin: 1em 0;
+        padding: 0 1%;
+        width: 23%;
+      }
+    }
+  }
+
+  .product-name {
+    flex: 0;
+  }
+
+  .product-image {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      flex: 1 0 160px;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      max-height: 200px;
+      max-width: 100%;
+    }
+  }
+}
+
+#fireking-logo { background-image: $product_logos_fireking; }
+#dahle-logo { background-image: $product_logos_dahle; }
+#sentry-logo { background-image: $product_logos_sentrysafe; }
+#gsa-logo { background-image: $product_logos_gsa; }
+#securall-logo { background-image: $product_logos_securall; }

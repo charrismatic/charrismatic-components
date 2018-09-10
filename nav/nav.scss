@@ -1,0 +1,52 @@
+/*---
+title:   Header Nav
+section: components
+---
+
+Simple Underlined  
+
+```example:html
+<header>
+  <ul class="nav simple_nav" role="tablist">
+      <li role="presentation" class="active nav-item"><a href="#sites" aria-controls="sites" role="tab" data-toggle="tab">Sites</a></li>
+      <li role="presentation" class="nav-item"><a href="#databases" aria-controls="databases" role="tab" data-toggle="tab">Databases</a></li>
+      <li role="presentation" class="nav-item"><a href="#queue" aria-controls="queue" role="tab" data-toggle="tab">Queue</a></li>
+      <li role="presentation" class="nav-item"><a href="#console" aria-controls="console" role="tab" data-toggle="tab">Console</a></li>
+      <li role="presentation" class="nav-item"><a href="#tools" aria-controls="tools" role="tab" data-toggle="tab">Tools</a></li>
+  </ul>
+</header> 
+```
+
+*/
+
+
+header {
+
+  .nav.simple_nav {
+    flex: 0 1 auto;
+    display: flex;
+    padding: 1em 1em;
+    margin: 0 .5em;
+    background-color: $grey_03;
+
+    .nav-item {
+      flex: 0 1 auto;
+      display: inline-block;
+      padding: .6em 1em;
+      color: $theme_primary;
+      border-radius: 1px;
+      transition: background-color 100ms ease-in 0ms, color  150ms ease-in 0ms;
+      text-transform: uppercase;
+
+      &:hover {
+        color: lighten($theme_primary, 10%);
+        // background-color: lighten($theme_primary, 10%);
+        border-bottom: 1px solid lighten($theme_primary, 10%);
+      }
+      
+      &.active {
+        border-bottom: 2px solid $theme_primary;
+      }
+    }
+  }
+}

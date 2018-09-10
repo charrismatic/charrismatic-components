@@ -1,0 +1,39 @@
+/*---
+title:   Expandable Checkbox Area
+section: controls
+---
+
+Expandable Checkbox
+
+*/
+.cbox-expandable {
+  display: none;
+}
+
+.cbox-expandable[type=checkbox] ~ .cbox-expandable-content {
+  display: none;
+}
+
+.cbox-expandable[type=checkbox]:checked ~ .cbox-expandable-content {
+  display: block;
+}
+
+.cbox-expandable-label:focus::before {
+  outline: 0;
+}
+
+.cbox-expandable-label::before {
+  margin-right: 0.5em;
+  position: absolute;
+  left: -2em;
+  outline: none;
+  padding: 0 8px;
+}
+
+input.cbox-expandable ~ .cbox-expandable-label::before {
+  content: "+";
+}
+
+input.cbox-expandable:checked ~ .cbox-expandable-label::before {
+  content: "-";
+}

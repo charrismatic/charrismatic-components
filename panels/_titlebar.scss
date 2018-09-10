@@ -1,0 +1,58 @@
+/*---
+title: title bar
+section: components
+---
+
+
+```example:html
+<div class="titlebar">
+  <div class="titlebar__marker"><i class="titlebar__icon icon--cursor"></i></div>
+  <h3 class="titlebar__title">Section Title</h3>
+</div>
+```
+*/
+
+.icon--cursor { background-image: define_icon( font-awesome, search, $grey_80); }
+
+.titlebar {
+  background-color: $grey_03;
+  position: relative;
+  display: flex;
+
+  .titlebar__icon {
+      @extend %svg_icon;
+      height: 2rem;
+      width: 2rem;
+      background-size: 100% 100%;
+      margin: 0;
+  }
+
+  &__marker {
+    background-image: imageUrl( $media_url, "titlebar-marker.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    padding-left: 0.6rem;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 3.2rem;
+  }
+
+  &__icon {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin: 0 0 0 5rem;
+    padding: 1em 0;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+}

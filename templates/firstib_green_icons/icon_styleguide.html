@@ -1,0 +1,190 @@
+<!-- EXAMPLE -->
+<div class="container">
+  <div class="container__title">1. Basic Usage</div>
+  <div class="container__example">
+    <i class="green-icon icon--free"></i>
+  </div>
+<pre>
+<code>
+&lt;i class="green-icon icon--free"&gt;&lt;/i&gt;
+</code>
+</pre>
+</div>
+<!-- EXAMPLE -->
+<div class="container">
+  <div class="container__title">2.  Icon block</div>
+  <div class="container__example">
+    <div class="icon-block debug_outline_structure">
+      <div class="icon-block-header">
+        <i class="green-icon icon--awards"></i>
+      </div>
+      <div class="icon-block-content">awards</div>
+    </div>
+  </div>
+<pre>
+<code>
+&lt;div class="icon-block"&gt;
+  &lt;div class="icon-block-header"&gt;
+    &lt;i class="green-icon icon--awards"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class="icon-block-content"&gt;
+    CONTENT
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+<!-- EXAMPLE -->
+<div class="container">
+  <div class="container__title">3. Round Icons</div>
+  <div class="container__example">
+    <div class="icon__coin">
+      <i class="green-icon icon--iras">
+        <span class="icon_helper_text">Money Market Icon</span>
+      </i>
+    </div>
+  </div>
+<p>The .icon_helper_text allows us to add text between the "&lt;i&gt;" tags for screen readers and ada compliance. Text will not be visible but it will be machine readable.</p>
+<pre>
+<code>
+&lt;div class="icon__coin"&gt;
+  &lt;i class="green-icon icon--iras"&gt;
+    &lt;span class="icon_helper_text"&gt;Money Market Icon&lt;/span&gt;
+  &lt;/i&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+<!-- EXAMPLE -->
+<div class="container">
+  <div class="container__title">4. Icon Cards</div>
+  <div class="container__title">Simple Icon Card</div>
+<div class="container__example">
+  <div class="icon__card">
+    <i class="green-icon icon--iras">
+      <span class="icon_helper_text">Money Market Icon</span>
+    </i>
+  </div>
+</div>
+<pre>
+<code>
+&lt;div class="icon__card"&gt;
+&lt;i class="green-icon icon--iras"&gt;
+  &lt;span class="icon_helper_text"&gt;Money Market Icon&lt;/span&gt;
+&lt;/i&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<div class="container__title">Icon Block Card</div>
+<div class="container__title">Dynamically Sized</div>
+<div class="container__example">
+  <div class="icon_card">
+    <div class="icon_card__content icon--raised">
+      <i class="green-icon icon--monthly-maintenance"></i>
+    </div>
+    <div class="icon_card__caption">
+      <span>No monthly maintenance fee for accounts with average daily balance of $4,000</span>
+    </div>
+  </div>
+</div>
+<pre>
+<code>
+&lt;div class="icon_card"&gt;
+  &lt;div class="icon_card__content icon--raised"&gt;
+    &lt;i class="green-icon icon--monthly-maintenance"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class="icon_card__caption"&gt;
+    &lt;span&gt;Text description that you would like to add&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<div class="container__title">Fixed Size Cards</div>
+<div class="flex flex-justify--distribute">
+<div class="container__example">
+  <div class="icon_card fixed_size--tall">
+    <div class="icon_card__content icon--raised">
+      <i class="green-icon icon--monthly-maintenance"></i>
+    </div>
+    <div class="icon_card__caption">
+      <span>fixed_size--tall</span>
+    </div>
+  </div>
+</div>
+<div class="container__example">
+  <div class="icon_card fixed_size--square">
+    <div class="icon_card__content icon--raised">
+      <i class="green-icon icon--monthly-maintenance"></i>
+    </div>
+    <div class="icon_card__caption">
+      <span>fixed_size--square</span>
+    </div>
+  </div>
+</div>
+<div class="container__example ">
+  <div class="icon_card fixed_size--wide">
+    <div class="icon_card__content icon--raised">
+      <i class="green-icon icon--monthly-maintenance"></i>
+    </div>
+    <div class="icon_card__caption">
+      <span>fixed_size--wide</span>
+    </div>
+  </div>
+</div>
+</div>
+Add modifier class to the main card container
+<pre>
+<code>
+  fixed_size--tall
+  fixed_size--square
+  fixed_size--wide
+</code>
+</pre>
+</div>
+<!-- EXAMPLE -->
+<div class="container">
+  <div class="container__title">5. Advanced Options - overylays, transparencies, background fill options</div>
+  <div class="container__example">
+    <div class="highlight-block bg_color--dark-blue">
+     <div class="highlight-block-content">
+       <div class="img-wrap circle--fill ">
+         <i class="green-icon icon--iras icon_size--6">
+            <span class="icon_helper_text">Money Market Icon</span>
+          </i>
+       </div>
+    </div>
+    </div>
+  </div>
+<pre>
+<code>
+&lt;div class="highlight-block bg_color--dark-blue"&gt;
+ &lt;div class="highlight-block-content"&gt;
+   &lt;div class="img-wrap circle--fill "&gt;
+     &lt;i class="green-icon icon--iras icon_size--6"&gt;
+        &lt;span class="icon_helper_text"&gt;Money Market Icon&lt;/span&gt;
+      &lt;/i&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+
+
+--
+
+Icon Cards
+
+---
+
+<div class="icon_card"><div class="icon_card__caption">icon_size--1</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--1"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--2</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--2"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--3</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--3"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--4</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--4"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--5</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--5"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--6</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--6"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--7</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--7"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--8</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--8"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--9</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--9"></i></div></div>
+<div class="icon_card"><div class="icon_card__caption">icon_size--10</div><div class="icon_card__content icon_card--raised"><i class="green-icon icon--check-rates icon_size--10"></i></div></div>

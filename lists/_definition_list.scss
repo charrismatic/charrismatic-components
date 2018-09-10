@@ -1,0 +1,61 @@
+/*---
+title:   Inline Definition List
+section: components
+---
+<dl>
+  <dt>Phone:</dt>
+  <dd>123-456-7890</dd>
+</dl>
+<dl>
+  <dt>Address:</dt>
+  <dd>123 Street</dd>
+</dl>
+<dl>
+  <dt></dt>
+  <dd>City, State Zip</dd>
+</dl>
+<dl>
+  <dt>Email:</dt>
+  <dd>abc@defghi.com</dd>
+</dl>
+*/
+
+
+.definition_list {
+
+  dl {
+    margin-top: 0;
+    margin-bottom: 1em
+  }
+
+  dd {
+    margin: 0 1.5em 1.5em;
+  }
+
+  &--inline {
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    dt {
+      display: inline-block;
+      text-align: left;
+    }
+
+    dd {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+
+  &--tight {
+    dl  {
+      margin-bottom: .5em;
+    }
+    dd {
+      margin: 0 .5em;
+    }
+  }
+}

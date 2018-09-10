@@ -1,0 +1,638 @@
+/****************************
+ * *   HOME PAGE STYLES   * *
+ ****************************/
+
+body#home {
+  background: $white_10;
+
+  section.main-content {
+    padding-top: 0;
+    margin-top: 0;
+  }
+ }
+
+/****************************
+* *      TOP BANNER       * *
+ ****************************/
+#home .banner-wrap {
+    @include max_width( $width_mobile_device_lg ) {
+      // min-height: 100vh;
+    }
+}
+
+section {
+
+  // TOP CONTENT BANNER BLOCK ON LANDING PAGE #CUSTOM-ELEMENT
+  // ORIGINALY MEANT TO FLEX TWO CONTENT ITEMS SIDE BY SIDE BY SIDE
+  // NOW KEEPS A CONTAINER ON ONE SIDE AND A PSUEDUO ELEMENT POSITIONED TO THE SIDE WITH AN IMAGE
+  // THIS IS DONE TO ENSURE THE IMAGE NEXT OVERLAPS WITH THE TEXT, BUT STILL SCALES WITH THE TEXT
+
+  &#banner {
+    background-position: center center;
+    background-size: cover;
+    min-height: 500px;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+    padding-top: 3em;
+    position: relative;
+    width: 100%;
+
+    .banner-content-wrap { display: block; }
+
+    .banner-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 2em;
+      padding-top: 0;
+      position: relative;
+      width: 60%;
+      z-index: 2;
+
+      @include max_width( $banner_break_mid ) { width: 100%; }
+
+      &::before {
+        background-image: $img_lock_overlay;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        display: block;
+        height: 100%;
+        left: 90%;
+        overflow: visible;
+        padding: 10% 0;
+        position: absolute;
+        width: 80%;
+        z-index: -1;
+
+        @include max_width( $banner_break_mid ) {
+          left: 0;
+          opacity: 0.5;
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    h2 {
+      color: $white_00;
+      font-weight: bold;
+      font-size: 4.5em;
+      margin: 1rem 0 0;
+      padding: 0;
+
+      @include max_width( $width_mobile_device_lg ) {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 1rem 0 1.5em;
+      color: $white_00;
+
+      @include max_width( $banner_break_mid ) {
+        max-width: 550px;
+        text-align: justify;
+        text-align-last: start;
+      }
+
+      @include max_width( $banner_break_mid ) {
+        text-align: left;
+        text-align-last: start;
+        font-size: 1.6em;
+      }
+    }
+
+    a { color: $white_00; }
+
+    // BANNER BUTTONS
+    ul {
+      display: flex;
+      width: 120%;
+
+      @include max_width( $banner_break_mid ) {
+        width: 100%;
+        padding-bottom: 2em;
+        flex-wrap: wrap;
+        max-width: 450px;
+
+        li.pull--mid {
+          order: 2;
+          width: 100%;
+          margin-top: 2em;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      li {
+        @extend button;
+
+        display: block;
+        flex: 1 1 auto;
+        margin-left: 1em;
+        border: 1px solid $white_00;
+        background: transparent;
+        padding: 0;
+        margin: 0 0.6em;
+
+        &:hover {
+          border: 1px solid $accent_red;
+          background: $accent_red;
+        }
+
+        &:first-of-type { margin-left: 0; }
+
+        a {
+          display: block;
+          padding: 0.8em 0.3em;
+          margin: 0;
+        }
+
+        &.highlight {
+          background: $accent_red;
+          border: 0;
+        }
+
+        @include max_width( $banner_break_mid ) {
+          flex: 1 0 auto;
+          margin: 0 0 0 1.5em;
+          padding: 0 0.5em;
+          font-size: 1.25em;
+        }
+
+        @include max_width( $width_mobile_device_lg ) {
+          margin: 1.6em 0 0 0;
+          width: 100%;
+          padding: 0;
+          flex: 1 0 100%;
+
+          &:first-of-type { margin-top: 0; }
+        }
+      }
+    }
+
+    // #BANNER
+    @include max_width( $banner_break_mid ) {
+      padding-top: 0;
+      margin-top: 0;
+      font-size: 12px;
+      min-height: auto;
+    }
+
+    @include max_width( $width_mobile_device_lg ) {
+      font-size: 12px;
+      padding-bottom: 2em;
+
+      p {
+        font-size: 1.7em;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
+
+/**********************************
+* *    START A CONVERSATION     * *
+ **********************************/
+
+$convo_break_lg: 1250px;
+$convo_break_md: 1050px;
+$convo_break_sm: $banner_break_mid;
+$convo_break_xs: 500px;
+
+#conversation {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  transform: translateY(-40%);
+
+  .row {
+    background: $white_00;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.73);
+    display: flex;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2.0rem 3rem;
+    width: 80%;
+
+    @include max_width ($convo_break_xs) { flex-wrap: wrap; }
+  }
+
+  .logo {
+    display: block;
+    flex: 0 0 200px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &::before {
+      background-image: $img_logo_stacked;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  .block-content {
+    position: relative;
+    display: block;
+    flex: 1 1 100%;
+    margin: 0 0 0 2.5em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.7em;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 1em 0;
+    font-size: 1.1em;
+  }
+
+  @include max_width($convo_break_lg) { font-size: 15px; }
+
+  @include max_width ($convo_break_md) { font-size: 16px; }
+
+  @include max_width( $banner_break_mid ) {
+    transform: translateY(0);
+
+    .row {
+      width: 100%;
+      max-width: none;
+      padding: 2.5rem 0;
+    }
+
+    .logo {
+      margin-left: 3rem;
+    }
+
+    .block-content {
+      flex: 1 1 90%;
+      margin: 0 3rem 0 2rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.1em;
+      padding: 1.5rem 0 0 0;
+    }
+
+    button {
+      margin: 1.5rem 0 0 0;
+      padding: 1.3rem 2rem;
+    }
+  }
+
+  @include max_width( $width_tablet_device_sm ) {
+    .logo { margin-left: 2rem; }
+    .block-content { margin: 0 2rem; text-align: center; }
+    button { min-width: 50%; }
+    .logo { display: none; }
+  }
+
+  @include max_width ($convo_break_xs) {
+
+    .block-content { margin: 0 1.7em; }
+
+    .logo {
+      border-right: 0;
+      width: auto;
+      height: 130px;
+      padding: 0 20px 20px;
+      flex-basis: auto;
+
+      &::before { background-size: contain; }
+    }
+
+    .button {
+      margin-top: 1.5em;
+      padding: 1em;
+      font-size: 1.3em;
+      display: block;
+    }
+  }
+
+}
+
+/****************************
+* *   SOLUTIONS COUNTERS  * *
+ ****************************/
+
+/******************************
+ *           OUTLINE          *
+ * section                    *
+ *  L .row                    *
+ * ---                        *
+ * .solutions-number-box      *
+ *  L .solution               *
+ *  {                         *
+ *   _.solution-count::before *
+ *   _.solution-count         *
+ *   _ h3                     *
+ *   _.subtext                *
+ *   _.divider                *
+ *   _.description            *
+ *  }                         *
+ ******************************/
+
+$home_solutions_md: 800px;
+
+#solutions-highlight-count {
+  padding: 4em 0;
+  background-color: $black_00;
+  background-image: $bg_block_solutions;
+  background-size: cover;
+  text-align: center;
+
+  // LAYOUT
+  .solutions-number-box {
+    display: flex;
+  }
+
+  // ELEMENT CONTAINER
+  .solution {
+    margin: 0 1em;
+
+    // ELEMENT ICON
+    &::before {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: 4em;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  .solution-count {
+    margin: 0.8em auto;
+    font-weight: bold;
+    font-size: 2.9em;
+
+    &.plus::after {
+      content: "+";
+      margin-left: 5px;
+    }
+  }
+
+  // TYPOGRAPHY
+  .solution-count,
+  h2,
+  h3,
+  span {
+    display: block;
+    color: $white_00;
+  }
+
+  span {
+    &.description { color: $white_20; }
+  }
+
+  h2 {
+    margin: 0 auto 1em;
+    padding: 0;
+    font-weight: bold;
+    font-size: 2.2em;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+
+  .divider {
+    display: inline-block;
+    margin: 1rem auto;
+    width: 40px;
+    height: 1px;
+    background: $accent_orange;
+  }
+
+  #block-solutions-customers.solution::before { background-image: $ic_hand-shake; }
+  #block-solutions-location.solution::before { background-image: $ic_location; }
+  #block-solutions-tools.solution::before { background-image: $ic_currency; }
+
+  // MEDIA QUERIES
+  @media (max-width: $width_tablet_device_lg) {
+
+    .solutions-number-box {
+      flex-direction: column;
+    }
+
+    .solution {
+      // @extend %flex;
+      display: flex;
+      flex-direction: row;
+      > * { margin: 0 1em; }
+      > *:first-child { margin-left: 0; }
+      > *:last-child { margin-right: 0; }
+
+      align-items: center;
+      margin: 2em 0 0 0;
+      &::before { display: none; }
+      .solution-count { margin: 0; }
+    }
+
+
+    .divider {
+      display: inline;
+      margin: 0rem auto;
+      width: 1px;
+      height: 40px;
+      background: #fda630;
+      flex: 0 0 1px;
+    }
+
+    .split--tab-lg { flex: 1 1 100%; }
+    h2 { margin: 0; }
+    h3 { text-align: center; }
+    .description { text-align: center; }
+  }
+}
+
+
+
+/****************************
+* *    CONTACT FORM       * *
+ ****************************/
+$contact_form_inner_max_w: 500px;
+$contact_section_max_w: 830px;
+$home_contact_break_sm: 600px;
+
+#home-contact-form {
+  padding-top: 6em;
+  text-align: center;
+
+  .row {
+    max-width: $contact_section_max_w;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .subtext {
+    margin: 2em auto;
+    font-size: 1em;
+    font-style: italic;
+  }
+
+  .contact-form-container {
+    margin-top: 3em;
+    padding: 2em;
+    background-color: $accent_red;
+    background-image: url('/images/klsec17/contact-form-overlay.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 1.5em 1.5em 0 $black_00;
+
+    > * {
+      color: $white;
+      max-width: $contact_form_inner_max_w;
+      margin: 2em auto;
+      width: 80%;
+      line-height: 1.6em;
+      padding: 0;
+    }
+  }
+
+  .top {
+    @extend %flex;
+
+    justify-content: space-around;
+    margin: 1em auto;
+
+    button {
+      background: transparent;
+      font-weight: bold;
+      text-transform: inherit;
+      font-size: 1.2em;
+      line-height: 1.4em;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    @include max_width( $home_contact_break_sm ) {
+      flex-wrap: wrap;
+
+      > button {
+        flex-basis: 100%;
+        margin: 0.5em 0;
+      }
+    }
+  }
+
+  .form-wrap {
+    position: relative;
+    display: block;
+  }
+
+  .input-wrap {
+    display: block;
+    width: 100%;
+    margin: 0.7em auto;
+
+    &:first-of-type { margin-top: 0; }
+
+    input {
+      padding: 0.95em;
+      font-size: 0.95em;
+
+      // &[type="reset"] { display: none; }
+    }
+  }
+
+  button {
+    margin-top: 0.7em;
+    width: 100%;
+  }
+
+  @include placeholder { color: darken($accent_red, 10%); }
+}
+
+/****************************
+* *  HOME TESTIMONIALS    * *
+ ****************************/
+
+#home-block-testimonial {
+  margin: 2em auto;
+  padding: 4em 0;
+  text-align: center;
+
+  .row { max-width: $contact_section_max_w; }
+
+  h2 {
+    margin: 0.5em 0;
+    font-weight: bold;
+    font-size: 1.7em;
+  }
+
+  .testimonial-content {
+    position: relative;
+    line-height: 1.8em;
+    margin: 0 1.5rem 0.2em;
+
+    &::after,
+    &::before {
+      position: absolute;
+      color: $accent_red;
+      font-size: 80px;
+    }
+
+    &::before {
+      top: 0;
+      left: -2rem;
+      content: "\201C";
+    }
+
+    &::after {
+      right: -2rem;
+      bottom: 0;
+      content: "\201D";
+    }
+  }
+
+  .testimonial-source {
+    text-align: right;
+    font-style: italic;
+    font-size: 0.9em;
+  }
+}
+
+
+
+// ALLOW LIST ITEMS ON WYSIWYG EDITOR CONTENT
+.cms-html-block,
+.product-details,
+.tab-panels,
+.content-block {
+  ol,
+  ul {
+    padding-left: 2em;
+    list-style: disc;
+  }
+
+  li {
+    display: list-item;
+    margin: 0.5em 0;
+  }
+}
