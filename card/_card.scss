@@ -1,7 +1,7 @@
 
 
 %card {
-  @extend %z_depth_2;
+  @include z_depth(depth_2);
   display: block;
   width: auto;
   margin: .5em auto;
