@@ -1,10 +1,11 @@
 
-
-%card {
-  @include z_depth(depth_2);
-  display: block;
-  width: auto;
+@mixin card ($padding:1em, $background:initial) {
+  @include z_depth("z2");
   margin: .5em auto;
+  padding: $padding;
+  width: auto;
+  display: block;
+  background-color: $background;
 }
 
 
@@ -35,9 +36,7 @@ section: components
 
 // SIMPLE CONTENT CARD
 .card__content_card {
-  @extend %card;
-  background: $white;
-  padding: 1em;
+  @include card(1em, $white);
 }
 
 
@@ -63,14 +62,12 @@ section: components
 
 
 .title_card {
-  @extend %card;
-  background: #222;
+  @include card(0, $grey_80)
   color: $white;
   font-weight: 400;
   position: relative;
   font-size: 1.44em;
   line-height: 2;
-  padding: 0em;
   margin: 0 auto 1em auto;
   text-shadow: none;
   text-align: center;
@@ -117,7 +114,15 @@ section: components
 
 
 .card {
-  @extend %card;
+  @include card(0)
+
+  &_wide {
+    flex-direction: row;
+  }
+
+  &_tall {
+    flex-direction: column;
+  }
 
   &.card_style--flat {
     color: $white;
@@ -151,7 +156,7 @@ section: components
     }
 
     button {
-      @extend %z_depth_2;
+      @include z_depth("z2");
     }
   }
 }
