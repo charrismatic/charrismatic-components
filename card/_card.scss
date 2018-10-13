@@ -1,11 +1,10 @@
 
-@mixin card ($padding:1em, $background:initial) {
+@mixin card ($padding:1em, $background:initial, $color:inherit) {
   @include z_depth("z2");
   margin: .5em auto;
   padding: $padding;
-  width: auto;
-  display: block;
   background-color: $background;
+  color: $color;
 }
 
 
@@ -14,7 +13,7 @@ title: content cards
 section: components
 
 ---
-<div class="card__content_card">
+<div class="simple_card">
   <h2>Basic Content Card</h2>
 </div>
 ---
@@ -23,7 +22,7 @@ section: components
 ## Content Card
 
 ---
-<div class="card__content_card">
+<div class="simple_card">
   <h2>Basic Content Card</h2>
   <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
    written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
@@ -35,8 +34,9 @@ section: components
 
 
 // SIMPLE CONTENT CARD
-.card__content_card {
+.simple_card {
   @include card(1em, $white);
+  display: inline-block;
 }
 
 
@@ -52,10 +52,6 @@ section: components
 </div>
 
 ```
-<div class="card__title-card">
-  <h2 class="title_card__title>Basic Title Card</h2>
-</div>
-```
 
 */
 
@@ -64,6 +60,7 @@ section: components
 .title_card {
   @include card(0, $grey_80)
   color: $white;
+  display: block;
   font-weight: 400;
   position: relative;
   font-size: 1.44em;
@@ -114,20 +111,30 @@ section: components
 
 
 .card {
-  @include card(0)
+  @include card(0);
+  display: inline-block;
+  padding: 0em;
+  &-wide { flex-direction: row; }
+  &-tall { flex-direction: column; }
 
-  &_wide {
-    flex-direction: row;
+  .card__header {
+
+  }
+  .card__footer {
+    padding: 0em 2em 1em 2em;
   }
 
-  &_tall {
-    flex-direction: column;
+  .card__content {
+    padding: 1em 2em 1em 2em;
+    color: inherit;
+    font-weight: normal;
+    line-height: 1.3;
+    font-size: .9em;
   }
 
-  &.card_style--flat {
-    color: $white;
-
+  &_style--flat {
     .card__title {
+      box-shadow: none;
       background: transparent;
       position: relative;
       font-size: 1.8em;
@@ -139,13 +146,14 @@ section: components
     }
 
     .card__content {
+      padding: 1em 2em 1em 2em;
       color: inherit;
       font-weight: normal;
       line-height: 1.3;
       font-size: .9em;
     }
 
-    .card__footer {}
+
 
     h2, p  {
       font-size: inherit !important;

@@ -35,7 +35,7 @@ COMPLEX-
 
 // ICON CARDS
 // REF: GREEN ICONS: /wp-content/themes/firstib_childtheme/iamges/green-icons
-.icon_card__flex-row {
+.icon_card_row {
   display: flex;
   flex-direction: row;
 
@@ -103,9 +103,7 @@ COMPLEX-
 }
 
 
-
-
-.icon_card--coin {
+.icon_card_coin {
   @extend %z_depth_2;
   border-radius: 50%;
   display: inline-block;

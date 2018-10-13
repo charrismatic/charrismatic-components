@@ -3,7 +3,7 @@ title: Material Design Card
 section: components
 ---
 
-Square card 
+Square card
 
 
 <section class="styleguide_section">
@@ -18,7 +18,7 @@ Square card
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Aenan convallis.
     </div>
-    
+
     <div class="mdl_card__actions mdl_card--border bg_theme_primary color_white">
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
         View Updates
@@ -44,10 +44,10 @@ Square card
   position: relative;
   border-radius: 2px;
   box-sizing: border-box;
-  border: 1px solid $grey_30; 
-  
+  border: 1px solid $grey_30;
+
   &__media {
-    background-color: red; 
+    background-color: red;
     background-repeat: repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -55,23 +55,23 @@ Square card
     background-attachment: scroll;
     box-sizing: border-box;
   }
-  
+
   &__title {
     align-items: center;
-    color: $color_red;
+    color: inherit;
     display: block;
     display: flex;
     justify-content: stretch;
     line-height: normal;
     padding: 1em;
     box-sizing: border-box;
-    
+
     &.mdl_card--border {
       border-bottom: 1px solid;
     }
   }
-  
-  
+
+
   &__title-text {
     align-self: flex-end;
     color: inherit;
@@ -104,7 +104,7 @@ Square card
       border-bottom: 1px solid $grey_30;
     }
   }
-  
+
   &__actions {
     font-size: 1em;
     line-height: normal;
@@ -121,7 +121,7 @@ Square card
     position: absolute;
     right: 16px;
     top: 16px;
-  }  
+  }
 
   &--expand { flex-grow: 1; }
 
