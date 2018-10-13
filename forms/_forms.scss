@@ -1,13 +1,12 @@
 /*---
-title: Forms 
-section: components 
+title: Forms
+section: components
 ---
 
-Forms 
+Forms
 
 
 */
-
 
 
 // FORMS
@@ -40,12 +39,10 @@ input[type="submit"] {
   padding: 1em;
   border: 0;
   border-radius: 3px;
-  background: $accent_orange;
-  color: $white;
   transition: 0.5s ease;
 
   &:hover {
-    background: $form_good;
+    // background: $form_good;
     cursor: pointer;
   }
 }
@@ -100,7 +97,7 @@ input[type="submit"] {
     font-weight: bold;
 
     &:hover {
-      color: $accent_red;
+      color: rgba(255,255,255,.1);
       cursor: pointer;
     }
   }
