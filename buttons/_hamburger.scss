@@ -1,37 +1,33 @@
-/*---
-title: Hamburger  
-section: Controls
-description: Tasty CSS-animated hamburgers
-author: Jonathan Suh @jonsuh
-link: https://github.com/jonsuh/hamburgers
----
-
-source: https://jonsuh.com/hamburgers
-
-Menu Indicator Hamburger 
-
-Dynamic Hamburger Menu Button
-
-
-<section class="styleguide_section">
-  <button class='hamburger hamburger--squeeze' type='button'>
-    <span class='hamburger-box'>
-      <span class='hamburger-inner'>
-      </span>
-    </span>
-  </button>
-  <button class='hamburger hamburger--squeeze active' type='button'>
-    <span class='hamburger-box'>
-      <span class='hamburger-inner'>
-      </span>
-    </span>
-  </button>
-</section> 
-
+/*
+/// ---
+/// title: Hamburger
+/// section: Controls
+/// description: Tasty CSS-animated hamburgers
+/// author: Jonathan Suh @jonsuh
+/// link: https://github.com/jonsuh/hamburgers
+/// ---
+///
+/// source: https://jonsuh.com/hamburgers
+///
+/// Menu Indicator Hamburger
+///
+/// Dynamic Hamburger Menu Button
+///
+/// <section class="styleguide_section">
+///   <button class='hamburger hamburger--squeeze' type='button'>
+///     <span class='hamburger-box'>
+///       <span class='hamburger-inner'>
+///       </span>
+///     </span>
+///   </button>
+///   <button class='hamburger hamburger--squeeze active' type='button'>
+///     <span class='hamburger-box'>
+///       <span class='hamburger-inner'>
+///       </span>
+///     </span>
+///   </button>
+/// </section>
 */
-
-
-// @import "../../colors";
 
 .hamburger {
   padding: 15px;

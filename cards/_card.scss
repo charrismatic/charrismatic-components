@@ -8,51 +8,51 @@
 }
 
 
-/*---
-title: content cards
-section: components
-
----
-<div class="simple_card">
-  <h2>Basic Content Card</h2>
-</div>
----
-
-
-## Content Card
-
----
-<div class="simple_card">
-  <h2>Basic Content Card</h2>
-  <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-   written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
-   "Lorem ipsum dolor sit amet.."</p>
-</div>
----
-
+/*
+///---
+/// title: content cards
+/// section: components
+///
+/// ---
+/// <div class="simple_card">
+///   <h2>Basic Content Card</h2>
+/// </div>
+/// ---
+///
+///
+/// ## Content Card
+///
+/// ---
+/// <div class="simple_card">
+///   <h2>Basic Content Card</h2>
+///   <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
+///    written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
+///    "Lorem ipsum dolor sit amet.."</p>
+/// </div>
+/// ---
+///
 */
 
 
 // SIMPLE CONTENT CARD
 .simple_card {
-  @include card(1em, $white);
+  @include card(1em, $page_bg);
+
   display: inline-block;
 }
 
 
-
-
-/*---
-title: Title card
-section: components
-
----
-<div class="title_card">
-  <h2 class="title_card__title">Basic Title Card</h2>
-</div>
-
-```
-
+/*
+/// title: Title card
+/// section: components
+///
+/// ---
+/// <div class="title_card">
+///   <h2 class="title_card__title">Basic Title Card</h2>
+/// </div>
+///
+/// ```
+///
 */
 
 
@@ -81,32 +81,30 @@ section: components
 
 
 
-
-
-/*---
-title: styled cards
-section: components
-
----
-<div class="card card_style--flat">
-  <h2 class="card__title">Flat Styled Card</h2>
-  <div class="card__content">
-    <ul>
-      <li>List A</li>
-      <li>List B</li>
-      <li>List C</li>
-    </ul>
-  </div>
-  <div class="card__footer">
-    <p>Optional Footer</p>
-    <button>With Buttons</button>
-  </div>
-</div>
----
-
-<div class="card__title-card">
-  <h2>Basic Title Card</h2>
-</div>
+/*
+/// ---
+/// title: styled cards
+/// section: components
+/// ---
+/// <div class="card card_style--flat">
+///   <h2 class="card__title">Flat Styled Card</h2>
+///   <div class="card__content">
+///     <ul>
+///       <li>List A</li>
+///       <li>List B</li>
+///       <li>List C</li>
+///     </ul>
+///   </div>
+///   <div class="card__footer">
+///     <p>Optional Footer</p>
+///     <button>With Buttons</button>
+///   </div>
+/// </div>
+/// ---
+///
+/// <div class="card__title-card">
+///   <h2>Basic Title Card</h2>
+/// </div>
 */
 
 
