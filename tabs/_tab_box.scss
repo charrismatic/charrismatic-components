@@ -32,8 +32,8 @@
 }
 
 .tab-container {
-  border: 1px solid $white_10;
-  box-shadow: 1px 1px 5px 0 $white_15;
+  border: 1px solid $grey_10;
+  box-shadow: 1px 1px 5px 0 $grey_15;
 
   .tab-panels {
     font-size: 13px;
@@ -58,7 +58,7 @@
 
   li {
     @extend %no-select;
-    background: $white_10;
+    background: $grey_10;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -101,8 +101,8 @@
       padding: .4em 1em;
       margin: 0;
       position: relative;
-      border-bottom: 1px solid $white_30;
-      background: $white_10;
+      border-bottom: 1px solid $grey_30;
+      background: $grey_10;
       transform: none;
       cursor: pointer;
 

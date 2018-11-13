@@ -1,40 +1,39 @@
-/**---
-title: icon card
-section: components
----
-
-SIMPLE
-
-<div class="icon_card">
-  <div class="icon_card__content icon_card--raised">
-    <i class="icon_card__icon green-icon--clock"></i>
-    <span class="icon_card__title">Online 24/7</span>
-    <span class="icon_card__caption">Bank on your own terms when you want, how you want</span>
-  </div>
-</div>
-
-
-COMPLEX-
-
-<div class="icon_card__flex-row">
-  <div class="icon_card">
-    <div class="icon_card__header bg_color--theme-dark-blue">
-      <div class="icon_card--raised icon_card--flexed">
-        <i class="icon_card__icon green-icon icon--percent"><span class="icon__assist-text">Percent icon</span></i>
-      </div>
-      <div class="icon_card__content">
-        <span class="icon_card__title">Earn interest at 7x the national average</span>
-        <span class="icon_card__caption">* As of October 5, 2017, the national average for Money Market accounts is 0.12% APY, according to Bankrate.com.</span>
-      </div>
-    </div>
-  </div>
-</div>
+/**
+///  ---
+/// title: icon card
+/// section: components
+/// ---
+///
+/// SIMPLE
+///
+/// <div class="icon_card">
+///   <div class="icon_card__content icon_card--raised">
+///     <i class="icon_card__icon green-icon--clock"></i>
+///     <span class="icon_card__title">Online 24/7</span>
+///     <span class="icon_card__caption">Bank on your own terms when you want, how you want</span>
+///   </div>
+/// </div>
+///
+///
+/// COMPLEX-
+///
+/// <div class="icon_card__flex-row">
+///   <div class="icon_card">
+///     <div class="icon_card__header bg_color--theme-dark-blue">
+///       <div class="icon_card--raised icon_card--flexed">
+///         <i class="icon_card__icon green-icon icon--percent"><span class="icon__assist-text">Percent icon</span></i>
+///       </div>
+///       <div class="icon_card__content">
+///         <span class="icon_card__title">Earn interest at 7x the national average</span>
+///         <span class="icon_card__caption">* As of October 5, 2017, the national average for Money Market accounts is 0.12% APY, according to Bankrate.com.</span>
+///       </div>
+///     </div>
+///   </div>
+/// </div>
 */
 
-
-
-// ICON CARDS
-// REF: GREEN ICONS: /wp-content/themes/firstib_childtheme/iamges/green-icons
+/// ICON CARDS
+/// REF: GREEN ICONS: /wp-content/themes/firstib_childtheme/iamges/green-icons
 .icon_card_row {
   display: flex;
   flex-direction: row;
@@ -73,9 +72,9 @@ COMPLEX-
       // > 960PX
       @include min_width($width_laptop_sm) { margin: 0 1em 0 0; }
       // < 960PX
-      @include max_width($width_laptop_sm) {  }
+      // @include max_width($width_laptop_sm) {  }
       @include max_width($width_mobile_sm) {
-         // if margin or padding top -> 0
+        // @if margin or padding top -> 0
       }
     }
 
@@ -105,6 +104,7 @@ COMPLEX-
 
 .icon_card_coin {
   @extend %z_depth_2;
+
   border-radius: 50%;
   display: inline-block;
   position: relative;

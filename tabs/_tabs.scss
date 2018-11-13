@@ -95,7 +95,7 @@
 
   li {
     @extend %no-select;
-    background: $white_15;
+    background: $grey_15;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -133,7 +133,7 @@ label.tab-panel-heading {
       text-align: left;
       padding: .4em 1em;
       margin: .4em 0;
-      background: $white_15;
+      background: $grey_15;
     }
 
     .tab-panel-content {
@@ -146,8 +146,8 @@ label.tab-panel-heading {
 
 
 .tab-container {
-  border: 1px solid $white_10;
-  box-shadow: 1px 1px 5px 0 $white_15;
+  border: 1px solid $grey_10;
+  box-shadow: 1px 1px 5px 0 $grey_15;
 
   .tab-panels {
     font-size: 13px;

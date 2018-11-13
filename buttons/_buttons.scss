@@ -15,12 +15,13 @@
 ///
 */
 
+// /data/projects/sandbox/mount/f  ine-hatfield.com/source/styles/components/buttons/index.scss
+// /data/projects/sandbox/mount/f  ine-hatfield.com/source/styles/style.scs
 
-$button_bg: $theme_primary;
-$button_color: $white;
+
 
 // DEFAULT BUTTON
-@mixin button ($bgcolor: null, $testcolor: inheirt) {
+@mixin button ($bgcolor: inherit, $testcolor: inheirt) {
   border: 0;
   padding: 1em;
   background: $bgcolor;
@@ -32,7 +33,6 @@ $button_color: $white;
   text-transform: uppercase;
   transition: color 200ms linear;
 }
-
 
 @mixin button_hover ( $litghterOrDarker:false ) {
   $bgcolor: inherit;
@@ -63,7 +63,7 @@ $button_color: $white;
 
 /// SCOPED BUTTON
 button {
-  @include button($button_bg)
+  @include button()
 
   &:hover {
     @include button_hover ()
@@ -76,6 +76,7 @@ button {
 
 .ic_button {
   @include icon_button();
+
   &:hover {
     box-shadow: 0 0 2px rgb(144, 144, 144);
     outline: 1px solid #f79c21;

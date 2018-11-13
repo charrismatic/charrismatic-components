@@ -1,6 +1,7 @@
 
 @mixin card ($padding:1em, $background:initial, $color:inherit) {
   @include z_depth("z2");
+
   margin: .5em auto;
   padding: $padding;
   background-color: $background;
@@ -36,7 +37,7 @@
 
 // SIMPLE CONTENT CARD
 .simple_card {
-  @include card(1em, $page_bg);
+  @include card(1em, initial);
 
   display: inline-block;
 }
@@ -56,9 +57,9 @@
 */
 
 
-
 .title_card {
-  @include card(0, $grey_80)
+  @include card(0, $grey_80);
+
   color: $white;
   display: block;
   font-weight: 400;
@@ -78,7 +79,6 @@
     border: 0;
   }
 }
-
 
 
 /*
