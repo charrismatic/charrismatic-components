@@ -1,36 +1,33 @@
-/*---
-title: Material Design Card
-section: components
----
-
-Square card
-
-
-<section class="styleguide_section">
-<div class="container">
-
-  <div class="demo-card-square mdl_card z-depth-2">
-    <div class="mdl_card__title">
-      <h2 class="mdl_card__title-text">Update</h2>
-      <span class="mdl_card__subtitle-text">Update</span>
-    </div>
-    <div class="mdl_card__supporting-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Aenan convallis.
-    </div>
-
-    <div class="mdl_card__actions mdl_card--border bg_theme_primary color_white">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        View Updates
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-```
-
+/*
+/// ---
+/// title: Material Design Card
+/// section: components
+/// ---
+///
+/// Square card
+///
+///
+/// <section class="styleguide_section">
+/// <div class="container">
+///
+///   <div class="demo-card-square mdl_card z-depth-2">
+///     <div class="mdl_card__title">
+///       <h2 class="mdl_card__title-text">Update</h2>
+///       <span class="mdl_card__subtitle-text">Update</span>
+///     </div>
+///     <div class="mdl_card__supporting-text">
+///       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+///       Aenan convallis.
+///     </div>
+///
+///     <div class="mdl_card__actions mdl_card--border bg_theme_primary color_white">
+///       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+///         View Updates
+///       </a>
+///     </div>
+///
+///   </div>
+/// </section>
 */
 
 .mdl_card {
@@ -71,7 +68,6 @@ Square card
     }
   }
 
-
   &__title-text {
     align-self: flex-end;
     color: inherit;
@@ -88,7 +84,7 @@ Square card
 
   &__subtitle-text {
     font-size: .9em;
-    color: #333;
+    color: #333333;
     margin: 0;
   }
 
@@ -124,7 +120,4 @@ Square card
   }
 
   &--expand { flex-grow: 1; }
-
-
-
 }

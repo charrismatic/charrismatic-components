@@ -1,33 +1,33 @@
-/********************************************
- *  TRANFORMATION TO THE SAME NAV HTML      *
- *  THAT WILL APPEAR ON MOBILE              *
- *
- *   @USES JAVASCRIPT FOR ADD/REMOVE ACTIVE *
- *   @USES HAMBURGER CSS BUTTON             *
- *                                          *
- *                                          *
- **************************************** * */
+/// TRANFORMATION TO THE SAME NAV HTML     
+/// THAT WILL APPEAR ON MOBILE             
+/// @USES JAVASCRIPT FOR ADD/REMOVE ACTIVE 
+/// @USES HAMBURGER CSS BUTTON             
 
-// nav_break_md : 780px;
-// nav_break_sm : 450px;
-// nav_break_smallest : 400px;
+$nav_accent_color : $theme_accent;
+$nav_primary_color : $theme_primary;
+$nav_primary_bdr_color: lighten($nav_primary_color, 20%);
+$nav_primary_bg: darken($nav_primary_color, 15%);
 
-@media (max-width: $nav_break_md ){
+$mob_menu_transition_in: 'transform 500ms cubic-bezier(0.42, 0.95, 0.58, 0.96) 0s';
+$mob_menu_transition_timing: cubic-bezier(0.42, 0.95, 0.58, 0.96);
+$mob_menu_transition_duration: 500ms;
+
+
+@media (max-width: _size('mobile_lg')) {
 
   .nav-container {
-      width: 52px;
-      height: 50px;
-      display: block;
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: 60px;
-      margin: 0;
-      position: relative;
+    margin: 0;
+    width: 52px;
+    height: 50px;
+    display: block;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60px;
 
     .hamburger {
       display: block;
-      color: $white_00;
-      display: block;
+      color: $grey_00;
       flex: 0 0 auto;
       padding: 10px;
       margin: 0;
@@ -48,21 +48,22 @@
 
   .content {
     .hamburger-inner {
-      background-color: $black_20;
+      background-color: $grey_20;
       &::before,
-      &::after { background-color: $black_20; }
+      &::after { background-color: $grey_20; }
     }
   }
 
   nav {
-    .home &, .content & { background: $accent_red; }
+    .home &,
+     .content & { background: $nav_primary_bg; }
   }
 
   // MOBILE NAV TOOLBAR AREA
   nav {
     &::before {
       content: "";
-      background: darken($accent_red, 10%);
+      background: $nav_primary_bg;
       height: 60px;
       position: relative;
       width: 100%;
@@ -70,15 +71,11 @@
       flex-grow: 0;
       flex-shrink: 0;
       flex-basis: 60px;
-      border-bottom: 1px solid lighten( $accent_orange, 15%);
-      box-shadow: inset 0px 1px 19px 0px rgba(25, 6, 6, 0.73);
+      border-bottom: 1px solid $nav_primary_bdr_color;
+      box-shadow: inset 0 1px 19px 0 rgba(25, 6, 6, 0.73);
       z-index: 2;
     }
   }
-
-  $mob_menu_transition_in: 'transform 500ms cubic-bezier(0.42, 0.95, 0.58, 0.96) 0s';
-  $mob_menu_transition_timing: cubic-bezier(0.42, 0.95, 0.58, 0.96);
-  $mob_menu_transition_duration: 500ms;
 
   // MENU ON
   .mob-menu-active {
@@ -88,10 +85,10 @@
     }
 
     nav {
-     visibility: visible;
-     width: 400px;
-     transform: translateX(0) translateY(0) rotateZ(0);
-     transition: visibility 0ms linear 0ms, transform 500ms cubic-bezier(0.42, 0.95, 0.58, 0.96) 0s;
+      width: 400px;
+       visibility: visible;
+       transform: translateX(0) translateY(0) rotateZ(0);
+       transition: visibility 0ms linear 0ms, transform 500ms cubic-bezier(0.42, 0.95, 0.58, 0.96) 0s;
     }
   }
 
@@ -146,7 +143,7 @@
 
   // COLLAPSIBLE TOGGLE TARGET
   .mob-collapsible {
-    .sm-section-title::before{
+    .sm-section-title::before {
       content: "";
       width: 0.8em;
       height: 0.8em;
@@ -159,15 +156,15 @@
       vertical-align: middle;
     }
 
-    .sm-section-title::after{
+    .sm-section-title::after {
       content: "";
       width: 100%;
       height: 1px;
       display: inline-block;
       position: absolute;
       bottom: 0;
-      left:0;
-      background: lighten( $accent_yellow, 10%);
+      left: 0;
+      background: lighten($nav_accent_color, 10%);
       width: 100%;
       transform: scaleX(0);
       transform-origin: center;
@@ -182,11 +179,9 @@
   $acc_trans_ht: height 300ms linear 0ms;
   $accordion_transition: $acc_trans_trans, $acc_trans_ht;
 
-  /* COLLAPSIBLE MENU LIST */
   nav {
     .submenu {
       .mob-collapsible {
-
         .sm-list-group {
           top: -100%;
           height: 0;
@@ -207,18 +202,22 @@
         }
 
         &.active {
+
           .sm-list-group {
             top: 0;
-            height: 100% ;
+            height: 100%;
+
             @include transition($accordion_transition);
-             transform: scaleY(1),  translateY( 0 );
+            transform: scaleY(1), translateY(0);
+
             .sm-list-item {
-              @include transition($accordion_transition);
-              a {
-                height: 100%;
-                @include transition($accordion_transition);
-              }
-            }
+               @include transition($accordion_transition);
+
+               &.active {
+                 height: 100%;
+                 @include transition($accordion_transition);
+               }
+            }     
           }
         }
       }
@@ -253,8 +252,8 @@
 
         > a:hover,
           .mob-collapsible .sm-section-title:hover {
-          color: $red_nav--hover-color;
-          background: $red_nav--hover-bg;
+          color: $theme_primary;
+          background: $nav_accent_color;
           box-shadow: inset 8px 0px 10px 0px rgba(105, 25, 29, 0.73);
         }
 
@@ -324,14 +323,14 @@
             padding: 0 0 0 1em;
             margin: 0;
             font-size: 0.9em;
-            color: lighten( $accent_yellow, 10%);
+            color: lighten($nav_accent_color, 10%);
 
-            &:hover {box-shadow: inset 4px 0 10px rgba(15, 7, 7, 0.4);}
+            &:hover {box-shadow: inset 4px 0 10px rgba(15, 7, 7, 0.4)};
             &:first-of-type { margin-top: 0; }
           }
 
           .sm-list-item-title  {
-            color: lighten( $accent_orange, 10%);
+            color: lighten($theme_primary, 10%);
             font-size: 1em;
             margin: 0 auto;
             text-decoration: none;
@@ -360,12 +359,12 @@
   // MOBILE SCROLL BAR
   nav {
     ::-webkit-scrollbar-thumb {
-      background: $white_30;
+      background: $grey_80;
       border-radius: 0;
     }
 
     ::-webkit-scrollbar {
-      background: $white_15;
+      background: $grey_85;
       max-height: 6px;
       max-width: 6px;
       border-radius: 0;
@@ -398,12 +397,12 @@
           box-shadow: inset 4px 0 10px rgba(15, 7, 7, 0.4);
 
           &:hover {
-            color: $white_05;
-            background: lighten( $accent_orange, 10% );
+            color: $grey_05;
+            background: lighten( $theme_primary, 10%);
             outline: 0;
             a {
-              color: $white_05;
-              background: lighten( $accent_orange, 10% );
+              color: $grey_05;
+              background: lighten(  $theme_primary, 10%);
             }
           }
           span { text-align: center; }

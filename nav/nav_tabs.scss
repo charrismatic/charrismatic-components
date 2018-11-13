@@ -1,51 +1,57 @@
-/*---
-title: Nav-Tabs
-name: nav_tabs
-section: components 
----
 
-
-
-```example:html 
- <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item"><a href="#databases" data-toggle="tab">Databases</a></li>
-    <li class="nav-item"><a href="#queue" data-toggle="tab">Queue</a></li>
-    <li class="nav-item"><a href="#console" data-toggle="tab">Console</a></li>
-    <li class="nav-item"><a href="#tools" data-toggle="tab">Tools</a></li>
- </ul>
-```
-
+/*
+/// ---
+/// title: Nav-Tabs
+/// name: nav_tabs
+/// section: components
+/// ---
+///
+/// ```example:html
+///  <ul class="nav nav-tabs" role="tablist">
+///     <li class="nav-item"><a href="#databases" data-toggle="tab">Databases</a></li>
+///     <li class=="="nav-item"><a href="#console" data-toggle="tab">Console</a></li>
+///     <li class="navnav-item"><a href="#console" data-toggle="tab">Console</a></li>
+///     <li class="nav"nav-item"><a href="#queue" data-toggle="tab">Queue</a></li>
+///     <li class="nav-item"><a href="#console" data-toggle="tab">Console</a></li>
+///     <li class="nav-item"><a href="#tools" data-toggle="tab">Tools</a></li>
+///  </ul>
+/// ```
 */
 
+$nav_primary_color : $theme_primary;
+$nav_primary_bdr_color: lighten($nav_primary_color, 20%);
+$nav_primary_bg: darken($nav_primary_color, 15%);
+
+
 .nav-tabs {
-  padding-left: 0em;
+  display: flex;
+  padding-left: 0;
+  background: #efefef;
   list-style: none;
   margin-bottom: 1em;
-  background: #efefef;
-  border-bottom: 1px solid lighten($theme_primary, 20%);
-  display: flex;
-  color: $theme_primary;
+  border-bottom: 1px solid $nav_primary_bdr_color;
+  color: $nav_primary_color;
 
   > .nav-item > a {
     position: relative;
-    border: 0;
     border-bottom: 1px solid transparent;
     border-radius: 0;
     display: block;
     padding: 10px 15px;
-    margin:0 0;
+    border: 0;
+    margin: 0 0;
 
     &:hover,
     &:focus {
-      color: #fff;
-      background-color: darken( $theme_primary ,15%);
+      color: #ffffff;
+      background-color: $nav_primary_bg;
     }
   }
 
   > .nav-item.active > a,
   > .nav-item.active > a:hover,
   > .nav-item.active > a:focus {
-    background-color: $theme_primary;
+    background-color: $nav_primary_color;
     color: #ffffff;
     border: 0;
     cursor: default;

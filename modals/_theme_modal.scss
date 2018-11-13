@@ -1,6 +1,6 @@
 $modal_header_color: $accent_red;
 $modal_content_color: #fafafa;
-$modal_footer_color: $white_15;
+$modal_footer_color: $grey_15;
 
 .modal-container {
   visibility: hidden;
@@ -176,7 +176,7 @@ $modal_exit_transition: 0ms linear 600ms;
     background: $modal_footer_color ;
     border-radius: 0 0 2px 2px;
     padding: 0.7em 1em ;
-    border-top: 1px solid $white_10;
+    border-top: 1px solid $grey_10;
   }
 
   .submit {
