@@ -1,4 +1,4 @@
-/**
+/*
 ///  ---
 /// title: icon card
 /// section: components
@@ -13,7 +13,6 @@
 ///     <span class="icon_card__caption">Bank on your own terms when you want, how you want</span>
 ///   </div>
 /// </div>
-///
 ///
 /// COMPLEX-
 ///
@@ -32,8 +31,20 @@
 /// </div>
 */
 
+
+$width_laptop_sm: _size('laptop_sd');
+$width_890: _size('tablet_lg');
+$width_nexus7: _size('nexus7');
+$width_galaxys5: _size('galaxys5');
+$theme_mobile_xl: _size('ipad');
+$width_mobile_md: _size('nexus6p');
+$width_mobile_sm: _size('iphone5');
+
+
+/*
 /// ICON CARDS
 /// REF: GREEN ICONS: /wp-content/themes/firstib_childtheme/iamges/green-icons
+*/
 .icon_card_row {
   display: flex;
   flex-direction: row;
@@ -73,19 +84,17 @@
       @include min_width($width_laptop_sm) { margin: 0 1em 0 0; }
       // < 960PX
       // @include max_width($width_laptop_sm) {  }
-      @include max_width($width_mobile_sm) {
-        // @if margin or padding top -> 0
-      }
+      // @include max_width($width_mobile_sm) {
+      // @if margin or padding top -> 0
+      // }
     }
 
     &:last-child {
       // > 960PX
       @include min_width($width_laptop_sm) { margin: 0 0 0 1em; }
       // < 960PX
-      @include max_width($width_laptop_sm) { }
-      @include max_width($width_mobile_sm) {
-        // if margin or padding top -> 0
-       }
+      // @include max_width($width_laptop_sm) {}
+      // @include max_width($width_mobile_sm) {}
     }
 
     @include max_width($width_mobile_md) {
@@ -97,14 +106,11 @@
     }
 
     .icon_card--flexed { flex: 1; }
-
   }
 }
 
-
 .icon_card_coin {
-  @extend %z_depth_2;
-
+  @include z_depth("z2");
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -120,44 +126,50 @@
   .icon_card__header {
     text-align: center;
     padding: 3.8em 3em;
+
     &--raised {
-      @extend %z_depth_1;
+      @include z_depth("z1");
+
       @include min_width($width_890) { box-shadow: 0; }
     }
+
     @include min_width($width_laptop_sm) { max-width: 150px; }
+
     @include max_width($width_890) {
       font-size: 0.8em;
       background-color: white;
     }
+
     @include max_width($theme_mobile_xl) { padding: 15% 5%; }
   }
 
   // BOTH AND HEADER AND CONTENT ACT VERT SIMILAR RIGHT NOW, HEADER IS USED IN LARGER
-  &__content{
-    // margin: auto;
+  &__content {
     padding: 1em 1em;
 
     @include max_width($width_890) { font-size: 0.8em; }
 
     @include max_width($theme_mobile_xl) {
-      // max-width: 80%;
       font-size: .9em;
       padding: 15% 5%;
     }
   }
 
   &--raised {
-    @extend %z_depth_1;
+    @include z_depth("z1");
+
     display: inline-block;
     background-color: white;
+
     @include min_width($width_890) {
-        box-shadow: none;
-        background-color: transparent;
+      box-shadow: none;
+      background-color: transparent;
     }
   }
 
   &--raised-2 {
-    @extend %z_depth_2;
+    @include z_depth("z2");
+
     display: inline-block;
     padding: 2em 1.5em;
     background-color: white;
@@ -173,27 +185,29 @@
   }
 
 
-  .icon_card__title-lg,
   .icon_card__title {
-    @extend %shadow_text;
     color: $grey_20;
     display: block;
     width: 100%;
-  }
-
-  .icon_card__title {
     font-size: 1em;
     margin: .7em 0;
     line-height: 1.5em;
     font-weight: 400;
     padding-top: .5em;
+
+
+    &-lg {
+      font-size: 1.4em;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .screen-assisve--text,
+    .assistive-text {
+      @include icon_assist_text();
+    }
   }
 
-  .icon_card__title-lg {
-    font-size: 1.4em;
-    font-weight: 300;
-    margin: 0;
-  }
 
   .icon_card__caption {
     font-size: .9em;
@@ -204,15 +218,12 @@
 
   &.fixed_size--square { width: 14em; }
   &.fixed_size--wide { width: 24em; }
-  &.fixed_size--tall { width: 10em;
-    .icon_card__content {
-      padding: 4em 1em;
-    }
+
+  &.fixed_size--tall {
+    width: 10em;
+    .icon_card__content { padding: 4em 1em; }
   }
 }
-
-
-
 
 // IN CONTENT CLASS
 .icon_card_row {
@@ -237,7 +248,8 @@
 
 
 .icon_card--coin {
-  @extend %z_depth_2;
+  @include z_depth("z2");
+
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -252,7 +264,7 @@
   position: relative;
   flex: 0 1 auto;
 
-  .icon_card__content  {
+  .icon_card__content {
     width: 100%;
     height: 100%;
     padding: 0;

@@ -1,0 +1,123 @@
+
+// Pricing Page styles
+.pricing_full {
+
+  form {
+    margin-top: 1em;
+    font-size: 0.9em;
+
+    label {
+      margin: 0.3em 0 0;
+    }
+  }
+
+  h3 {
+    display: inline-block;
+    padding-top: 0;
+    font-size: 2em;
+  }
+
+  a {
+    display: inline-block;
+    // TODO REMOVE ALL FLOATS
+    float: right;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      // color: $theme_primary;
+      cursor: pointer;
+    }
+  }
+
+  ::placeholder {}
+
+  .options {
+    display: flex;
+    padding-top: 2em;
+    // border-top: 1px solid $grey_15;
+    font-size: 1em;
+    line-height: 2em;
+
+    > li {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1em;
+    }
+
+    .option1 {
+      flex: 1;
+    }
+
+    .option2 {
+      flex: 1;
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+
+  li > a {
+    display: block;
+    margin: 1em auto;
+    width: 220px;
+    height: 120px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: bold;
+
+    > img {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+}
+
+
+@include max_width(479px) {
+  .pricing_full {
+    > h3 {
+      display: block;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    > a {
+      display: block;
+      float: none;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    > p { margin: 20px 0; }
+
+    .options {
+      > li {
+        margin: 0;
+        width: 100%;
+
+        > a > img {
+          display: block;
+          float: none;
+          margin: 20px auto;
+        }
+      }
+
+      form {
+        width: 100%;
+
+        input { width: 100%; }
+        label { width: 100%; }
+        select { width: 100%; }
+      }
+    }
+  }
+}
