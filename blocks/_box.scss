@@ -14,7 +14,11 @@
 ///  </div>
 /// </div>
 /// ```
-
+///
+/// ---
+///
+/// Box Group
+///
 //// ```example:html
 /// <section class="flex-row">
 /// <div class="box__outer">
@@ -22,12 +26,13 @@
 ///    <span class="box__title">CONTENT</span>
 ///  </div>
 /// </div>
-
+//
 /// <div class="box__outer">
 ///  <div class="box__inner">
 ///    <span class="box__title">CONTENT</span>
 ///  </div>
 /// </div>
+///
 /// <div class="box__outer">
 ///  <div class="box__inner">
 ///    <span class="box__title">CONTENT</span>
@@ -37,7 +42,6 @@
 /// ```
 //// ---
 */
-
 
 .box {
   position: relative;

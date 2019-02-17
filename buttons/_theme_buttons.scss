@@ -1,0 +1,87 @@
+$hover_effect_light: rgba(255, 255, 255, 0.15);
+$hover_effect_dark: rgba(0, 0, 0, 0.15);
+
+
+// DEFAULT BUTTON DEFINITION
+%button {
+  @include font_style($font_body, bold, $grey_00);
+  background: $accent_orange;
+  border: 0;
+  cursor: pointer;
+  font-size: 0.8em;
+  letter-spacing: 1.8px;
+  min-width: inherit;
+  padding: 1em 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 200ms linear;
+
+  &.accent {
+    background-color: $accent_red;
+    color: $grey_00;
+  }
+
+  &::before {
+    content: "";
+    transition: background 300ms ease-in;
+    background: rgba(255,255,255,0);
+  }
+
+}
+
+%button_hover {
+  position: relative;
+
+  &::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    display: block;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: background 300ms ease-in, box-shadow 300ms ease-in;
+    background: $hover_effect_light;
+  }
+
+
+  &.accent {
+    &::before {
+        background-color: $hover_effect_light;
+    }
+  }
+}
+
+
+button:focus {
+  @extend %button_hover;
+
+}
+
+
+
+// BUTTON CLASSES
+button,
+.button,
+.btn {
+  @extend %button;
+
+  &:hover {
+    @extend %button_hover;
+  }
+}
+
+
+.products-grid {
+  button.get-pricing {
+    background: rgba(1,0,0,0);
+    color: $grey_20;
+    border: 1px solid $grey_25;
+    transition: background 300ms $material_standard, color 300ms $material_standard;
+
+    &:hover {
+      background: rgba(0,0,0,.1);
+      color: $grey_10;
+    }
+  }
+}

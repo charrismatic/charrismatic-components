@@ -1,0 +1,507 @@
+fieldset { border: 0; }
+strong { font-weight: bold; }
+small { font-size: 1em; }
+ul, ol { list-style: none; }
+
+.no-display { display: none; }
+
+.validation-failed:not(:focus) {
+  border-bottom: 1px solid #ca1e32 !important;
+}
+
+select.validation-failed {
+  border: 1px solid #ca1e32 !important;
+}
+
+.validation-failed + label{
+  color: #ca1e32;
+}
+
+.validation-advice {
+  position: absolute;
+  margin-top: 0;
+  color: #ca1e32;
+  font-size: 0.8em;
+  line-height: 1em;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+
+label.required::after {
+  // content: "*";
+  margin-left: 0.1em;
+}
+
+.opc {
+  fieldset { padding: .3em 0 .7em; }
+}
+
+.form-list {
+
+  label {
+    margin: 1em 0 2px 0;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  label.required em {
+    position: absolute;
+    right: -0.5em;
+    top: 0;
+  }
+
+
+  li.control label {
+    display: inline-block;
+    margin: 0.5em 0;
+    transform: none;
+  }
+
+  li.control input.radio,
+  li.control input.checkbox {
+    margin-right: 6px;
+  }
+
+  .field {
+    margin-bottom: 5px;
+    width: 275px;
+  }
+
+  input.input-text {
+    width: 262px;
+  }
+
+  select {
+    width: 262px;
+  }
+
+  .field,
+  input.input-text,
+  select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+ .input-box input.cvv {
+    width: 100px;
+  }
+}
+
+
+.split-2col {
+  .input-box {
+    display: inline-block;
+    width: 49%;
+    &:nth-child(2n) {margin-left: 1%;}
+  }
+
+  .wide {
+    .input-box {
+      width: 100%;
+    }
+  }
+}
+
+
+
+.buttons-set {
+  button.left { float: left; }
+  button.right { float: right; }
+}
+
+.buttons-set button.button {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.buttons-set p.required {
+  margin: 0 5px 5px 0;
+}
+
+.buttons-set .back-link {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.buttons-set .back-link a {
+  display: block;
+  line-height: 36px;
+}
+
+.buttons-set .back-link small {}
+
+p.required {
+  text-align: right;
+  font-size: 0.8333em;
+}
+
+
+.block {
+  margin: 0 0 10px;
+}
+
+.block .block-title strong {
+  font-weight: inherit;
+}
+
+.block .block-content {
+  padding: 10px 5px;
+}
+
+.please-wait {
+  margin-right: 5px;
+}
+
+.please-wait img {
+  vertical-align: middle;
+}
+
+.tool-tip {
+  @include z_depth('z2');
+  position: absolute;
+  z-index: 9999;
+  padding: 1.5em 1em;
+  background-color: #fff;
+
+
+  .tool-tip-content { padding: 5px; }
+
+  .btn-close a::before {
+    content: "X";
+    display: block;
+    position: absolute;
+    font-size: 17px;
+  }
+
+  .btn-close a {
+    display: block;
+    overflow: hidden;
+    width: 17px;
+    height: 17px;
+    margin: 0 0 0 auto;
+    text-indent: -999em;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .btn-close a:hover {}
+  .btn-close a:focus {}
+}
+
+.block-progress .block-title {
+  padding: 10px 0;
+  border: 0;
+  background: none;
+}
+
+.block-progress .block-title strong {
+  text-transform: none;
+  font-weight: normal;
+  font-family: inherit;
+}
+
+.block-progress .block-content {
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.block-progress dt {
+  margin: 0 0 5px;
+  padding: 6px 0 6px 30px;
+  background: url('/skin/frontend/fortis/default/images/img/checkout-progress.png') 0 5px no-repeat;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+.opc {
+  position: relative;
+
+  .ul {
+    padding-left: 18px;
+    list-style: disc outside;
+
+    > li {
+      display: list-item;
+      list-style-type: disc;
+    }
+  }
+
+
+  tfoot {
+    td {
+      padding: 0.5em 0;
+    }
+  }
+
+  .buttons-set p.required {
+    margin: 0;
+    padding: 0 0 10px;
+  }
+
+  .buttons-set .please-wait {
+    height: 28px;
+    line-height: 28px;
+  }
+
+  .section {
+    margin: 0 0 10px;
+    padding: 0;
+  }
+
+  .step-title {
+    padding: 10px;
+    background: #f5f5f5;
+    text-align: right;
+  }
+
+  .allow .step-title a {
+    display: none;
+  }
+
+  .step-title a {
+    display: none;
+  }
+
+  .step-title .number {
+    margin: 0 8px 0 0;
+    padding: 0.2em 0.5em;
+    border: 1px solid #dedede;
+    background: #fff;
+    font-size: 1.3333em;
+  }
+
+  .step-title h2 {
+    display: inline;
+    margin: 0;
+    color: #999;
+    font-size: 1.2em;
+  }
+
+
+  .section.allow {
+    cursor: pointer;
+  }
+
+  .section.allow.active {
+    cursor: auto;
+  }
+
+  .step-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f5f5f5;
+  }
+
+  .allow .step-title:hover {
+    background-color: #e5e5e5;
+  }
+
+  .allow .step-title h2 {
+    color: #333;
+  }
+
+  .allow .step-title a {
+    position: absolute;
+    right: 1em;
+    display: block;
+    justify-self: flex-end;
+  }
+
+  .active .step-title {
+    background-color: #e5e5e5;
+    cursor: default;
+  }
+
+  .active .step-title .number {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .active .step-title a {
+    display: none;
+  }
+
+  .step {
+    position: relative;
+  }
+
+  .step .tool-tip {
+    right: 30px;
+  }
+
+  .product-name {
+    font-size: 1em;
+  }
+}
+
+
+#opc-login {
+  h3 {
+    margin-top: 10px;
+  }
+
+  h4 {
+    font-weight: normal;
+    font-family: inherit;
+  }
+
+  .form-list {
+    margin: 1em 0 1em;
+  }
+
+  .form-list li {
+    margin: 0 0 3px;
+  }
+
+  .buttons-set {
+    padding: 0;
+    extend: button;
+  }
+
+  // #opc-login .buttons-set button {}
+  // #opc-login .buttons-set a {}
+}
+
+.order-review .f-left {
+  display: inline-block;
+}
+
+button.continue {
+  float: right;
+}
+
+#checkout-review-submit .btn-checkout {
+  float: right;
+}
+
+
+label.info {
+  position: relative;
+  display: inline-block;
+  transform: none;
+}
+
+label.payment-method {
+  transform: none;
+  display: block;
+  padding: 0 0 0 0;
+  position: relative;
+  margin: 0 0 0.4em 0;
+}
+
+.input-field {
+  label.select {
+    // display: none;
+    top: 0;
+    transform: translateY(-1.5em);
+    height: 1.5em;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    margin: 3em 0 1em 0;
+  }
+}
+
+#opc-review .step {
+  padding: 0;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and ( -moz-min-device-pixel-ratio: 1.5), only screen and ( min--moz-device-pixel-ratio: 1.5), only screen and ( -o-min-device-pixel-ratio: 3/2), only screen and ( -ms-min-device-pixel-ratio: 1.5) {
+  .block .block-title {
+    padding: 15px 10px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.3333em;
+    line-height: 1.25em;
+  }
+  #opc-login h3 {
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.3333em;
+  }
+  .tool-tip {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and ( min--moz-device-pixel-ratio: 1.5),
+ only screen and ( -o-min-device-pixel-ratio: 3/2),
+ only screen and ( -ms-min-device-pixel-ratio: 1.5) {
+  .main {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .form-list {}
+  .form-list .field {
+    width: 33.333%;
+  }
+  #billing-new-address-form .field,
+  #shipping-new-address-form .field {
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 50%;
+  }
+  .form-list .input-box input,
+  .form-list .input-box select {
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+  .form-list li.control input.radio,
+  .form-list li.control input.checkbox {
+    display: inline-block;
+    width: initial;
+  }
+}
+
+@media (max-width:479px) {
+  .container {
+    max-width: initial!important;
+    width: 90%!important;
+  }
+
+  #billing-new-address-form .field,
+  #shipping-new-address-form .field {
+    width: 100%;
+  }
+}
+
+
+.page-title {
+  position: relative;
+}
+
+#checkoutSteps {
+  input,
+  select,
+  input label {
+    margin-top: 0.4em;
+    font-size: 0.9em;
+  }
+
+  select.month,
+  select.year {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+
+a.cvv-what-is-this {
+  cursor: pointer;
+}
