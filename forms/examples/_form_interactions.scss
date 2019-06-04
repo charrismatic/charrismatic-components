@@ -1,6 +1,7 @@
 // FROM MATERIALIZE CSS
 // NOT USED
 
+$gutter-width:1em;
 
 // Styling for input field wrapper
 .input-field {
@@ -19,12 +20,12 @@
   // Gutter spacing
   &.col {
     label {
-      left: $gutter-width / 2;
+      // left: $gutter-width / 2;
     }
 
     .prefix ~ label,
     .prefix ~ .validate ~ label {
-      width: calc(100% - 3rem - #{$gutter-width});
+      // width: calc(100% - 3rem - #{$gutter-width});
     }
   }
 
@@ -32,7 +33,7 @@
   margin-top: 1rem;
 
   label {
-    color: $input-border-color;
+    // color: $mob_nav_border_color;
     position: absolute;
     top: 0;
     left: 0;
@@ -54,11 +55,11 @@
   // Prefix Icons
   .prefix {
     position: absolute;
-    width: $input-height;
+    // width: $input-height;
     font-size: 2rem;
     transition: color .2s;
 
-    &.active { color: $input-focus-color; }
+    // &.active { color: $input-focus-color; }
   }
 
   .prefix ~ input,
@@ -70,23 +71,23 @@
     width: 92%;
     width: calc(100% - 3rem);
   }
-
-  .prefix ~ label { margin-left: 3rem; }
-
-  @media #{$medium-and-down} {
-    .prefix ~ input {
-      width: 86%;
-      width: calc(100% - 3rem);
-    }
+  //
+  // .prefix ~ label { margin-left: 3rem; }
+  //
+  // @media #{$medium-and-down} {
+  //   .prefix ~ input {
+  //     width: 86%;
+  //     width: calc(100% - 3rem);
+  //   }
+  // }
+  //
+  // @media #{$small-and-down} {
+  //   .prefix ~ input {
+  //     width: 80%;
+  //     width: calc(100% - 3rem);
+  //   }
   }
-
-  @media #{$small-and-down} {
-    .prefix ~ input {
-      width: 80%;
-      width: calc(100% - 3rem);
-    }
-  }
-}
+// }
 
 
 
@@ -105,7 +106,7 @@
   }
 
   &:focus {
-    background-color: $input-background;
+    // background-color: $input-background;
     border: 0;
     box-shadow: none;
     color: #444;
@@ -139,7 +140,7 @@
 // Default textarea
 textarea {
   width: 100%;
-  height: $input-height;
+  // height: $input-height;
   background-color: transparent;
 
   &.materialize-textarea {
@@ -157,7 +158,7 @@ textarea {
     overflow-y: hidden; /* prevents scroll bar flash */
     padding: .8rem 0 1.6rem 0; /* prevents text jump on Enter keypress */
     resize: none;
-    min-height: $input-height;
+    // min-height: $input-height;
   }
 }
 
@@ -177,8 +178,8 @@ textarea {
 
 /* Autocomplete */
 .autocomplete-content {
-  margin-top: -1 * $input-margin-bottom;
-  margin-bottom: $input-margin-bottom;
+  // margin-top: -1 * $input-margin-bottom;
+  // margin-bottom: $input-margin-bottom;
   display: block;
   opacity: 1;
   position: static;
@@ -187,8 +188,8 @@ textarea {
     .highlight { color: #444; }
 
     img {
-      height: $dropdown-item-height - 10;
-      width: $dropdown-item-height - 10;
+      // height: $dropdown-item-height - 10;
+      // width: $dropdown-item-height - 10;
       margin: 5px 15px;
     }
   }

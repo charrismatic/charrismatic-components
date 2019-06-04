@@ -1,0 +1,120 @@
+//  TODO REMOVE JQUERY/JAVASCRIPT FUNCTION DEFINITIONS FROM TEPLATE FILES
+//  MOVE TO MAIN FUNCTIONS
+
+/**
+ *  *tab-container
+ *  ⋅⋅*tab-menu (ul)
+ *  ⋅⋅⋅⋅* (li) _clickable target_ [default, active]
+ *  ⋅⋅*tab-panels [ default, active ]
+ *  ⋅⋅⋅⋅*(label) .tab-panel-heading @for
+ *  ⋅⋅⋅⋅*(div) .tab-panel-content @id
+ */
+
+ // STANDARD TABS
+.tab-panels {
+  padding: 0 0 15px 0;
+
+  .panel {
+    display: none;
+    margin: 0;
+    padding: 1em;
+    font-size: 0.8em;
+  }
+}
+
+.product-content-bottom-group {
+  max-width: 80%;
+  @include max_width($width_tablet_device_lg) { max-width: 100%; }
+}
+
+.box-tabs {
+  margin-bottom: 2em;
+}
+
+.tab-container {
+  border: 1px solid $grey_10;
+  box-shadow: 1px 1px 5px 0 $grey_15;
+
+  .tab-panels {
+    font-size: 13px;
+
+    .tab-panel-content {
+      position: relative;
+      display: none;
+      padding: 1em;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+.tab-menu {
+  @extend %flex;
+  margin: 0;
+  margin-left: 0;
+  align-items: stretch;
+
+  li {
+    @extend %no-select;
+    background: $grey_10;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 0.8em;
+    text-align: center;
+    flex-basis: auto;
+  }
+
+  a {
+    display: block;
+  }
+
+  .active {
+    background: $accent_orange;
+    color: $white;
+  }
+}
+
+
+// LABEL
+.tab-panel-heading {
+  display: none;
+}
+
+
+@include max_width($width_tablet_device_lg) {
+
+  .tab-menu{ display: none; }
+
+  .tab-panels {
+    position: relative;
+    padding: 0;
+
+    .tab-panel-heading {
+      font-size: 1.4em;
+      display: block;
+      text-align: left;
+      padding: .4em 1em;
+      margin: 0;
+      position: relative;
+      border-bottom: 1px solid $grey_30;
+      background: $grey_10;
+      transform: none;
+      cursor: pointer;
+
+      &.active {
+        transform: none;
+        color: $white;
+        background: $accent_orange;
+      }
+    }
+
+    // .tab-panel-content {
+    //   .active { }
+    // }
+  }
+}

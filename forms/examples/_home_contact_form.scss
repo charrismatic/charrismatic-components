@@ -7,7 +7,7 @@
   padding-top: 6em;
   text-align: center;
 
-  .row { max-width: $contact_section_max_w; }
+  .row { max-width: 90%; }
 
   h2 {
     margin: 0;
@@ -25,15 +25,14 @@
   .contact-form-container {
     margin-top: 3em;
     padding: 2em;
-    background-color: $accent_red;
-    background-image: $home_contact_overlay;
+    // background-image: $home_contact_overlay;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: 1.5em 1.5em 0 $black_00;
+    // box-shadow: 1.5em 1.5em 0 $grey_00;
 
     > * {
-      color: $white;
-      max-width: $contact_form_inner_max_w;
+      color: inherit;
+      // max-width: $contact_form_inner_max_w;
       margin: 2em auto;
       width: 80%;
       line-height: 1.6em;
@@ -42,7 +41,6 @@
   }
 
   .top {
-    @extend %flex;
 
     justify-content: space-around;
     margin: 1em auto;
@@ -65,15 +63,15 @@
       margin: 0;
       padding: 1.5em 0;
     }
-
-    @include max_width( $home_contact_break_sm ) {
-      flex-wrap: wrap;
-
-      > button {
-        flex-basis: 100%;
-        margin: 0.5em 0;
-      }
-    }
+    //
+    // @include max_width( $home_contact_break_sm ) {
+    //   flex-wrap: wrap;
+    //
+    //   > button {
+    //     flex-basis: 100%;
+    //     margin: 0.5em 0;
+    //   }
+    // }
   }
 
   .input-field {
@@ -90,7 +88,7 @@
     width: 100%;
   }
 
-  @include placeholder { color: $white_00; }
+  // @include placeholder { color: #fff; }
 }
 
 form.accented {
@@ -98,7 +96,7 @@ form.accented {
     input,
     text-area,
     label {
-      color: $white;
+      color: #fff;
       background: transparent;
     }
   }

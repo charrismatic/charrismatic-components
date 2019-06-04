@@ -1,0 +1,119 @@
+///<section class="footer-row site-footer-bottom">
+///    <div class="site-info tagline flex-row">
+///        <span>Developed with <i class="html_entitiy heart color_red"></i></span>
+///        <span class="footer-site-title">M@tt\Harr.is</span>
+///        <span class="sep" role="separator" ></span>
+///        <span>Fine&amp;Hatfield</span>
+///        <span> &copy; <?php echo date("Y"); ?></span>
+///    </div>
+///</section>
+
+/* ----------
+ *  Site info
+  ----------- */
+.site-info {
+  display: block;
+  font-size: .875rem;
+  font-size: 14px;
+  margin-bottom: 0;
+  width: 100%;
+
+  a { color: #666; }
+}
+
+.tagline {
+  border-top: 1px solid red;
+  margin: 0;
+}
+
+.site-footer-bottom {
+  padding-top: .4em;
+  padding-bottom: .2em;
+  background: rgb(38, 61, 72);
+  color: rgb(200,200,200);
+}
+
+@media screen and (min-width: 48em) {
+  .site-footer {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+
+    .footer_widget--left { width: 36%; }
+    .footer_widget--right { width: 58%; }
+  }
+
+  .social-navigation {
+    margin-bottom: 0;
+    width: 36%;
+  }
+
+  .social-navigation + .site-info {
+    margin-left: 6%;
+  }
+
+  .site-info .sep {
+    margin: 0 0.5em;
+    display: inline;
+    visibility: visible;
+    height: auto;
+    width: auto;
+  }
+}
+
+.tagline {
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  word-spacing: 2px;
+  position: relative;
+  border-top: 1px solid red;
+  text-shadow: 1px 1px 3px rgba(1,1,1,1);
+
+  span {
+    margin: 0 3px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #151a1e;
+    background-image: repeating-linear-gradient(145deg, #1d252d, #151c22 30px, #151c22 0, #151a1e 60px);
+    min-height: 50px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #154e7b;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBzdG9wLWNvbG9yPSIjMTUxYzIyIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxNTgwZDQiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUzOSIvPjxzdG9wIHN0b3AtY29sb3I9IiMxNTFjMjIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0, rgb(21, 28, 34)), color-stop(0.539, rgb(21,128,212)), color-stop(1, rgb(21,28,34)));
+    background-image: -webkit-repeating-linear-gradient(left, rgb(21,28,34) 0%, rgb(21,128,212) 53.9%, rgb(21,28,34) 100%);
+    background-image: repeating-linear-gradient(to right, rgb(21,28,34) 0%, rgb(21,128,212) 53.9%, rgb(21,28,34) 100%);
+    background-image: -ms-repeating-linear-gradient(left, rgb(21,28,34) 0%, rgb(21,128,212) 53.9%, rgb(21,28,34) 100%);
+    opacity: 0.3;
+  }
+}
+
+
+.site-info .sep {
+  margin: 0;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+}
+
+footer .site-info .site-title {
+  font-size: 2.2rem;
+  margin: 0 0.1em 0 0.1em;
+}

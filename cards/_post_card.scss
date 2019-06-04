@@ -1,0 +1,102 @@
+/* ---
+/// example:
+///  card z_depth-3
+///
+*/
+
+.img_card {
+  margin: 0.7em 1em;
+  text-align: center;
+
+  &.ratio {
+    &--3-4 .card__thumbnail { width: 3em; height: 4em; }
+    &--4-3 .card__thumbnail { width: 4em; height: 3em; }
+    &--3-1 .card__thumbnail { width: 3em; height: 1em; }
+    &--2-1 .card__thumbnail { width: 2em; height: 1em; }
+  }
+
+  &.size {
+    &-1 .card__thumbnail { font-size: 1em; }
+    &-2 .card__thumbnail { font-size: 2em; }
+    &-3 .card__thumbnail { font-size: 3em; }
+    &-4 .card__thumbnail { font-size: 4em; }
+    &-5 .card__thumbnail { font-size: 5em; }
+  }
+
+  .card__thumbnail {
+    margin: auto;
+    a { background-color: rgba(0, 0, 0, 0); }
+    a img {
+      max-height: 100%;
+      -webkit-transition: opacity .2s;
+      transition: opacity .2s;
+      -webkit-backface-visibility: hidden;
+    }
+  }
+}
+
+
+.post_card {
+  display: flex;
+
+  .card__left {
+    display: flex;
+    flex: 1 0 auto;
+    margin: 0;
+  }
+
+  .card__thumbnail {
+    margin: auto;
+    display: block;
+
+    img {
+      display: block;
+    }
+  }
+
+  .card__right {
+    flex: 1 1 100%;
+    margin: 0 1em;
+    padding-top: 2em;
+    padding-right: 1.5em;
+    padding-bottom: .5em;
+    padding-left: 2em;
+    // .entry-header {    }
+
+    .entry-title {
+      padding: 0 0 0.5em;
+      text-align: right;
+      font-size: 1.8em;
+    }
+
+    .entry-summary {
+      text-align: justify;
+    }
+
+    .entry-taxonomies {
+      text-align: right;
+    }
+
+    .taxonomy-term-list {
+      padding-top: 0;
+      padding-left: 0;
+      list-style: none;
+
+      .term-list-item {
+        display: inline-block;
+        margin-bottom: 0.5em;
+        margin-left: 0.8em;
+        padding: 0;
+        border: 1px solid $grey_90;
+      }
+
+      .term-list-item a {
+        display: block;
+        padding: 0.5em 0.5em;
+        box-shadow: none;
+        letter-spacing: -.5px;
+        font-size: 0.9em;
+      }
+    }
+  }
+}

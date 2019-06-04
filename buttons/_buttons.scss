@@ -1,47 +1,56 @@
-/*---
-title: Buttons 
-section: Controls
----
-
-User input and control 
-
-<section class="styleguide_section">
-<div class="container">
-  <button>learn more</button>
-  <i class="svg_icon comment-bubbles ic_button">hello</i>
-</div>
-</section>
-
+/*
+/// ---
+/// title: Buttons
+/// section: Controls
+/// ---
+///
+/// User input and control
+///
+/// <section class="styleguide_section">
+/// <div class="container">
+///   <button>learn more</button>
+///   <i class="svg_icon comment-bubbles ic_button">hello</i>
+/// </div>
+/// </section>
+///
 */
 
+// /data/projects/sandbox/mount/f  ine-hatfield.com/source/styles/components/buttons/index.scss
+// /data/projects/sandbox/mount/f  ine-hatfield.com/source/styles/style.scs
 
-
-
-// @import "../../colors";
 
 
 // DEFAULT BUTTON
-%button {
-  background: $theme_primary;
+@mixin button ($bgcolor: inherit, $testcolor: inheirt) {
   border: 0;
-  color: $white;
+  padding: 1em;
+  background: $bgcolor;
+  color: $testcolor;
   cursor: pointer;
   font-size: 1.3em;
   border-radius: 1em;
-  padding: 1em;
   text-align: center;
   text-transform: uppercase;
   transition: color 200ms linear;
 }
 
-%button-hover {
-  background: #e8a03f;
+@mixin button_hover ( $litghterOrDarker:false ) {
+  $bgcolor: inherit;
+
+  @if $litghterOrDarker == "lighter" {
+    background-color: rgba(255, 255, 255, .1);
+  }
+
+  @if $litghterOrDarker == "darker" {
+    background-color: rgba(255, 255, 255, .1);
+  }
+
   box-shadow: 2px 2px 2px rgb(144, 144, 144);
   outline: 1px solid #e88a0b;
   color: rgb(43, 43, 43);
 }
 
-%icon_button {
+@mixin icon_button () {
   border: 0;
   cursor: pointer;
   font-size: 1.3em;
@@ -52,35 +61,30 @@ User input and control
   transition: color 200ms linear, background-color 200ms ease-in;
 }
 
-/// SCOPED BUTTON 
-/// TODO: UPDATE TO RELAVANT CLASS
+/// SCOPED BUTTON
 button {
-@extend %button;
+  @include button()
 
   &:hover {
-    // background-color: #ffb22c;
-    box-shadow: 0px 0px 2px rgb(144, 144, 144);
+    @include button_hover ()
+
+    box-shadow: 0 0 2px rgb(144, 144, 144);
     outline: 1px solid #f79c21;
     color: #f5f5f5;
   }
 }
 
 .ic_button {
-  @extend %icon_button;
-  
+  @include icon_button();
+
   &:hover {
-    background-color: $color_blue;
-    box-shadow: 0px 0px 2px rgb(144, 144, 144);
+    box-shadow: 0 0 2px rgb(144, 144, 144);
     outline: 1px solid #f79c21;
     color: #f5f5f5;
   }
 }
 
-// ACCESSORY BUTTON CLASS 
-.btn {
-  @extend %button;
-
-  &:hover{
-    @extend %button-hover;
-  }
-}
+// ACCESSORY BUTTON CLASS
+// .btn { //   @extend %button; //
+//   &:hover { //     @extend %button-hover; //   }
+// }

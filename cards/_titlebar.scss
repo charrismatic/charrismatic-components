@@ -1,0 +1,94 @@
+/*
+///
+/// ## Titlebar
+///
+/// <div class="titlebar">
+///   <div class="titlebar__marker">
+///     <i class="titlebar__icon icon--cursor"></i>
+///   </div>
+///   <h3 class="titlebar__title">Titlebar Title</h3>
+/// </div>
+///
+/// ```html
+/// &lt;div class=&quot;titlebar&quot;&gt;
+///   &lt;div class=&quot;titlebar__marker&quot;&gt;
+///     &lt;i class=&quot;titlebar__icon icon--cursor&quot;&gt;&lt;/i&gt;
+///   &lt;/div&gt;
+///   &lt;h3 class=&quot;titlebar__title&quot;&gt;Titlebar Title&lt;/h3&gt;
+/// &lt;/div&gt;
+/// ```
+///
+*/
+
+$card_bg: #f2f2f2;
+
+.titlebar {
+  background-color:$card_bg;
+  position: relative;
+  display: flex;
+
+  &__marker {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    padding-left: 0.6rem;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 3.2rem;
+  }
+
+  &__icon {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin: 0 0 0 5rem;
+    padding: 1em 0;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+}
+
+.controlbar {
+  position: relative;
+  right: 0;
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  flex: 1 1 auto;
+
+  &__item {
+    font-size: 0.9em;
+    flex: 0 1 auto;
+    margin: 0 0.9em;
+    color: #4d4c4c;
+  }
+
+  &__item.active {
+    color: #b92228;
+    font-weight: bold;
+  }
+}
+
+.social-bar {
+  height: 2rem;
+
+  i.svg_icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0 2px;
+    background-size: 65%;
+  }
+
+  i.svg_icon:last-of-type {
+    margin-right: 0;
+  }
+}

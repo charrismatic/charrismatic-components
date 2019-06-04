@@ -3,7 +3,7 @@
 // TOOLBAR CONTAINER
 .toolbar {
   align-items: baseline;
-  border-bottom: 1px dashed $white_30;
+  border-bottom: 1px dashed $grey_30;
   display: flex;
   font-size: 0.9em;
   justify-content: space-between;
@@ -144,7 +144,7 @@
       margin: 0;
 
 
-      &:hover { background-color: $black_30; }
+      &:hover { background-color: $grey_30; }
     }
 
     a.previous { @extend %direction_prev;}
@@ -166,7 +166,7 @@
       width: 1.7em;
 
       &:hover {
-        background-color: $white_40;
+        background-color: $grey_40;
       }
 
       a {

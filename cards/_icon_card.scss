@@ -1,0 +1,296 @@
+/*
+///  ---
+/// title: icon card
+/// section: components
+/// ---
+///
+/// SIMPLE
+///
+/// <div class="icon_card">
+///   <div class="icon_card__content icon_card--raised">
+///     <i class="icon_card__icon green-icon--clock"></i>
+///     <span class="icon_card__title">Online 24/7</span>
+///     <span class="icon_card__caption">Bank on your own terms when you want, how you want</span>
+///   </div>
+/// </div>
+///
+/// COMPLEX-
+///
+/// <div class="icon_card__flex-row">
+///   <div class="icon_card">
+///     <div class="icon_card__header bg_color--theme-dark-blue">
+///       <div class="icon_card--raised icon_card--flexed">
+///         <i class="icon_card__icon green-icon icon--percent"><span class="icon__assist-text">Percent icon</span></i>
+///       </div>
+///       <div class="icon_card__content">
+///         <span class="icon_card__title">Earn interest at 7x the national average</span>
+///         <span class="icon_card__caption">* As of October 5, 2017, the national average for Money Market accounts is 0.12% APY, according to Bankrate.com.</span>
+///       </div>
+///     </div>
+///   </div>
+/// </div>
+*/
+
+
+$width_laptop_sm: _size('laptop_sd');
+$width_890: _size('tablet_lg');
+$width_nexus7: _size('nexus7');
+$width_galaxys5: _size('galaxys5');
+$theme_mobile_xl: _size('ipad');
+$width_mobile_md: _size('nexus6p');
+$width_mobile_sm: _size('iphone5');
+
+
+/*
+/// ICON CARDS
+/// REF: GREEN ICONS: /wp-content/themes/firstib_childtheme/iamges/green-icons
+*/
+.icon_card_row {
+  display: flex;
+  flex-direction: row;
+
+  // > 960PX
+  @include max_width($width_laptop_sm) { flex-wrap: wrap; }
+
+  // CHILD CARD
+  > .icon_card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.7em;
+    flex: 1 0 0;
+    align-items: stretch;
+
+    // < 960PX
+    @include max_width($width_laptop_sm) {
+      flex: 0 1 45%;
+      margin: .4em auto;
+    }
+
+    // < 600PX
+    @include max_width($width_nexus7) {
+      flex: 0 1 45%;
+      margin: .8em auto;
+    }
+
+    // > 360
+    @include max_width($width_galaxys5) {
+      flex: 1 1 80%;
+      margin: 1em auto;
+    }
+
+
+    &:first-child {
+      // > 960PX
+      @include min_width($width_laptop_sm) { margin: 0 1em 0 0; }
+      // < 960PX
+      // @include max_width($width_laptop_sm) {  }
+      // @include max_width($width_mobile_sm) {
+      // @if margin or padding top -> 0
+      // }
+    }
+
+    &:last-child {
+      // > 960PX
+      @include min_width($width_laptop_sm) { margin: 0 0 0 1em; }
+      // < 960PX
+      // @include max_width($width_laptop_sm) {}
+      // @include max_width($width_mobile_sm) {}
+    }
+
+    @include max_width($width_mobile_md) {
+      .icon_card__content { margin: 0; }
+    }
+
+    @include max_width($width_mobile_sm) {
+      .icon_card__content { margin: 0; }
+    }
+
+    .icon_card--flexed { flex: 1; }
+  }
+}
+
+.icon_card_coin {
+  @include z_depth("z2");
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  padding: 1em;
+  border: 1px solid #e6e6e6;
+}
+
+.icon_card {
+  display: inline-block;
+  text-align: center;
+
+  // HEADER FOR TOP BLOCK ELEMENTS/COLOR ACCENTING
+  .icon_card__header {
+    text-align: center;
+    padding: 3.8em 3em;
+
+    &--raised {
+      @include z_depth("z1");
+
+      @include min_width($width_890) { box-shadow: 0; }
+    }
+
+    @include min_width($width_laptop_sm) { max-width: 150px; }
+
+    @include max_width($width_890) {
+      font-size: 0.8em;
+      background-color: white;
+    }
+
+    @include max_width($theme_mobile_xl) { padding: 15% 5%; }
+  }
+
+  // BOTH AND HEADER AND CONTENT ACT VERT SIMILAR RIGHT NOW, HEADER IS USED IN LARGER
+  &__content {
+    padding: 1em 1em;
+
+    @include max_width($width_890) { font-size: 0.8em; }
+
+    @include max_width($theme_mobile_xl) {
+      font-size: .9em;
+      padding: 15% 5%;
+    }
+  }
+
+  &--raised {
+    @include z_depth("z1");
+
+    display: inline-block;
+    background-color: white;
+
+    @include min_width($width_890) {
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+
+  &--raised-2 {
+    @include z_depth("z2");
+
+    display: inline-block;
+    padding: 2em 1.5em;
+    background-color: white;
+  }
+
+  .icon_card__icon {
+    width: auto;
+    display: block;
+    padding: 0;
+    height: 3.5em;
+    margin: .4em auto;
+    max-width: 86%;
+  }
+
+
+  .icon_card__title {
+    color: $grey_20;
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    margin: .7em 0;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top: .5em;
+
+
+    &-lg {
+      font-size: 1.4em;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .screen-assisve--text,
+    .assistive-text {
+      @include icon_assist_text();
+    }
+  }
+
+
+  .icon_card__caption {
+    font-size: .9em;
+    line-height: 1.5em;
+    margin: 0.7em 0;
+    text-align: center;
+  }
+
+  &.fixed_size--square { width: 14em; }
+  &.fixed_size--wide { width: 24em; }
+
+  &.fixed_size--tall {
+    width: 10em;
+    .icon_card__content { padding: 4em 1em; }
+  }
+}
+
+// IN CONTENT CLASS
+.icon_card_row {
+  display: flex;
+  justify-content: space-around;
+
+  @include max_width($width_890) { flex-wrap: wrap; }
+
+  .icon_card {
+    flex: 0;
+    @include max_width($width_890) {
+      flex: 0 1 40%;
+      margin: 1em auto;
+      border-top: 1px solid #d6d6d6;
+    }
+    @include max_width($theme_mobile_xl) {
+      flex: 0 0 100%;
+      padding: 2em 0 0;
+    }
+  }
+}
+
+
+.icon_card--coin {
+  @include z_depth("z2");
+
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  padding: 1em;
+  border: 1px solid #e6e6e6;
+}
+
+
+.icon_card--fluid {
+  width: 12em;
+  height: 12em;
+  position: relative;
+  flex: 0 1 auto;
+
+  .icon_card__content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    position: absolute;
+
+    .icon_card__icon {
+      width: 70%;
+      height: 70%;
+      position: relative;
+      display: block;
+      margin: 15%;
+      padding: unset;
+    }
+  }
+}
+
+
+// ICON GRID PREVIEW PAGE
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  .icon_card {
+    flex: 1;
+    width: 7em;
+    text-align: center;
+    margin: 0.6em 0.5em;
+  }
+}

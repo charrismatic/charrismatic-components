@@ -1,41 +1,47 @@
-/*---
-title: box
-name: components_box
-section: components
----
-
-Basic Wrapped Box
-
-```example:html
-<div class="box__outer">
- <div class="box__inner">
-   <span class="box__title">CONTENT</span>
- </div>
-</div>
-```
-
-```example:html
-<section class="flex-row">
-<div class="box__outer">
- <div class="box__inner">
-   <span class="box__title">CONTENT</span>
- </div>
-</div>
-<div class="box__outer">
- <div class="box__inner">
-   <span class="box__title">CONTENT</span>
- </div>
-</div>
-<div class="box__outer">
- <div class="box__inner">
-   <span class="box__title">CONTENT</span>
- </div>
-</div>
-</section>
-```
-
+/*
+//// ---
+/// title: box
+/// name: components_box
+/// section: components
+/// ---
+///
+/// Basic Wrapped Box
+///
+/// ```example:html
+/// <div class="box__outer">
+///  <div class="box__inner">
+///    <span class="box__title">CONTENT</span>
+///  </div>
+/// </div>
+/// ```
+///
+/// ---
+///
+/// Box Group
+///
+//// ```example:html
+/// <section class="flex-row">
+/// <div class="box__outer">
+///  <div class="box__inner">
+///    <span class="box__title">CONTENT</span>
+///  </div>
+/// </div>
+//
+/// <div class="box__outer">
+///  <div class="box__inner">
+///    <span class="box__title">CONTENT</span>
+///  </div>
+/// </div>
+///
+/// <div class="box__outer">
+///  <div class="box__inner">
+///    <span class="box__title">CONTENT</span>
+///  </div>
+/// </div>
+/// </section>
+/// ```
+//// ---
 */
-
 
 .box {
   position: relative;

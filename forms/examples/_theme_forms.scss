@@ -5,7 +5,7 @@ label {
   margin: 0.6em 0 0.4em;
   font-size: 1em;
   color: #e2e2e2;
-  color: $placeholder-text-color;
+  // color: $placeholder-text-color;
   z-index: 2;
 }
 
@@ -32,8 +32,8 @@ input[type="submit"] {
   padding: 1em;
   border: 0;
   border-radius: 3px;
-  background: $accent_orange;
-  color: $white;
+  // background: $accent_orange;
+  // color: $white;
   transition: 0.5s ease;
 
   &:hover {
@@ -66,11 +66,8 @@ input[type="submit"] {
     -webkit-box-shadow:0 0 0 50px #dedede inset !important; /* Change the color to your own background color */
     -webkit-text-fill-color: #000000;
 }
-
 #special-pricing-form input:-webkit-autofill { -webkit-box-shadow:0 0 0 50px #eeeeee inset !important; }
-
 #home-contact-form input:-webkit-autofill { -webkit-box-shadow:0 0 0 50px #b9262f inset !important; }
-
 #about_contact_form input:-webkit-autofill:focus,
 #quote-only input:-webkit-autofill:focus,
 #web_to_lead input:-webkit-autofill:focus {
@@ -111,7 +108,7 @@ select:-webkit-autofill {
     margin: 0;
     margin-top: 26px;
     padding: 15px 20px;
-    background: $white_10;
+    // background: $grey_10;
     line-height: 1em;
   }
 

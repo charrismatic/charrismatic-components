@@ -1,32 +1,17 @@
-/*
-/// ---
-/// title: Hamburger
-/// section: Controls
-/// description: Tasty CSS-animated hamburgers
-/// author: Jonathan Suh @jonsuh
-/// link: https://github.com/jonsuh/hamburgers
-/// ---
-///
-/// source: https://jonsuh.com/hamburgers
-///
-/// Menu Indicator Hamburger
-///
-/// Dynamic Hamburger Menu Button
-///
-/// <section class="styleguide_section">
-///   <button class='hamburger hamburger--squeeze' type='button'>
-///     <span class='hamburger-box'>
-///       <span class='hamburger-inner'>
-///       </span>
-///     </span>
-///   </button>
-///   <button class='hamburger hamburger--squeeze active' type='button'>
-///     <span class='hamburger-box'>
-///       <span class='hamburger-inner'>
-///       </span>
-///     </span>
-///   </button>
-/// </section>
+/* Hamburger Menu Button
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ *
+ *
+ *  EXAMPLE HTML
+    <button class='hamburger hamburger--squeeze' type='button'>
+      <span class='hamburger-box'>
+        <span class='hamburger-inner'>
+        </span>
+      </span>
+    </button>
 */
 
 .hamburger {
@@ -48,7 +33,7 @@
   .hamburger-inner::before,
   .hamburger-inner::after,
   .hamburger-inner {
-    // background-color: $theme_primary;
+    background-color: $grey_30;
   }
 }
 
@@ -72,6 +57,7 @@
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
+  background-color: $white;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
