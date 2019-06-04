@@ -1,0 +1,643 @@
+
+$width_tablet_device_lg: 850px;
+$width_tablet_device_sm: 660px;
+$width_mobile_device_lg: 420px;
+$width_mobile_device_sm: 360px;
+
+$grid_tablet : 850px;
+$grid_mobile : 625px;
+
+// HOME PAGE
+$banner_break_mid: 850px;
+$banner_break_sm1: 560px;
+
+
+@mixin max_width($width) {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin min_width($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin range_width($min_width, $max_width) {
+  @media (min-width: #{$min_width}) and (max-width: #{$max_width}) {
+    @content;
+  }
+}
+
+
+// Maintain ratio mixin. Great for responsive grids, or videos.
+// https://gist.github.com/brianmcallister/2932463
+// $ratio - Ratio the element needs to maintain.
+// Examples
+//
+// A 16:9 ratio would look like this:
+// .element {
+//   @include maintain-ratio(16 9);
+// }
+@mixin maintain-ratio($ratio: 1 1) {
+  // @if length($ratio) < 2 or length($ratio) > 2 {
+  //   @warn "$ratio must be a list with two values.";
+  // }
+
+  $width: 100%;
+  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+
+  width: $width;
+  height: 0;
+  padding-bottom: $height;
+}
+
+// https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin list_c($list) {
+  // example:
+  // $buttonConfig: 'save' 50px, 'cancel' 50px, 'help' 100px;
+
+  @each $tuple in $list {
+    .button-#{nth($tuple, 1)} {
+      width: nth($tuple, 2);
+    }
+  }
+}
+
+
+@mixin shadow($x: 4px, $y:5px, $blur:14px, $spread:0 ,$rgba: rgba(24, 24, 24, 0.4)) {
+  box-shadow: $x $y $blur $spread $rgba;
+}
+
+@function imageUrl($base, $path) {
+  @return url('#{$base}/#{$path}');
+}
+
+
+
+
+$convo_break_lg: 1250px;
+$convo_break_md: 1050px;
+$convo_break_xs: 500px;
+$black_00: black;
+$accent_red: red;
+$white_20: grey;
+$white_00: white;
+
+$ic_location: '' ;;
+$ic_currency: '' ;;
+$accent_orange: '' ;
+$ic_hand-shake: '' ;
+$theme_background_color_alt: #223323;
+
+$convo_break_xs: 600px;
+$width_tablet_device_sm: 400px ;
+$width_tablet_device_lg: 800px ;
+$width_mobile_device_lg: 1200px;
+$contact_section_max_w: '' ;
+$banner_break_mid: '' ;
+$bg_block_solutions: '' ;
+$img_lock_overlay: '' ;
+$img_logo_stacked: '' ;
+
+/****************************
+ * *   HOME PAGE STYLES   * *
+ ****************************/
+
+body#home {
+  background: $theme_background_color_alt;
+
+  section.main-content {
+    padding-top: 0;
+    margin-top: 0;
+  }
+ }
+
+/****************************
+* *      TOP BANNER       * *
+ ****************************/
+#home .banner-wrap {
+    @include max_width( $width_mobile_device_lg ) {
+      // min-height: 100vh;
+    }
+}
+
+section {
+
+  &#banner {
+    background-position: center center;
+    background-size: cover;
+    min-height: 500px;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+    padding-top: 3em;
+    position: relative;
+    width: 100%;
+
+    .banner-content-wrap { display: block; }
+
+    .banner-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 2em;
+      padding-top: 0;
+      position: relative;
+      width: 60%;
+      z-index: 2;
+
+      @include max_width( $banner_break_mid ) { width: 100%; }
+
+      &::before {
+        background-image: $img_lock_overlay;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        display: block;
+        height: 100%;
+        left: 90%;
+        overflow: visible;
+        padding: 10% 0;
+        position: absolute;
+        top: 0;
+        width: 80%;
+        z-index: -1;
+
+        @include max_width( $banner_break_mid ) {
+          left: 0;
+          opacity: 0.5;
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    h2 {
+      color: $white_00;
+      font-weight: bold;
+      font-size: 4.5em;
+      margin: 1rem 0 0;
+      padding: 0;
+
+      @include max_width( $width_mobile_device_lg ) {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 1rem 0 1.5em;
+      color: $white_00;
+
+      @include max_width( $banner_break_mid ) {
+        max-width: 550px;
+        text-align: justify;
+        text-align-last: start;
+      }
+
+      @include max_width( $banner_break_mid ) {
+        text-align: left;
+        text-align-last: start;
+        font-size: 1.6em;
+      }
+    }
+
+    a { color: $white_00; }
+
+    // BANNER BUTTONS
+    ul {
+      display: flex;
+      width: 120%;
+
+      @include max_width( $banner_break_mid ) {
+        width: 100%;
+        padding-bottom: 2em;
+        flex-wrap: wrap;
+        max-width: 450px;
+
+        li.pull--mid {
+          order: 2;
+          width: 100%;
+          margin-top: 2em;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      li {
+        // @extend %button;
+
+        display: block;
+        flex: 1 1 auto;
+        margin-left: 1em;
+        border: 1px solid $white_00;
+        background: transparent;
+        padding: 0;
+        margin: 0 0.6em;
+
+        &:hover {
+          border: 1px solid $accent_red;
+          background: $accent_red;
+        }
+
+        &:first-of-type { margin-left: 0; }
+
+        a {
+          display: block;
+          padding: 0.8em 0.3em;
+          margin: 0;
+        }
+
+        &.highlight {
+          background: $accent_red;
+          border: 0;
+        }
+
+        @include max_width( $banner_break_mid ) {
+          flex: 1 0 auto;
+          margin: 0 0 0 1.5em;
+          padding: 0 0.5em;
+          font-size: 1.25em;
+        }
+
+        @include max_width( $width_mobile_device_lg ) {
+          margin: 1.6em 0 0 0;
+          width: 100%;
+          padding: 0;
+          flex: 1 0 100%;
+
+          &:first-of-type { margin-top: 0; }
+        }
+      }
+    }
+
+    // #BANNER
+    @include max_width( $banner_break_mid ) {
+      padding-top: 0;
+      margin-top: 0;
+      font-size: 12px;
+      min-height: auto;
+    }
+
+    @include max_width( $width_mobile_device_lg ) {
+      font-size: 12px;
+      padding-bottom: 2em;
+
+      p {
+        font-size: 1.7em;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
+
+/**********************************
+* *    START A CONVERSATION     * *
+ **********************************/
+
+$convo_break_lg: 1250px;
+$convo_break_md: 1050px;
+$convo_break_sm: $banner_break_mid;
+$convo_break_xs: 500px;
+
+#conversation {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  transform: translateY(-40%);
+
+  .row {
+    background: $white_00;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.73);
+    display: flex;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2.0rem 3rem;
+    width: 80%;
+
+    @include max_width ($convo_break_xs) { flex-wrap: wrap; }
+  }
+
+  .logo {
+    display: block;
+    flex: 0 0 200px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &::before {
+      background-image: $img_logo_stacked;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  .block-content {
+    position: relative;
+    display: block;
+    flex: 1 1 100%;
+    margin: 0 0 0 2.5em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.7em;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 1em 0;
+    font-size: 1.1em;
+  }
+
+  @include max_width($convo_break_lg) { font-size: 15px; }
+
+  @include max_width ($convo_break_md) { font-size: 16px; }
+
+  @include max_width( $banner_break_mid ) {
+    transform: translateY(0);
+
+    .row {
+      width: 100%;
+      max-width: none;
+      padding: 2.5rem 0;
+    }
+
+    .logo {
+      margin-left: 3rem;
+    }
+
+    .block-content {
+      flex: 1 1 90%;
+      margin: 0 3rem 0 2rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.1em;
+      padding: 1.5rem 0 0 0;
+    }
+
+    button {
+      margin: 1.5rem 0 0 0;
+      padding: 1.3rem 2rem;
+    }
+  }
+
+  @include max_width( $width_tablet_device_sm ) {
+    .logo { margin-left: 2rem; }
+    .block-content { margin: 0 2rem; text-align: center; }
+    button { min-width: 50%; }
+    .logo { display: none; }
+  }
+
+  @include max_width ($convo_break_xs) {
+
+    .block-content { margin: 0 1.7em; }
+
+    .logo {
+      border-right: 0;
+      width: auto;
+      height: 130px;
+      padding: 0 20px 20px;
+      flex-basis: auto;
+
+      &::before { background-size: contain; }
+    }
+
+    .button {
+      margin-top: 1.5em;
+      padding: 1em;
+      font-size: 1.3em;
+      display: block;
+    }
+  }
+
+}
+
+/********************************
+ *     SOLUTIONS COUNTERS       *
+ *             ---              *
+ * .solutions-number-box        *
+ *   .solution                  *
+ *     _.solution-count::before *
+ *     _.solution-count         *
+ *     _ h3                     *
+ *     _.subtext                *
+ *     _.divider                *
+ *     _.description            *
+ ********************************/
+
+#solutions-highlight-count {
+  padding: 4em 0;
+  background-color: $black_00;
+  background-image: $bg_block_solutions;
+  background-size: cover;
+  text-align: center;
+
+  // LAYOUT
+  .solutions-number-box {
+    display: flex;
+  }
+
+  // ELEMENT CONTAINER
+  .solution {
+    margin: 0 1em;
+
+    // ELEMENT ICON
+    &::before {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: 4em;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  .solution-count {
+    margin: 0.8em auto;
+    font-weight: bold;
+    font-size: 2.9em;
+
+    &.plus::after {
+      content: "+";
+      margin-left: 5px;
+    }
+  }
+
+  // TYPOGRAPHY
+  .solution-count,
+  h2,
+  h3,
+  span {
+    display: block;
+    color: $white_00;
+  }
+
+  span {
+    &.description { color: $white_20; }
+  }
+
+  h2 {
+    margin: 0 auto 1em;
+    padding: 0;
+    font-weight: bold;
+    font-size: 2.2em;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+
+  .divider {
+    display: inline-block;
+    margin: 1rem auto;
+    width: 40px;
+    height: 1px;
+    background: $accent_orange;
+  }
+
+  #block-solutions-customers.solution::before { background-image: $ic_hand-shake; }
+  #block-solutions-location.solution::before { background-image: $ic_location; }
+  #block-solutions-tools.solution::before { background-image: $ic_currency; }
+
+  // MEDIA QUERIES
+  @media (max-width: $width_tablet_device_lg) {
+
+    .solutions-number-box {
+      flex-direction: column;
+    }
+
+    .solution {
+      // @extend %flex;
+      display: flex;
+      flex-direction: row;
+      > * { margin: 0 1em; }
+      > *:first-child { margin-left: 0; }
+      > *:last-child { margin-right: 0; }
+
+      align-items: center;
+      margin: 2em 0 0 0;
+      &::before { display: none; }
+      .solution-count { margin: 0; }
+    }
+
+
+    .divider {
+      display: inline;
+      margin: 0rem auto;
+      width: 1px;
+      height: 40px;
+      background: #fda630;
+      flex: 0 0 1px;
+    }
+
+    .split--tab-lg { flex: 1 1 100%; }
+    h2 { margin: 0; }
+    h3 { text-align: center; }
+    .description { text-align: center; }
+  }
+}
+
+
+
+/****************************
+* *  HOME TESTIMONIALS    * *
+ ****************************/
+#home-block-testimonial {
+  margin: 2em auto;
+  padding: 4em 0;
+  text-align: center;
+
+  .row { max-width: $contact_section_max_w; }
+
+  h2 {
+    margin: 0.5em 0;
+    font-weight: bold;
+    font-size: 1.7em;
+  }
+
+  .testimonial-content {
+    position: relative;
+    line-height: 1.8em;
+    margin: 0 1.5rem 0.2em;
+
+    &::after,
+    &::before {
+      position: absolute;
+      color: $accent_red;
+      font-size: 80px;
+    }
+
+    &::before {
+      top: 0;
+      left: -2rem;
+      content: "\201C";
+    }
+
+    &::after {
+      right: -2rem;
+      bottom: 0;
+      content: "\201D";
+    }
+  }
+
+  .testimonial-source {
+    text-align: right;
+    font-style: italic;
+    font-size: 0.9em;
+  }
+}
+
+// ALLOW LIST TYPE DISPLAY ON CONTENT
+// FROM WYSIWYG EDITORS
+.cms-html-block,
+.product-details,
+.tab-panels,
+.content-block {
+  ol,
+  ul {
+    padding-left: 2em;
+    list-style: disc;
+  }
+
+  li {
+    display: list-item;
+    margin: 0.5em 0;
+  }
+}

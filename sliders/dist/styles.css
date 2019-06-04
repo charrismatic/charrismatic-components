@@ -1,0 +1,560 @@
+/****************************
+ * *   HOME PAGE STYLES   * *
+ ****************************/
+body#home {
+  background: #223323;
+}
+
+body#home section.main-content {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/****************************
+* *      TOP BANNER       * *
+ ****************************/
+section#banner {
+  background-position: center center;
+  background-size: cover;
+  min-height: 500px;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+  padding-top: 3em;
+  position: relative;
+  width: 100%;
+}
+
+section#banner .banner-content-wrap {
+  display: block;
+}
+
+section#banner .banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 2em;
+  padding-top: 0;
+  position: relative;
+  width: 60%;
+  z-index: 2;
+}
+
+@media (max-width: ) {
+  section#banner .banner-text {
+    width: 100%;
+  }
+}
+
+section#banner .banner-text::before {
+  background-image: "";
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 90%;
+  overflow: visible;
+  padding: 10% 0;
+  position: absolute;
+  top: 0;
+  width: 80%;
+  z-index: -1;
+}
+
+@media (max-width: ) {
+  section#banner .banner-text::before {
+    left: 0;
+    opacity: 0.5;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+section#banner h2 {
+  color: white;
+  font-weight: bold;
+  font-size: 4.5em;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+@media (max-width: 1200px) {
+  section#banner h2 {
+    margin-top: 0;
+  }
+}
+
+section#banner p {
+  font-size: 1.3em;
+  margin: 1rem 0 1.5em;
+  color: white;
+}
+
+@media (max-width: ) {
+  section#banner p {
+    max-width: 550px;
+    text-align: justify;
+    text-align-last: start;
+  }
+}
+
+@media (max-width: ) {
+  section#banner p {
+    text-align: left;
+    text-align-last: start;
+    font-size: 1.6em;
+  }
+}
+
+section#banner a {
+  color: white;
+}
+
+section#banner ul {
+  display: flex;
+  width: 120%;
+}
+
+@media (max-width: ) {
+  section#banner ul {
+    width: 100%;
+    padding-bottom: 2em;
+    flex-wrap: wrap;
+    max-width: 450px;
+  }
+  section#banner ul li.pull--mid {
+    order: 2;
+    width: 100%;
+    margin-top: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+section#banner ul li {
+  display: block;
+  flex: 1 1 auto;
+  margin-left: 1em;
+  border: 1px solid white;
+  background: transparent;
+  padding: 0;
+  margin: 0 0.6em;
+}
+
+section#banner ul li:hover {
+  border: 1px solid red;
+  background: red;
+}
+
+section#banner ul li:first-of-type {
+  margin-left: 0;
+}
+
+section#banner ul li a {
+  display: block;
+  padding: 0.8em 0.3em;
+  margin: 0;
+}
+
+section#banner ul li.highlight {
+  background: red;
+  border: 0;
+}
+
+@media (max-width: ) {
+  section#banner ul li {
+    flex: 1 0 auto;
+    margin: 0 0 0 1.5em;
+    padding: 0 0.5em;
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 1200px) {
+  section#banner ul li {
+    margin: 1.6em 0 0 0;
+    width: 100%;
+    padding: 0;
+    flex: 1 0 100%;
+  }
+  section#banner ul li:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: ) {
+  section#banner {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 12px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  section#banner {
+    font-size: 12px;
+    padding-bottom: 2em;
+  }
+  section#banner p {
+    font-size: 1.7em;
+    line-height: 1.5em;
+  }
+}
+
+/**********************************
+* *    START A CONVERSATION     * *
+ **********************************/
+#conversation {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  transform: translateY(-40%);
+}
+
+#conversation .row {
+  background: white;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.73);
+  display: flex;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2.0rem 3rem;
+  width: 80%;
+}
+
+@media (max-width: 500px) {
+  #conversation .row {
+    flex-wrap: wrap;
+  }
+}
+
+#conversation .logo {
+  display: block;
+  flex: 0 0 200px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#conversation .logo::before {
+  background-image: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+#conversation .block-content {
+  position: relative;
+  display: block;
+  flex: 1 1 100%;
+  margin: 0 0 0 2.5em;
+}
+
+#conversation h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+#conversation p {
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+
+@media (max-width: 1250px) {
+  #conversation {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1050px) {
+  #conversation {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: ) {
+  #conversation {
+    transform: translateY(0);
+  }
+  #conversation .row {
+    width: 100%;
+    max-width: none;
+    padding: 2.5rem 0;
+  }
+  #conversation .logo {
+    margin-left: 3rem;
+  }
+  #conversation .block-content {
+    flex: 1 1 90%;
+    margin: 0 3rem 0 2rem;
+  }
+  #conversation p {
+    margin: 0;
+    font-size: 1.1em;
+    padding: 1.5rem 0 0 0;
+  }
+  #conversation button {
+    margin: 1.5rem 0 0 0;
+    padding: 1.3rem 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #conversation .logo {
+    margin-left: 2rem;
+  }
+  #conversation .block-content {
+    margin: 0 2rem;
+    text-align: center;
+  }
+  #conversation button {
+    min-width: 50%;
+  }
+  #conversation .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  #conversation .block-content {
+    margin: 0 1.7em;
+  }
+  #conversation .logo {
+    border-right: 0;
+    width: auto;
+    height: 130px;
+    padding: 0 20px 20px;
+    flex-basis: auto;
+  }
+  #conversation .logo::before {
+    background-size: contain;
+  }
+  #conversation .button {
+    margin-top: 1.5em;
+    padding: 1em;
+    font-size: 1.3em;
+    display: block;
+  }
+}
+
+/********************************
+ *     SOLUTIONS COUNTERS       *
+ *             ---              *
+ * .solutions-number-box        *
+ *   .solution                  *
+ *     _.solution-count::before *
+ *     _.solution-count         *
+ *     _ h3                     *
+ *     _.subtext                *
+ *     _.divider                *
+ *     _.description            *
+ ********************************/
+#solutions-highlight-count {
+  padding: 4em 0;
+  background-color: black;
+  background-image: "";
+  background-size: cover;
+  text-align: center;
+}
+
+#solutions-highlight-count .solutions-number-box {
+  display: flex;
+}
+
+#solutions-highlight-count .solution {
+  margin: 0 1em;
+}
+
+#solutions-highlight-count .solution::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 4em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#solutions-highlight-count .solution-count {
+  margin: 0.8em auto;
+  font-weight: bold;
+  font-size: 2.9em;
+}
+
+#solutions-highlight-count .solution-count.plus::after {
+  content: "+";
+  margin-left: 5px;
+}
+
+#solutions-highlight-count .solution-count,
+#solutions-highlight-count h2,
+#solutions-highlight-count h3,
+#solutions-highlight-count span {
+  display: block;
+  color: white;
+}
+
+#solutions-highlight-count span.description {
+  color: grey;
+}
+
+#solutions-highlight-count h2 {
+  margin: 0 auto 1em;
+  padding: 0;
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+#solutions-highlight-count h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#solutions-highlight-count .divider {
+  display: inline-block;
+  margin: 1rem auto;
+  width: 40px;
+  height: 1px;
+  background: "";
+}
+
+#solutions-highlight-count #block-solutions-customers.solution::before {
+  background-image: "";
+}
+
+#solutions-highlight-count #block-solutions-location.solution::before {
+  background-image: "";
+}
+
+#solutions-highlight-count #block-solutions-tools.solution::before {
+  background-image: "";
+}
+
+@media (max-width: 800px) {
+  #solutions-highlight-count .solutions-number-box {
+    flex-direction: column;
+  }
+  #solutions-highlight-count .solution {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2em 0 0 0;
+  }
+  #solutions-highlight-count .solution > * {
+    margin: 0 1em;
+  }
+  #solutions-highlight-count .solution > *:first-child {
+    margin-left: 0;
+  }
+  #solutions-highlight-count .solution > *:last-child {
+    margin-right: 0;
+  }
+  #solutions-highlight-count .solution::before {
+    display: none;
+  }
+  #solutions-highlight-count .solution .solution-count {
+    margin: 0;
+  }
+  #solutions-highlight-count .divider {
+    display: inline;
+    margin: 0rem auto;
+    width: 1px;
+    height: 40px;
+    background: #fda630;
+    flex: 0 0 1px;
+  }
+  #solutions-highlight-count .split--tab-lg {
+    flex: 1 1 100%;
+  }
+  #solutions-highlight-count h2 {
+    margin: 0;
+  }
+  #solutions-highlight-count h3 {
+    text-align: center;
+  }
+  #solutions-highlight-count .description {
+    text-align: center;
+  }
+}
+
+/****************************
+* *  HOME TESTIMONIALS    * *
+ ****************************/
+#home-block-testimonial {
+  margin: 2em auto;
+  padding: 4em 0;
+  text-align: center;
+}
+
+#home-block-testimonial .row {
+  max-width: "";
+}
+
+#home-block-testimonial h2 {
+  margin: 0.5em 0;
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+#home-block-testimonial .testimonial-content {
+  position: relative;
+  line-height: 1.8em;
+  margin: 0 1.5rem 0.2em;
+}
+
+#home-block-testimonial .testimonial-content::after, #home-block-testimonial .testimonial-content::before {
+  position: absolute;
+  color: red;
+  font-size: 80px;
+}
+
+#home-block-testimonial .testimonial-content::before {
+  top: 0;
+  left: -2rem;
+  content: "\201C";
+}
+
+#home-block-testimonial .testimonial-content::after {
+  right: -2rem;
+  bottom: 0;
+  content: "\201D";
+}
+
+#home-block-testimonial .testimonial-source {
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.cms-html-block ol,
+.cms-html-block ul,
+.product-details ol,
+.product-details ul,
+.tab-panels ol,
+.tab-panels ul,
+.content-block ol,
+.content-block ul {
+  padding-left: 2em;
+  list-style: disc;
+}
+
+.cms-html-block li,
+.product-details li,
+.tab-panels li,
+.content-block li {
+  display: list-item;
+  margin: 0.5em 0;
+}

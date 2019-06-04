@@ -1,10 +1,9 @@
 // REFERENCE: MATERIALZE.CSS
-
-
 $carousel-height: 70px;
 $carousel-item-height: $carousel-height / 1.5;
 $carousel-item-width: $carousel-item-height;
 
+$white_10: darken( rgb(255,255,255), 10%);
 
 .carousel {
   &.carousel-slider {

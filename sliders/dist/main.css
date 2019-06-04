@@ -1,0 +1,610 @@
+/* HOME SOLUTIONS COUNTERS  */
+a:hover {
+  color: #4d4d4d;
+}
+
+/*   HOME CONTACT FORM   */
+/*
+ * @name keyframes
+ * @description Mixin to to define animation keyframes
+ *
+ * @example
+ *
+ * @include keyframes(slide-down) {
+ *   0% { opacity: 1; }
+ *   90% { opacity: 0; }
+ *  }
+ *
+ *  .element {
+ *  width: 100px;
+ *  height: 100px;
+ *  background: black;
+ *  @include animation('slide-down 5s 3');
+ *  }
+ */
+/**
+ * https://www.sassmeister.com/gist/8458511
+ * ----
+ * Sass (v3.3.0.rc.2)
+ * Compass (v1.0.0.alpha.17)
+ * ----
+ * Add vendor prefixes to keyframes
+ * Usage: @include animation(block-1-animate, $speed, ease-out, infinite)
+ *
+ * @example
+ * // DEFINE KEYFRAMES
+ * @include keyframes(slide-down) {
+ *    0% { opacity: 1; }
+ *    90% { opacity: 0; }
+ * }
+ * // DECLARE ANIMATION
+ * .element {
+ *   width: 100px;
+ *   height: 100px;
+ *   background: black;
+ *   @include animation('slide-down 5s 3');
+ * }
+ */
+/**
+*  GOOGLE MATERIAL GUIDLINES FOR MOVEMENT AND MOTION:
+*
+*  @source: https://material.io/guidelines/motion/duration-easing.html
+*
+*  Entering the screen
+*  Elements entering the screen use the deceleration curve for a speedy entrance,
+*  indicating that they had been travelling at peak velocity.
+*
+*  Permanently leaving the screen
+*  Elements permanently leaving the screen use the acceleration curve
+*  to speed off-screen over a slightly shorter duration,
+*  as they will not be returning and require less user focus.
+*
+*  Temporarily leaving the screen
+*  Elements temporarily leaving the screen should use the sharp curve,
+*  as they may return to the screen at any time and should appear nearby
+*  and within reach.
+*
+*  Relative movement
+*  Entering or exiting elements that move other on-screen elements do so
+*  along a smooth easing curve, so that they remain minimally disruptive
+*  and avoid eye-catching, dramatic movement.
+*  The standard curve is used for moving elements both in and out of the
+*  bounds of the screen. This curve has a slightly longer duration compared
+*  to independent elements.
+*/
+/**
+* @mixin
+* @name tranistion
+* @description Include multiple transition with a single fu
+* @example
+* .class {
+*   color: gray;
+*   @include transition(color .3s ease);
+*   &:hover {
+*     color: black;
+*   }
+* }
+**/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1a1a1a;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  display: block;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+
+input,
+select,
+textarea {
+  color: inherit;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+body {
+  color: #1a1a1a;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+html, body {
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+@media only screen and (min-width: 0) {
+  html, body {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  html, body {
+    font-size: 13.5px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+#category-product-slider {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#category-product-slider .slide-container {
+  position: relative;
+  left: 0;
+  width: 100%;
+  min-height: 370px;
+  height: auto;
+  max-height: 50vh;
+  padding: 3em 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+#category-product-slider .slider-block {
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 0;
+}
+
+#category-product-slider .slider-block.active {
+  display: block;
+}
+
+#category-product-slider .slider-block.active .slider-image img {
+  box-shadow: 4px 1px 10px 0px rgba(66, 66, 66, 0.78);
+}
+
+#category-product-slider .slider-block .row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 250px;
+}
+
+#category-product-slider .slider-block .slider-image {
+  position: relative;
+  min-width: 200px;
+  max-width: 350px;
+  flex-basis: 30%;
+  flex-basis: 30vw;
+  margin: 1.5em 0 0 1.5em;
+}
+
+#category-product-slider .slider-block .slider-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#category-product-slider .slider-block .slider-image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-shadow: -1.5em -1.5em 0 #fda630;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#category-product-slider .slider-block .slider-content {
+  margin-left: 4em;
+  flex-basis: 70%;
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+}
+
+#category-product-slider .slider-block .slider-content h2 {
+  position: relative;
+  margin-top: -0.5em;
+  color: #B9262F;
+}
+
+#category-product-slider .slider-block .slider-content h2::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  border-bottom: 1px solid #b9262f;
+  content: '';
+}
+
+#category-product-slider .slider-block .slider-content h3 {
+  padding: 0.5em 0;
+}
+
+#category-product-slider .slider-block .slider-content p {
+  padding: 0 0 1em 0;
+}
+
+#slider-selector {
+  padding-bottom: 2em;
+  width: 100%;
+  border-top: 5px solid #b9262f;
+  padding: 0;
+  box-shadow: 0 -6px 13px 0 rgba(146, 146, 146, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+#slider-selector .row {
+  max-width: 1600px;
+}
+
+#slider-selector ul {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+
+#slider-selector ul i {
+  position: absolute;
+  margin: 0;
+  padding: 6px 10px;
+  min-width: 50px;
+  height: 0;
+  background-position: center -16px;
+  background-size: 40px;
+  cursor: default;
+}
+
+#slider-selector ul li {
+  position: relative;
+  display: inline-block;
+  flex: 1 1 100%;
+}
+
+#slider-selector .slider-nav-btn {
+  margin: 10px;
+  padding: 5px;
+  min-width: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#slider-selector .slider-nav-btn::before {
+  position: relative;
+  display: block;
+  margin: 0 auto 0.8em;
+  width: 60px;
+  height: 60px;
+  background-image: "";
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_ts-storage"]:before {
+  background-image: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_atf-explosives"]:before {
+  background-image: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_dea-controlled"]:before {
+  background-image: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_custom-design"]:before {
+  background-image: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_vaults-doors"]:before {
+  background-image: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_consulting"]:before {
+  background-image: "";
+}
+
+#slider-selector .slider-nav-btn[data-target="slider_osha-hazmat"]:before {
+  background-image: "";
+}
+
+/****************************************
+ *  SLIDER TRANSITIONS AND ANIMATIONS   *
+ ****************************************/
+#slider-selector i {
+  will-change: transform;
+}
+
+#slider-selector .slider-nav-btn {
+  opacity: 0.5;
+  transition: opacity 400ms ease-in-out;
+}
+
+#slider-selector .slider-nav-btn:hover, #slider-selector .slider-nav-btn.active {
+  opacity: 1;
+}
+
+#solutions-slider-indicator {
+  transform: translateZ(1px);
+  transition: left 400ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}
+
+#solutions-slider-indicator:hover i {
+  transition: left 460ms cubic-bezier(0, 0, 0.2, 1) 300ms;
+}
+
+#category-product-slider .slider-block {
+  opacity: 0.0;
+  transform-origin: bottom center;
+  transform: translateX(100%) translateY(30%) translateZ(0) scale(0.8);
+  visibility: hidden;
+}
+
+#category-product-slider .slider-block.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#category-product-slider .slider-block.slide-left {
+  transform: translateX(-100%) translateY(30%) translateZ(0) scale(0.8);
+}
+
+#category-product-slider .slider-block.slide-right {
+  transform: translateX(100%) translateY(10%) translateZ(0) scale(0.8);
+}
+
+#category-product-slider .slider-block.slide-center {
+  transform: translateX(0) translateY(0) translateZ(0) scale(1);
+}
+
+#category-product-slider .slider-block.entering {
+  will-change: transform, opacity;
+  transition: transform 1100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, visibility 0ms linear 0ms, opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+}
+
+#category-product-slider .slider-block.exiting {
+  will-change: transform, opacity;
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, visibility 1000ms linear 0ms, opacity 1100ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+}
+
+@media (max-width: 850px) {
+  #category-product-slider .slider-block {
+    opacity: 1;
+    transform-origin: center;
+    transform: translateX(120%) translateZ(0);
+  }
+  #category-product-slider .slider-block.slide-left {
+    transform: translateX(-120%) translateZ(0) scale(1);
+  }
+  #category-product-slider .slider-block.slide-right {
+    transform: translateX(120%) translateZ(0) scale(1);
+  }
+  #category-product-slider .slider-block.slide-center {
+    transform: translateX(0) translateZ(0) scale(1);
+  }
+  #category-product-slider .slider-block.entering {
+    transition: transform 1500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, visibility 0ms linear 0ms;
+  }
+  #category-product-slider .slider-block.exiting {
+    transition: transform 1500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, visibility 1500ms linear 0ms;
+  }
+}
+
+/****************************************
+ *  SLIDER FONT SIZES AND TYPOGRAPHY    *
+ ****************************************/
+@media (max-width: 1050px) {
+  #category-product-slider {
+    font-size: 14px;
+  }
+}
+
+#category-product-slider .slider-block .slider-content h2 {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#category-product-slider .slider-block .slider-content h3 {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+#category-product-slider .slider-block .slider-content p {
+  line-height: 2;
+}
+
+#slider-selector .slider-nav-btn {
+  font-size: 0.9em;
+  line-height: 1em;
+}
+
+/****************************************
+ *  SLIDER RESPONSIVE VIEW              *
+ ****************************************/
+/*  TABLET VIEW */
+@media (max-width: 850px) {
+  #category-product-slider .slide-container {
+    border-bottom: 2px solid #b9262f;
+    border-top: 2px solid #b9262f;
+    border-right: 1px solid #b3b3b3;
+    border-left: 1px solid #b3b3b3;
+    box-shadow: inset 0px 1px 23px 9px rgba(67, 67, 67, 0.67);
+    justify-content: flex-end;
+    padding: 0;
+  }
+  #category-product-slider .slide-container .slider-block {
+    height: 100%;
+  }
+  #category-product-slider .slide-container .slider-block .row {
+    left: -20%;
+    width: 120%;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 0;
+    justify-content: space-between;
+    overflow: visible;
+  }
+  #category-product-slider .slide-container .slider-block .slider-image {
+    width: auto;
+    box-shadow: none;
+    margin: 0;
+    height: 100%;
+    max-height: 100%;
+    width: 30%;
+    max-width: none;
+    display: block;
+    min-width: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+  #category-product-slider .slide-container .slider-block .slider-image::before {
+    content: "";
+    box-shadow: none;
+    display: none !important;
+  }
+  #category-product-slider .slide-container .slider-block .slider-image::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    background-image: url("");
+    background-color: #404040;
+    background-size: cover;
+    right: 0;
+    height: 100%;
+    left: 0;
+  }
+  #category-product-slider .slide-container .slider-block .slider-image img {
+    display: none;
+    width: auto;
+    left: 0%;
+    box-shadow: none;
+    height: 100%;
+  }
+  #category-product-slider .slide-container .slider-block .slider-content {
+    flex-basis: 64vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 2% 0 2%;
+    right: 0;
+    height: 100%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #category-product-slider .slide-container .slider-block .slider-content h2::after {
+    content: '';
+    position: relative;
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+  #slider-selector {
+    background: white;
+    margin-top: 0;
+  }
+  #category-product-slider .slide-container #slider_ts-storage.slider-block .slider-image::after {
+    background-image: "";
+  }
+  #category-product-slider .slide-container #slider_dea-controlled.slider-block .slider-image::after {
+    background-image: "";
+  }
+  #category-product-slider .slide-container #slider_atf-explosives.slider-block .slider-image::after {
+    background-image: "";
+  }
+  #category-product-slider .slide-container #slider_osha-hazmat.slider-block .slider-image::after {
+    background-image: "";
+  }
+  #category-product-slider .slide-container #slider_custom-design.slider-block .slider-image::after {
+    background-image: "";
+  }
+  #category-product-slider .slide-container #slider_consulting.slider-block .slider-image::after {
+    background-image: "";
+  }
+  #category-product-slider .slide-container #slider_vaults-doors.slider-block .slider-image::after {
+    background-image: "";
+  }
+}
+
+.ic-caret-down.red {
+  background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%20viewBox%3D%220%200%201792%201792%22%3E%3Cpath%20fill%3D%22%23b9262f%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M1408%20704q0%2026-19%2045l-448%20448q-19%2019-45%2019t-45-19l-448-448q-19-19-19-45t19-45%2045-19h896q26%200%2045%2019t19%2045z%22%20%2F%3E%3C%2Fsvg%3E);
+  display: inline-block;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  margin: 10px 20px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: color 200ms linear 0ms;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+#slider-selector i {
+  will-change: transform;
+}
+
+#solutions-slider-indicator {
+  -webkit-transform: translateZ(1px);
+  transform: translateZ(1px);
+  transition: left 400ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}

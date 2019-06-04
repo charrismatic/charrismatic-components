@@ -1,3 +1,524 @@
+
+
+// COLOR VARIABLE DEFINITIONS
+$black: rgba(0,0,0,1);
+
+$black_00: $black; // #000000;
+$black_10: lighten($black,10%); // rgb(26,26,26) , #1a1a1a
+$black_15: lighten($black,15%); // rgb(38,38,38) , #262626
+$black_20: lighten($black,20%); // rgb(51,51,51) , #333333
+$black_25: lighten($black,25%); // rgb(64,64,64) , #404040
+$black_30: lighten($black,30%); // #4d4d4d
+$black_35: lighten($black,35%); //
+$black_40: lighten($black,40%); // #666666
+$black_45: lighten($black,45%); //
+$black_50: lighten($black,50%); // #808080
+
+$white: rgba(255,255,255,1);
+
+$white_00: $white;              // #ffffff;
+$white_05: darken($white, 05%); // #f2f2f2
+$white_10: darken($white, 10%); // #e6e6e6
+$white_15: darken($white, 15%); // #d9d9d9
+$white_20: darken($white, 20%); // #cccccc
+$white_25: darken($white, 25%); // #bfbfbf
+$white_30: darken($white, 30%); // #b3b3b3
+$white_35: darken($white, 35%); // #a6a6a6
+$white_40: darken($white, 40%); // #999999
+$white_45: darken($white, 45%); // #8c8c8c
+$white_50: darken($white, 50%); // #808080
+
+
+$accent_red:               rgb(185,38,47);
+$anchor_link:              rgb(250,76,6);
+$logo_accent_orange:       rgb(250,76,6);
+$logo_accent_orange_light: rgb(253,123,64);
+$accent_orange:            rgb(253,166,48);
+$accent_yellow:            rgb(255,205,85);      //#ffcd55
+
+$desturated_red:           rgb(154,42,49);
+$desturated_red_darker:    rgb(125,22,29);
+
+$mob_nav_border_color:     darken($accent_red, 8%);
+
+// FORMS
+$form_good:                rgb(19,198,7);
+
+
+$ic_padlock: '';
+$ic_bomb: '';
+$ic_drugs: '';
+$ic_design: '';
+$ic_safebox: '';
+$ic_clipboard: '';
+$ic_radiation: '';
+$slider_ts-storage: '';
+$slider_dea-controlled: '';
+$slider_atf-explosives : '';
+$slider_osha-hazmat: '';
+$slider_custom-design: '';
+$slider_consulting : '';
+$slider_vaults-doors: '';
+/* HOME SOLUTIONS COUNTERS  */
+$home_solutions_md: 800px;
+
+$font_size: 1em;
+$font_body: "proxima-nova", sans-serif;
+$font_plus: "proxima-nova", sans-serif;
+$font_head: "proxima-nova", sans-serif;
+
+
+// DEFAULT
+$font_color_base: $black_10;
+
+// THEME COLOR
+$theme_font_color: $font_color_base;
+$theme_background_color: $white;
+$theme_background_color_alt: $white_10;
+
+$fnt_clr_dkst: darken($theme_font_color, 10%);
+$fnt_clr_dker: darken($theme_font_color, 20%);
+
+a:hover { color: lighten($theme_font_color, 20%); }
+
+// FORM VALIDATION
+$validation_success: color("green", "base") !default;
+$validation_error: color("red", "base") !default;
+// $link-color: color("grey", "darken-1") !default;
+
+/*   HOME CONTACT FORM   */
+$contact_form_inner_max_w: 500px;
+$contact_section_max_w: 830px;
+$home_contact_break_sm: 600px;
+
+
+$width_tablet_device_lg: 850px;
+$width_tablet_device_sm: 660px;
+$width_mobile_device_lg: 420px;
+$width_mobile_device_sm: 360px;
+
+$grid_tablet : 850px;
+$grid_mobile : 625px;
+
+// HOME PAGE
+$banner_break_mid: 850px;
+$banner_break_sm1: 560px;
+// NOTE: PREFER RGB VALUES FOR BETTER BROWSER COMPATABILITY
+
+
+/*
+ * @name keyframes
+ * @description Mixin to to define animation keyframes
+ *
+ * @example
+ *
+ * @include keyframes(slide-down) {
+ *   0% { opacity: 1; }
+ *   90% { opacity: 0; }
+ *  }
+ *
+ *  .element {
+ *  width: 100px;
+ *  height: 100px;
+ *  background: black;
+ *  @include animation('slide-down 5s 3');
+ *  }
+ */
+// PREFIXED
+@mixin keyframes_prefixed($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// NON-PREFIXED
+@mixin keyframes($animation_name) {
+ @keyframes #{$animation_name} {
+   @content;
+ }
+}
+
+
+
+/**
+ * https://www.sassmeister.com/gist/8458511
+ * ----
+ * Sass (v3.3.0.rc.2)
+ * Compass (v1.0.0.alpha.17)
+ * ----
+ * Add vendor prefixes to keyframes
+ * Usage: @include animation(block-1-animate, $speed, ease-out, infinite)
+ *
+ * @example
+ * // DEFINE KEYFRAMES
+ * @include keyframes(slide-down) {
+ *    0% { opacity: 1; }
+ *    90% { opacity: 0; }
+ * }
+ * // DECLARE ANIMATION
+ * .element {
+ *   width: 100px;
+ *   height: 100px;
+ *   background: black;
+ *   @include animation('slide-down 5s 3');
+ * }
+ */
+@mixin animation_prefixed ($animation, $duration, $transition, $iteration) {
+  -webkit-animation-name: $animation;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $transition;
+  -webkit-animation-iteration-count: $iteration;
+
+  -moz-animation-name: $animation;
+  -moz-animation-duration: $duration;
+  -moz-animation-timing-function: $transition;
+  -moz-animation-iteration-count: $iteration;
+
+  -o-animation-name: $animation;
+  -o-animation-duration: $duration;
+  -o-animation-timing-function: $transition;
+  -o-animation-iteration-count: $iteration;
+
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-timing-function: $transition;
+  animation-iteration-count: $iteration;
+}
+
+@mixin animation($name, $duration, $transition, $iteration) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $transition;
+  animation-iteration-count: $iteration;
+}
+/**
+*  GOOGLE MATERIAL GUIDLINES FOR MOVEMENT AND MOTION:
+*
+*  @source: https://material.io/guidelines/motion/duration-easing.html
+*
+*  Entering the screen
+*  Elements entering the screen use the deceleration curve for a speedy entrance,
+*  indicating that they had been travelling at peak velocity.
+*
+*  Permanently leaving the screen
+*  Elements permanently leaving the screen use the acceleration curve
+*  to speed off-screen over a slightly shorter duration,
+*  as they will not be returning and require less user focus.
+*
+*  Temporarily leaving the screen
+*  Elements temporarily leaving the screen should use the sharp curve,
+*  as they may return to the screen at any time and should appear nearby
+*  and within reach.
+*
+*  Relative movement
+*  Entering or exiting elements that move other on-screen elements do so
+*  along a smooth easing curve, so that they remain minimally disruptive
+*  and avoid eye-catching, dramatic movement.
+*  The standard curve is used for moving elements both in and out of the
+*  bounds of the screen. This curve has a slightly longer duration compared
+*  to independent elements.
+*/
+
+// RECOMMENDED DURATIONS
+$material_timing_mobile: 300ms;
+$material_timing_mobile_enter: 225ms;
+$material_timing_mobile_exit: 195ms;
+$material_timing_tablet: 390ms;
+$material_timing_desktop: 200ms;
+
+// Google Material Standard Curve
+// Ease in out
+$material_standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+// Deceleration curve
+$material_decel: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+// Acceleration curve
+$material_accel: cubic-bezier(0.4, 0.0, 1, 1);
+
+// Ease in out - for exiting elements
+$material_sharp_exit: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+@mixin material_transition(
+  $prop,
+  $timing: $material_timing_mobile,
+  $trans: $material_standard,
+  $delay: 0ms ){
+  transition: $prop $timing $trans $delay;
+}
+
+
+
+/**
+* @mixin
+* @name tranistion
+* @description Include multiple transition with a single fu
+* @example
+* .class {
+*   color: gray;
+*   @include transition(color .3s ease);
+*   &:hover {
+*     color: black;
+*   }
+* }
+**/
+@mixin transition($args...) {
+   transition: $args;
+}
+
+@function _trans($prop: all, $dur: 600, $trans: ease-in-out, $delay: 0) {
+  @return #{$prop} #{$dur}ms #{$trans} #{$delay}ms;
+}
+
+
+
+
+@mixin max_width($width) {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin min_width($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin range_width($min_width, $max_width) {
+  @media (min-width: #{$min_width}) and (max-width: #{$max_width}) {
+    @content;
+  }
+}
+
+
+// Maintain ratio mixin. Great for responsive grids, or videos.
+// https://gist.github.com/brianmcallister/2932463
+// $ratio - Ratio the element needs to maintain.
+// Examples
+//
+// A 16:9 ratio would look like this:
+// .element {
+//   @include maintain-ratio(16 9);
+// }
+@mixin maintain-ratio($ratio: 1 1) {
+  // @if length($ratio) < 2 or length($ratio) > 2 {
+  //   @warn "$ratio must be a list with two values.";
+  // }
+
+  $width: 100%;
+  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+
+  width: $width;
+  height: 0;
+  padding-bottom: $height;
+}
+
+// https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+
+// NOTE: PREFER RGB VALUES FOR BETTER BROWSER COMPATABILITY
+
+
+// COLOR VARIABLE DEFINITIONS
+$black: rgba(0,0,0,1);
+
+$black_00: $black; // #000000;
+$black_10: lighten($black,10%); // rgb(26,26,26) , #1a1a1a
+$black_15: lighten($black,15%); // rgb(38,38,38) , #262626
+$black_20: lighten($black,20%); // rgb(51,51,51) , #333333
+$black_25: lighten($black,25%); // rgb(64,64,64) , #404040
+$black_30: lighten($black,30%); // #4d4d4d
+$black_35: lighten($black,35%); //
+$black_40: lighten($black,40%); // #666666
+$black_45: lighten($black,45%); //
+$black_50: lighten($black,50%); // #808080
+
+$white: rgba(255,255,255,1);
+
+$white_00: $white;              // #ffffff;
+$white_05: darken($white, 05%); // #f2f2f2
+$white_10: darken($white, 10%); // #e6e6e6
+$white_15: darken($white, 15%); // #d9d9d9
+$white_20: darken($white, 20%); // #cccccc
+$white_25: darken($white, 25%); // #bfbfbf
+$white_30: darken($white, 30%); // #b3b3b3
+$white_35: darken($white, 35%); // #a6a6a6
+$white_40: darken($white, 40%); // #999999
+$white_45: darken($white, 45%); // #8c8c8c
+$white_50: darken($white, 50%); // #808080
+
+
+$accent_red:               rgb(185,38,47);
+$anchor_link:              rgb(250,76,6);
+$logo_accent_orange:       rgb(250,76,6);
+$logo_accent_orange_light: rgb(253,123,64);
+$accent_orange:            rgb(253,166,48);
+$accent_yellow:            rgb(255,205,85);      //#ffcd55
+
+$desturated_red:           rgb(154,42,49);
+$desturated_red_darker:    rgb(125,22,29);
+
+$mob_nav_border_color:     darken($accent_red, 8%);
+
+// FORMS
+$form_good:                rgb(19,198,7);
+
+
+
+
+
+// SET FONT DEFAULTS
+@mixin font_style($font_family, $font_wt, $font_color) {
+  color: $font_color;
+  font-family: $font_family;
+  font-size: $font_size;
+  font-weight: $font_wt;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+//
+// @include font-face(proxima-nova, fonts/proxima-nova_400, 500, normal, eot woff2 woff);
+//
+// .tk-proxima-nova{
+//   font-family:"proxima-nova",sans-serif;}
+//
+// @font-face{
+//   font-family:tk-proxima-nova-n7;
+//   src:url('/fonts/proxima-nova_700.woff2') format("woff2"), url('/fonts/proxima-nova_700.woff') format("woff"), url('/fonts/proxima-nova_700.otf') format("opentype");
+//   font-weight:700;
+//   font-style:normal;
+// }
+// @font-face{
+//   font-family:tk-proxima-nova-n4;
+//   src: url('/fonts/proxima-nova_400.woff2') format("woff2"), url('/fonts/proxima-nova_400.woff') format("woff"), url('/fonts/proxima-nova_400.otf') format("opentype");
+//   font-weight:400;
+//   font-style:normal;
+// }
+
+
+%font-base {
+  @include font_style($font_plus, normal, $theme_font_color);
+  display: block;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { @extend %font-base; }
+
+p {
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+h1 { font-size: $font_size * 2.0; }
+h2 { font-size: $font_size * 1.7; }
+h3 { font-size: $font_size * 1.4; }
+h4 { font-size: $font_size * 1.2; }
+h5 { font-size: $font_size * 1.0; }
+h6 { font-size: $font_size * 0.8; }
+
+input,
+select,
+textarea {
+  @include font_style($font_body, normal, inherit);
+
+  font-size: $font_size * 0.9;
+}
+
+
+body {
+  @include font_style($font_body, normal, $theme_font_color);
+}
+
+
+html, body {
+  line-height: 1.5;
+  font-weight: normal;
+
+  @media only screen and (min-width: 0) {
+    font-size: 13px;
+  }
+
+  @media only screen and (min-width: $width_tablet_device_sm ) {
+    font-size: 13.5px;
+  }
+
+  @media only screen and (min-width: $width_tablet_device_lg) {
+    font-size: 14px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
 // A MULTI PANE SLIDER
 
 
@@ -425,4 +946,28 @@ $slide_d: 0;
 #category-product-slider .slide-container  #slider_custom-design.slider-block .slider-image::after { background-image: $slider_custom-design; }
 #category-product-slider .slide-container  #slider_consulting.slider-block .slider-image::after { background-image:  $slider_consulting ; }
 #category-product-slider .slide-container  #slider_vaults-doors.slider-block .slider-image::after { background-image: $slider_vaults-doors; }
+}
+
+.ic-caret-down.red {
+  background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%20viewBox%3D%220%200%201792%201792%22%3E%3Cpath%20fill%3D%22%23b9262f%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M1408%20704q0%2026-19%2045l-448%20448q-19%2019-45%2019t-45-19l-448-448q-19-19-19-45t19-45%2045-19h896q26%200%2045%2019t19%2045z%22%20%2F%3E%3C%2Fsvg%3E);
+  display: inline-block;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  margin: 10px 20px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: color 200ms linear 0ms;
+  cursor: pointer;
+  vertical-align: middle;
+}
+#slider-selector i {
+  will-change: transform;
+}
+
+#solutions-slider-indicator {
+  -webkit-transform: translateZ(1px);
+  transform: translateZ(1px);
+  transition: left 400ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 }
