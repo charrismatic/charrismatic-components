@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
+    "bump": "npm version patch",
     "test": "standard"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:charrismatic/charrismatic-omponents.git",
+    "url": "git@github.com:charrismatic/charrismatic-components.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
