@@ -1,0 +1,56 @@
+
+
+.panel {
+  display: block;
+  border: 1px solid $grey_50;
+  padding: 1em;
+  max-width: 100%;
+  width: auto;
+  flex-grow: 1;
+
+  &__block {
+    justify-content: center;
+  }
+
+  &__content {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__icon {
+    background-color: $grey_15;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    position: relative;
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 10px solid $white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 1px $grey_15;
+    flex: 0 0 auto;
+    margin-right: 0;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+  &__subtitle {
+    font-size: .8em;
+  }
+}
+
+
+.image-panel {
+  color: white;
+  min-width: 100px;
+  background-size: 100% 100%;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

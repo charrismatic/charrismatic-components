@@ -1,0 +1,36 @@
+
+// MODAL AND MODAL PARTS STRUCTURE
+.modal__header {
+  @extend .z-depth-2;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > * { flex: 0 1 auto; }
+
+  i { margin: 0 0.6rem 0 0; }
+
+  span {
+    display: inline-block;
+    font-weight: 600;
+    font-style: italic;
+    vertical-align: middle;
+  }
+}
+
+.modal__content {
+  overflow-y: auto;
+  .input-field label { margin: 0; }
+}
+
+.modal__footer {
+  @extend .z-depth-4;
+  width: auto;
+
+  button {
+    display: block;
+    margin: 0 0 0 auto;
+   }
+}

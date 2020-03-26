@@ -1,0 +1,51 @@
+/*---
+title: social bar
+section: components
+---
+
+<section class="styleguide_section">
+<div class="container">
+
+  <section>
+    <div class="flex-row debug_outline_structure">
+      <div class="panel image-panel bg_accent_red" style="background-image: url('');">
+        <div class="panel__title--small">Shop our latest</div>
+        <div class="panel__title">Tractor Parts</div>
+        <div class="panel__subtitle">View in Stock Items</div>
+      </div>
+      <div class="panel image-panel bg_accent_red" style="background-image: url('');">
+        <div class="panel__title--small">Get everything you need</div>
+        <div class="panel__title">Shop Our Crazy Kits</div>
+        <div class="panel__subtitle">View all Kits</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex-row flex_fit debug_outline_structure">
+      <div class="fl-25">
+        <img src="" /><span>Img Alt Title</span>
+      </div>
+      <div class="block fl-75 debug_outline_structure">
+        <div class="titlebar">
+          <div class="titlebar__marker">
+            <i class="titlebar__icon icon--shirt"></i>
+          </div>
+          <h3 class="titlebar__title">Merchandise</h3>
+          <div id="productlist-controls" class="flex controlbar">
+            <div class="controlbar__item active" tabindex="0" data-target="clothing">Clothing</div>
+            <div class="controlbar__item" tabindex="0" data-target="flags">Flags</div>
+            <div class="controlbar__item" tabindex="0" data-target="hats">Hats</div>
+            <div class="controlbar__item" tabindex="0" data-target="other">Other</div>
+          </div>
+        </div>
+       </div>
+    </div>
+  </section>
+</div>
+</section>
+
+*/
+
+
+@import '../lib/socialbar.example';

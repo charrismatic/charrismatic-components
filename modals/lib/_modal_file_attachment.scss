@@ -1,0 +1,80 @@
+
+
+// FILE ATTACHMENT CHECKBOX TOGGLE
+#is_attachment[type="checkbox"]:not(:checked) ~ .file-field {
+  display: none;
+}
+
+#is_attachment[type="checkbox"]:checked ~ .file-field {
+  display: block;
+}
+
+#is_attachment[type="checkbox"] {
+  display: none;
+}
+
+#is_attachment[type="checkbox"] + label {
+  transform: none;
+}
+
+// FILE ATTACHMENT FIELD
+.file-field {
+  font-size: 12px;
+
+  .btn {
+    height: 1em;
+    line-height: 1;
+    width: 2em;
+    font-size: 1em;
+
+    &::after {
+      content: "File";
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1em;
+    }
+
+    &:hover {
+      height: 1em;
+      line-height: 1;
+      position: unset;
+      font-size: 1em;
+    }
+
+    input.file {
+      font-size: 1em;
+    }
+  }
+
+  .file-path-wrapper {
+    overflow: hidden;
+    padding-left: 10px;
+    margin: 0;
+
+    input.file-path {
+      margin-bottom: 0;
+      pointer-events: none;
+      font-size: 1em;
+      line-height: 1;
+      height: 1em;
+      padding: 1em;
+    }
+  }
+
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 2;
+  }
+}

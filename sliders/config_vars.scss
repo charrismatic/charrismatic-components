@@ -1,0 +1,131 @@
+
+// COLOR VARIABLE DEFINITIONS
+$black: rgba(0,0,0,1);
+
+$black_00: $black; // #000000;
+$black_10: lighten($black,10%); // rgb(26,26,26) , #1a1a1a
+$black_15: lighten($black,15%); // rgb(38,38,38) , #262626
+$black_20: lighten($black,20%); // rgb(51,51,51) , #333333
+$black_25: lighten($black,25%); // rgb(64,64,64) , #404040
+$black_30: lighten($black,30%); // #4d4d4d
+$black_35: lighten($black,35%); //
+$black_40: lighten($black,40%); // #666666
+$black_45: lighten($black,45%); //
+$black_50: lighten($black,50%); // #808080
+
+$white: rgba(255,255,255,1);
+
+$white_00: $white;              // #ffffff;
+$white_05: darken($white, 05%); // #f2f2f2
+$white_10: darken($white, 10%); // #e6e6e6
+$white_15: darken($white, 15%); // #d9d9d9
+$white_20: darken($white, 20%); // #cccccc
+$white_25: darken($white, 25%); // #bfbfbf
+$white_30: darken($white, 30%); // #b3b3b3
+$white_35: darken($white, 35%); // #a6a6a6
+$white_40: darken($white, 40%); // #999999
+$white_45: darken($white, 45%); // #8c8c8c
+$white_50: darken($white, 50%); // #808080
+
+
+$accent_red:               rgb(185,38,47);
+$anchor_link:              rgb(250,76,6);
+$logo_accent_orange:       rgb(250,76,6);
+$logo_accent_orange_light: rgb(253,123,64);
+$accent_orange:            rgb(253,166,48);
+$accent_yellow:            rgb(255,205,85);      //#ffcd55
+
+$desturated_red:           rgb(154,42,49);
+$desturated_red_darker:    rgb(125,22,29);
+
+$mob_nav_border_color:     darken($accent_red, 8%);
+
+// FORMS
+$form_good:                rgb(19,198,7);
+
+
+$ic_padlock: '';
+$ic_bomb: '';
+$ic_drugs: '';
+$ic_design: '';
+$ic_safebox: '';
+$ic_clipboard: '';
+$ic_radiation: '';
+$slider_ts-storage: '';
+$slider_dea-controlled: '';
+$slider_atf-explosives : '';
+$slider_osha-hazmat: '';
+$slider_custom-design: '';
+$slider_consulting : '';
+$slider_vaults-doors: '';
+/* HOME SOLUTIONS COUNTERS  */
+$home_solutions_md: 800px;
+
+$font_size: 1em;
+$font_body: "proxima-nova", sans-serif;
+$font_plus: "proxima-nova", sans-serif;
+$font_head: "proxima-nova", sans-serif;
+
+
+// DEFAULT
+$font_color_base: $black_10;
+
+// THEME COLOR
+$theme_font_color: $font_color_base;
+$theme_background_color: $white;
+$theme_background_color_alt: $white_10;
+
+$fnt_clr_dkst: darken($theme_font_color, 10%);
+$fnt_clr_dker: darken($theme_font_color, 20%);
+
+a:hover { color: lighten($theme_font_color, 20%); }
+
+// FORM VALIDATION
+$validation_success: color("green", "base") !default;
+$validation_error: color("red", "base") !default;
+// $link-color: color("grey", "darken-1") !default;
+
+/*   HOME CONTACT FORM   */
+$contact_form_inner_max_w: 500px;
+$contact_section_max_w: 830px;
+$home_contact_break_sm: 600px;
+
+
+$width_tablet_device_lg: 850px;
+$width_tablet_device_sm: 660px;
+$width_mobile_device_lg: 420px;
+$width_mobile_device_sm: 360px;
+
+$grid_tablet : 850px;
+$grid_mobile : 625px;
+
+// HOME PAGE
+$banner_break_mid: 850px;
+$banner_break_sm1: 560px;
+// NOTE: PREFER RGB VALUES FOR BETTER BROWSER COMPATABILITY
+
+
+
+$convo_break_lg: 1250px;
+$convo_break_md: 1050px;
+$convo_break_xs: 500px;
+$black_00: black;
+$accent_red: red;
+$white_20: grey;
+$white_00: white;
+
+$ic_location: '' ;;
+$ic_currency: '' ;;
+$accent_orange: '' ;
+$ic_hand-shake: '' ;
+$theme_background_color_alt: #223323;
+
+$convo_break_xs: 600px;
+$width_tablet_device_sm: 400px ;
+$width_tablet_device_lg: 800px ;
+$width_mobile_device_lg: 1200px;
+$contact_section_max_w: '' ;
+$banner_break_mid: '' ;
+$bg_block_solutions: '' ;
+$img_lock_overlay: '' ;
+$img_logo_stacked: '' ;

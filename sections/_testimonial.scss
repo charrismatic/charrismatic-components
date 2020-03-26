@@ -1,0 +1,50 @@
+
+
+/****************************
+* *  HOME TESTIMONIALS    * *
+ ****************************/
+#home-block-testimonial {
+  margin: 2em auto;
+  padding: 4em 0;
+  text-align: center;
+}
+
+#home-block-testimonial .row {
+  max-width: "";
+}
+
+#home-block-testimonial h2 {
+  margin: 0.5em 0;
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+#home-block-testimonial .testimonial-content {
+  position: relative;
+  line-height: 1.8em;
+  margin: 0 1.5rem 0.2em;
+}
+
+#home-block-testimonial .testimonial-content::after, #home-block-testimonial .testimonial-content::before {
+  position: absolute;
+  color: red;
+  font-size: 80px;
+}
+
+#home-block-testimonial .testimonial-content::before {
+  top: 0;
+  left: -2rem;
+  content: "\201C";
+}
+
+#home-block-testimonial .testimonial-content::after {
+  right: -2rem;
+  bottom: 0;
+  content: "\201D";
+}
+
+#home-block-testimonial .testimonial-source {
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9em;
+}

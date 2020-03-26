@@ -1,0 +1,55 @@
+
+$modal_entry_transition: 0ms linear 0ms;
+$modal_exit_transition: 0ms linear 600ms;
+
+// EXIT TRANSITIONS
+.modal_container {
+  @include transition(
+    visibility $modal_exit_transition,
+    z-index $modal_exit_transition
+  );
+
+  .modal_overlay {
+    will-change: opacity;
+    @include transition(
+      opacity 300ms cubic-bezier(0.74, 0.19, 0.39, 1) 300ms,
+      z-index $modal_exit_transition
+    );
+  }
+
+  .modal {
+    @include transition(
+      height 200ms $easeInOutQuart 0ms,
+      transform 200ms cubic-bezier(1, 0.35, 0.56, 1.04) 220ms,
+      opacity 200ms cubic-bezier(0.77, 0, 0.175, 1) 200ms,
+      z-index $modal_exit_transition
+    );
+
+    input.required,
+    textarea { transition: visibility 0ms linear 0ms; }
+  }
+
+  // ENTRY TRANSITIONS
+  &.active {
+    @include transition(
+      visibility $modal_entry_transition,
+      z-index $modal_entry_transition
+    );
+
+    .modal_overlay {
+      will-change: opacity;
+      @include transition(
+        opacity 300ms $easeOutQuart 100ms
+      );
+    }
+
+    .modal {
+      @include transition(
+        // transform 300ms cubic-bezier(1, 0.26, 0.55, 1) 100ms,
+        transform 300ms $easeOutQuart 100ms,
+        opacity 250ms $easeInOutQuart 0ms,
+        z-index $modal_entry_transition
+      );
+    }
+  }
+}

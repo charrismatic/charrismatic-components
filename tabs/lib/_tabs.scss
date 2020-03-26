@@ -1,0 +1,54 @@
+
+.tab_panel_container {
+  border: 1px solid $grey_10;
+  box-shadow: 1px 1px 5px 0 $grey_15;
+
+  .tab_panel {
+    display: none;
+    margin: 0;
+    padding: 1em;
+    font-size: 0.8em;
+
+    &.active { display: block; }
+
+    .tab_panel__heading {
+      display: none;
+      &.active { display: block; }
+    }
+
+    .tab_panel__content {
+      display: none;
+      position: relative;
+      padding: 1em;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+
+@include max_width($width_tablet_device_lg) {
+
+  .tab_panel {
+    position: relative;
+    padding: 0;
+
+    .tab_panel__heading {
+      font-size: 1.4em;
+      display: block;
+      text-align: left;
+      padding: .4em 1em;
+      margin: 0;
+      position: relative;
+      border-bottom: 1px solid;
+      transform: none;
+      cursor: pointer;
+
+      &.active {
+        transform: none;
+      }
+    }
+  }
+}

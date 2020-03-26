@@ -1,0 +1,19 @@
+{
+  "name": "@charrismatic-components",
+  "version": "1.0.0",
+  "description": "A collection of frontend web components and reusable blocks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:charrismatic/charrismatic-omponents.git",
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": "Matt Harris <charrismatic@protonmail.com> (https://charrismatic.github.io/)",
+  "license": "MIT"
+}

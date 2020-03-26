@@ -1,0 +1,60 @@
+
+// PAGINATOR
+.toolbar_pager {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  .toolbar_pager__pages {
+    display: inline-block;
+    vertical-align: middle;
+
+    li.next,
+    li.previous {
+      position: relative;
+    }
+
+    li a.previous,
+    li a.next {
+      @extend %svg_icon;
+      transition: background-color 300ms ease-in-out, background-position 300ms ease-in-out;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      &:hover { background-color: $grey_30; }
+    }
+
+    a.previous { @extend %direction_prev; }
+    a.next {@extend %direction_next; }
+
+    ol {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+    }
+
+    li {
+      cursor: pointer;
+      display: inline-block;
+      // height: 2em;
+      line-height: 2em;
+      text-align: center;
+      transition: 0.3s;
+      width: 1.7em;
+
+      &:hover {
+        background-color: $grey_40;
+      }
+
+      a {
+        color: inherit;
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

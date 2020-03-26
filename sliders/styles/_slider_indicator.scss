@@ -1,0 +1,42 @@
+
+$indicator_t: 400;
+$indicator_d: 300;
+#solutions-slider-indicator {
+  transform: translateZ(1px);
+
+  // INDICATOR RESET POSITION
+  @include transition(
+  _trans('left'  , $indicator_t , $material_standard , $indicator_d / 2)
+  )
+
+  // INDICATOR MOVE TO CURRENT
+  &:hover i {
+    @include transition(
+    _trans('left'  , $indicator_t * 1.15 , $material_decel  , $indicator_d)
+    )
+  }
+}
+
+
+#solutions-slider-indicator {
+  -webkit-transform: translateZ(1px);
+  transform: translateZ(1px);
+  transition: left 400ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}
+
+
+
+.ic-caret-down.red {
+  background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221792%22%20height%3D%221792%22%20viewBox%3D%220%200%201792%201792%22%3E%3Cpath%20fill%3D%22%23b9262f%22%20stroke%3D%22transparent%22%20stroke-width%3D%220%22%20d%3D%22M1408%20704q0%2026-19%2045l-448%20448q-19%2019-45%2019t-45-19l-448-448q-19-19-19-45t19-45%2045-19h896q26%200%2045%2019t19%2045z%22%20%2F%3E%3C%2Fsvg%3E);
+  display: inline-block;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  margin: 10px 20px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: color 200ms linear 0ms;
+  cursor: pointer;
+  vertical-align: middle;
+}

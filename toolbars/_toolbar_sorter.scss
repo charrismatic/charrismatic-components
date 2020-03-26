@@ -1,0 +1,59 @@
+
+// PRODUCT SORTER
+.toolbar_sorter {
+  align-items: baseline;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+
+  label,
+  select {
+    display: inline-block;
+  }
+
+  .view-mode {
+    display: inline-block;
+
+    label { margin-right: 5px; }
+
+    .grid,
+    .list {
+      background-repeat: no-repeat;
+      display: inline-block;
+      margin: 0;
+      overflow: hidden;
+      text-indent: -9999px;
+    }
+  }
+
+  .sort-by {
+    .sort-order {
+      border: 1px solid transparent;
+      display: inline-block;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      vertical-align: top;
+      width: 1.6em;
+
+      &::after {
+        display: inline-block;
+        font-size: 2em;
+        height: 100%;
+        margin-top: -0.1em;
+        position: relative;
+        text-align: center;
+      }
+    }
+
+    .asc::after { content: '\25BE'; }
+    .desc::after { content: '\25B4'; }
+  }
+
+  .sort-by .category-asc,
+  .sort-by .category-desc {
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+  }
+}

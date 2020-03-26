@@ -1,0 +1,142 @@
+
+/**********************************
+* *    START A CONVERSATION     * *
+ **********************************/
+#conversation {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  transform: translateY(-40%);
+}
+
+#conversation .row {
+  background: white;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.73);
+  display: flex;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2.0rem 3rem;
+  width: 80%;
+}
+
+@media (max-width: 500px) {
+  #conversation .row {
+    flex-wrap: wrap;
+  }
+}
+
+#conversation .logo {
+  display: block;
+  flex: 0 0 200px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#conversation .logo::before {
+  background-image: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+#conversation .block-content {
+  position: relative;
+  display: block;
+  flex: 1 1 100%;
+  margin: 0 0 0 2.5em;
+}
+
+#conversation h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+#conversation p {
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+
+@media (max-width: 1250px) {
+  #conversation {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1050px) {
+  #conversation {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: ) {
+  #conversation {
+    transform: translateY(0);
+  }
+  #conversation .row {
+    width: 100%;
+    max-width: none;
+    padding: 2.5rem 0;
+  }
+  #conversation .logo {
+    margin-left: 3rem;
+  }
+  #conversation .block-content {
+    flex: 1 1 90%;
+    margin: 0 3rem 0 2rem;
+  }
+  #conversation p {
+    margin: 0;
+    font-size: 1.1em;
+    padding: 1.5rem 0 0 0;
+  }
+  #conversation button {
+    margin: 1.5rem 0 0 0;
+    padding: 1.3rem 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #conversation .logo {
+    margin-left: 2rem;
+  }
+  #conversation .block-content {
+    margin: 0 2rem;
+    text-align: center;
+  }
+  #conversation button {
+    min-width: 50%;
+  }
+  #conversation .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  #conversation .block-content {
+    margin: 0 1.7em;
+  }
+  #conversation .logo {
+    border-right: 0;
+    width: auto;
+    height: 130px;
+    padding: 0 20px 20px;
+    flex-basis: auto;
+  }
+  #conversation .logo::before {
+    background-size: contain;
+  }
+  #conversation .button {
+    margin-top: 1.5em;
+    padding: 1em;
+    font-size: 1.3em;
+    display: block;
+  }
+}

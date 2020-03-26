@@ -1,0 +1,30 @@
+
+/****************************************
+ *  SLIDER FONT SIZES AND TYPOGRAPHY    *
+ ****************************************/
+#category-product-slider {
+  @include max_width(1050px) { font-size: 14px; }
+
+  .slider-block {
+    .slider-content {
+      h2 {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 1.8em;
+      }
+
+      p { line-height: 2; }
+    }
+  }
+}
+
+#slider-selector {
+  .slider-nav-btn {
+    font-size: 0.9em;
+    line-height: 1em;
+  }
+}

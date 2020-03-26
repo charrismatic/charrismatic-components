@@ -1,0 +1,143 @@
+
+/********************************
+ *     SOLUTIONS COUNTERS       *
+ *             ---              *
+ * .solutions-number-box        *
+ *   .solution                  *
+ *     _.solution-count::before *
+ *     _.solution-count         *
+ *     _ h3                     *
+ *     _.subtext                *
+ *     _.divider                *
+ *     _.description            *
+ ********************************/
+#solutions-highlight-count {
+  padding: 4em 0;
+  background-color: black;
+  background-image: "";
+  background-size: cover;
+  text-align: center;
+}
+
+#solutions-highlight-count .solutions-number-box {
+  display: flex;
+}
+
+#solutions-highlight-count .solution {
+  margin: 0 1em;
+}
+
+#solutions-highlight-count .solution::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 4em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#solutions-highlight-count .solution-count {
+  margin: 0.8em auto;
+  font-weight: bold;
+  font-size: 2.9em;
+}
+
+#solutions-highlight-count .solution-count.plus::after {
+  content: "+";
+  margin-left: 5px;
+}
+
+#solutions-highlight-count .solution-count,
+#solutions-highlight-count h2,
+#solutions-highlight-count h3,
+#solutions-highlight-count span {
+  display: block;
+  color: white;
+}
+
+#solutions-highlight-count span.description {
+  color: grey;
+}
+
+#solutions-highlight-count h2 {
+  margin: 0 auto 1em;
+  padding: 0;
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+#solutions-highlight-count h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#solutions-highlight-count .divider {
+  display: inline-block;
+  margin: 1rem auto;
+  width: 40px;
+  height: 1px;
+  background: "";
+}
+
+#solutions-highlight-count #block-solutions-customers.solution::before {
+  background-image: "";
+}
+
+#solutions-highlight-count #block-solutions-location.solution::before {
+  background-image: "";
+}
+
+#solutions-highlight-count #block-solutions-tools.solution::before {
+  background-image: "";
+}
+
+@media (max-width: 800px) {
+  #solutions-highlight-count .solutions-number-box {
+    flex-direction: column;
+  }
+  #solutions-highlight-count .solution {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2em 0 0 0;
+  }
+  #solutions-highlight-count .solution > * {
+    margin: 0 1em;
+  }
+  #solutions-highlight-count .solution > *:first-child {
+    margin-left: 0;
+  }
+  #solutions-highlight-count .solution > *:last-child {
+    margin-right: 0;
+  }
+  #solutions-highlight-count .solution::before {
+    display: none;
+  }
+  #solutions-highlight-count .solution .solution-count {
+    margin: 0;
+  }
+  #solutions-highlight-count .divider {
+    display: inline;
+    margin: 0rem auto;
+    width: 1px;
+    height: 40px;
+    background: #fda630;
+    flex: 0 0 1px;
+  }
+  #solutions-highlight-count .split--tab-lg {
+    flex: 1 1 100%;
+  }
+  #solutions-highlight-count h2 {
+    margin: 0;
+  }
+  #solutions-highlight-count h3 {
+    text-align: center;
+  }
+  #solutions-highlight-count .description {
+    text-align: center;
+  }
+}
