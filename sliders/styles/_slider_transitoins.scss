@@ -1,0 +1,86 @@
+
+
+/****************************************
+ *  SLIDER TRANSITIONS AND ANIMATIONS   *
+ ****************************************/
+#slider-selector {
+  i { will-change: transform; }
+
+  .slider-nav-btn {
+    opacity: 0.5;
+    transition: opacity 400ms ease-in-out;
+
+    &:hover,
+    &.active { opacity: 1; }
+
+  }
+}
+
+
+
+$slide_t: 1000;
+$slide_d: 0;
+#category-product-slider {
+  .slider-block {
+    opacity: 0.0;
+    transform-origin: bottom center;
+    transform: translateX(100%) translateY(30%) translateZ(0) scale(0.8);
+    visibility: hidden;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // ALWAYS EXIT
+    &.slide-left { transform: translateX(-100%) translateY(30%) translateZ(0) scale(0.8); }
+    &.slide-right { transform: translateX(100%) translateY(10%) translateZ(0) scale(0.8); }
+
+    // ALWAYS ENTER
+    &.slide-center { transform: translateX(0) translateY(0) translateZ(0) scale(1); }
+
+    // INCOMING TRANSITION
+    &.entering {
+      will-change: transform, opacity;
+      @include transition(
+      _trans('transform'  , $slide_t * 1.1 , $material_standard , $slide_d),
+      _trans('visibility' , 0 , 'linear' , 0),
+      _trans('opacity'    , $slide_t * 1.0 , $material_standard , 50)
+      )
+    }
+
+    // EXITING TRANSITION
+    &.exiting {
+      will-change: transform, opacity;
+      @include transition(
+        _trans('transform'  , $slide_t , $material_standard , 0),
+        _trans('visibility' , $slide_t + $slide_d , 'linear' , 0),
+        _trans('opacity'    , $slide_t * 1.1 , $material_standard , 50)
+      )
+    }
+
+    $trans_multiplier: 1.5;
+    @include max_width( 850px ) {
+      opacity: 1;
+      transform-origin: center;
+      transform: translateX(120%) translateZ(0);
+      &.slide-left  { transform: translateX(-120%) translateZ(0) scale(1); }
+      &.slide-right { transform: translateX(120%) translateZ(0) scale(1); }
+      &.slide-center { transform: translateX(0) translateZ(0) scale(1); }
+      &.entering {
+        @include transition(
+        _trans('transform'  , $slide_t * $trans_multiplier , $material_standard , $slide_d),
+        _trans('visibility' , 0 , 'linear' , 0)
+        )
+      }
+
+      // EXITING TRANSITION
+      &.exiting {
+        @include transition(
+          _trans('transform'  , $slide_t * $trans_multiplier , $material_standard , 0),
+          _trans('visibility' , ($slide_t + $slide_d ) * $trans_multiplier, 'linear' , 0)
+        )
+      }
+    }
+  }
+}

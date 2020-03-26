@@ -1,0 +1,38 @@
+<section id="home-contact-section">
+  <div class="row">
+    <h2>A sentence for a tagline.</h2>
+    <div class="subtext">Informative Text For Your Audience.</div>
+    <div class="contact-form-container">
+      <div class="top">
+        <a href="tel:123.123.1325"><button id="contact-form-call">Call Now<br>123.123.1234</button></a>
+        <button id="contact-form-chat" onclick="startChatWindow()">Click to<br>Chat Now</button>
+      </div>
+      <p>Fill out the form and a Human Person Expert will contact you asap.</p>
+      <form id="home-contact-form" onsubmit="handle_form(event)" data-success-url="/thank-you" data-send-url="/api/v1/form" class="accented" name="home_contact">
+      <div class="form-wrap">
+          <div class="input-field">
+            <input id ="name" name="name" type="text" data-validation="required" value="">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field">
+            <input id="email" name="email" type="text" data-validation="email" value="">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <input id="phone" name="phone" type="text" data-validation="phone" value="">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="input-field">
+            <textarea id ="message" name="message" class="materialize-textarea" data-validation="required" data-validation-length="min4" rows="2" value=""></textarea>
+            <label for="message">What are your needs?</label>
+          </div>
+          <input type="reset" hidden>
+        <div class="input-field">
+          <button id="home-contact-submit" class="submit" data-form="home-contact-form">SUBMIT</button>
+          <div id="validation-message"></div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</section>

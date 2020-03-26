@@ -1,0 +1,29 @@
+
+.tab_menu {
+  display: flex;
+  margin: 0;
+  align-items: stretch;
+
+  .tab_menu__item {
+    @include noselect();
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 0.8em;
+    text-align: center;
+    flex-basis: auto;
+  }
+
+  a {
+    display: block;
+  }
+
+  .active {
+    background: $accent_orange;
+    color: $white;
+  }
+
+  @include max_width($width_tablet_device_lg) { display: none; }
+}

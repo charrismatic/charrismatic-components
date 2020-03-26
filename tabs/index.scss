@@ -1,0 +1,11 @@
+// - tab-container
+// (ul) - tab-menu
+// (li) - - _clickable target_ [default, active]
+// (div)- - - tab-panels [ default, active ]
+// (label) - - - .tab-panel-heading @for
+// (div) - - - - .tab-panel-content @id
+
+@import 'tabs';
+@import 'tab_nav';
+@import 'tab_menu';
+@import 'tab_accordion_panels';

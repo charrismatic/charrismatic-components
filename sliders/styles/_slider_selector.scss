@@ -1,0 +1,69 @@
+#slider-selector i {
+  will-change: transform;
+}
+// THE SELECTOR BAR FOR THE SLIDER
+#slider-selector {
+  padding-bottom: 2em;
+  width: 100%;
+  border-top: 5px solid $accent_red;
+  padding: 0;
+  box-shadow: 0 -6px 13px 0 rgba(146, 146, 146, 0.3);
+  position: relative;
+  z-index: 2;
+
+  .row { max-width: 1600px; }
+
+  ul {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+    // SLIDER SELECTOR`S INDICATOR
+    // #solutions-slider-indicator
+    i {
+      position: absolute;
+      margin: 0;
+      padding: 6px 10px;
+      min-width: 50px;
+      height: 0;
+      background-position: center -16px;
+      background-size: 40px;
+      cursor: default;
+    }
+
+    li {
+      position: relative;
+      display: inline-block;
+      flex: 1 1 100%;
+    }
+  }
+
+  .slider-nav-btn {
+    margin: 10px;
+    padding: 5px;
+    min-width: 50px;
+    text-align: center;
+    cursor: pointer;
+
+    &::before {
+      position: relative;
+      display: block;
+      margin: 0 auto 0.8em;
+      width: 60px;
+      height: 60px;
+      background-image: $ic_padlock;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+    }
+
+    &[data-target="slider_ts-storage"]:before { background-image: $ic_padlock; }
+    &[data-target="slider_atf-explosives"]:before { background-image: $ic_bomb; }
+    &[data-target="slider_dea-controlled"]:before { background-image: $ic_drugs; }
+    &[data-target="slider_custom-design"]:before { background-image: $ic_design; }
+    &[data-target="slider_vaults-doors"]:before { background-image: $ic_safebox; }
+    &[data-target="slider_consulting"]:before { background-image: $ic_clipboard; }
+    &[data-target="slider_osha-hazmat"]:before { background-image: $ic_radiation; }
+  }
+}

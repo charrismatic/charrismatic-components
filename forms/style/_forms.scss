@@ -1,0 +1,222 @@
+/*---
+title: Forms
+section: components
+---
+
+Forms
+
+
+*/
+
+
+// $form_upload_label: $grey_10;
+$form_upload_label: #333;
+// $form_options: $grey_15;
+$form_options: #555;
+
+
+// FORMS
+label {
+  display: block;
+  margin: 0.6em 0 0.4em;
+  font-size: 1em;
+}
+
+select,
+textarea,
+input {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.5em;
+  max-width: 100%;
+  width: 100%;
+  font: inherit;
+  font-size: 1.1em;
+  line-height: 1em;
+}
+
+textarea { height: 7em; }
+
+input[type="reset"] { display: none !important; }
+
+input[type="submit"] {
+  margin: 0.7em 0;
+  padding: 1em;
+  border: 0;
+  border-radius: 3px;
+  transition: 0.5s ease;
+
+  &:hover {
+    // background: $form_good;
+    cursor: pointer;
+  }
+}
+
+.input-checkbox-container {
+  display: flex;
+
+  label {
+    flex: 1 1 auto;
+    margin: .2em 0;
+    padding: .2em 0;
+    order: 2;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px dotted #3333DD;
+    }
+  }
+
+  input {
+    flex: 0 1 1em;
+    order: 1;
+    margin: .4em 0.2em;
+    padding: 0;
+  }
+}
+
+#about_contact_form {
+  margin: auto;
+  font-size: 0.9em;
+
+  label#file_upload {
+    margin: 0;
+    margin-top: 26px;
+    padding: 15px 20px;
+    background: $form_upload_label;
+    line-height: 1em;
+  }
+
+  input[name="attachment"] { display: none; }
+  &.submit_project { width: 100%; }
+  &.submit_project > div { width: 50%; }
+}
+
+// Pricing Page styles
+.pricing_full {
+  form {
+    margin-top: 1em;
+    font-size: 0.9em;
+
+    label {
+      margin: 0.3em 0 0;
+    }
+  }
+
+  h3 {
+    display: inline-block;
+    padding-top: 0;
+    font-size: 2em;
+  }
+
+  a {
+    display: inline-block;
+    // TODO REMOVE ALL FLOATS
+    float: right;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+  }
+
+  .options {
+    display: flex;
+    padding-top: 2em;
+    border-top: 1px solid $form_options;
+    font-size: 1em;
+    line-height: 2em;
+
+    > li {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1em;
+    }
+
+    .option1 {
+      flex: 1;
+    }
+
+    .option2 {
+      flex: 1;
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+
+  li > a {
+    display: block;
+    margin: 1em auto;
+    width: 220px;
+    height: 120px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: bold;
+
+    > img {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+}
+//
+// @include max_width(479px) {
+//   .pricing_full {
+//     > h3 {
+//       display: block;
+//       text-align: center;
+//       font-size: 20px;
+//     }
+//
+//     > a {
+//       display: block;
+//       float: none;
+//       margin: 0 auto;
+//       padding: 20px;
+//       text-align: center;
+//       font-size: 15px;
+//     }
+//
+//     > p { margin: 20px 0; }
+//
+//     .options {
+//       > li {
+//         margin: 0;
+//         width: 100%;
+//
+//         > a > img {
+//           display: block;
+//           float: none;
+//           margin: 20px auto;
+//         }
+//       }
+//
+//       form {
+//         width: 100%;
+//
+//         input { width: 100%; }
+//         label { width: 100%; }
+//         select { width: 100%; }
+//       }
+//     }
+//   }
+// }
+
+#err {
+  display: none;
+  float: left;
+  box-sizing: border-box;
+  margin-left: 2%;
+  padding: 10px 20px;
+  width: 48%;
+}

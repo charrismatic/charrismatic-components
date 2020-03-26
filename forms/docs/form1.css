@@ -1,0 +1,60 @@
+
+/*========================
+** 	CONTACT FORMS
+=========================*/
+input:focus,
+textarea:focus{
+    box-shadow: 0px 1px 5px rgba(136, 136, 136, 0.35);
+	outline: none;
+}
+
+.submit-btn{
+    color: #ffffff;
+    background: #be374c;
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.section input,
+.section textarea{
+	width: 500px;
+	max-width: 100%;
+	padding: 15px 0 15px 10px;
+	border: none;
+	transition: .2s;
+	border: 2px solid #fff;
+}
+
+.section input.good,
+.section textarea.good{
+	border: 2px solid rgba(0, 179, 88, 0.94);
+}
+
+.section input.bad,
+.section textarea.bad{
+	border: 2px solid rgba(243, 4, 4, 0.94);
+}
+
+
+.section textarea{ height: 80px; }
+
+form.form-inline p {
+	margin-bottom: 5px;
+	margin-top: 20px;
+}
+
+
+.section input,
+.section textarea,
+.section input,
+.section textarea{
+	border: 1px solid #cecece;
+}

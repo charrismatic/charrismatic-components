@@ -1,0 +1,235 @@
+<!-- <script
+src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+crossorigin="anonymous"></script> -->
+
+<link rel='stylesheet' href='/searchbar.css'>
+<script>
+
+
+
+      function search_active (event) {
+        console.log('SEARCH ACTIVE', event);
+        search_input.classList.add("active");
+        search_btn.classList.add("active");
+      }
+      function search_inactive (event) {
+        console.log('event', event);
+        console.log('SEARCH INACTIVE');
+
+        search_input.classList.remove("active");
+        search_btn.classList.remove("active");
+      }
+      function searchHasInput() {
+        console.log('searchHasInput');
+        if (search_input.value) {
+          return search_input.value
+        } else {
+          return false;
+        }
+      }
+
+      function seachbarIsActive() {
+        console.log('seachbarIsActive');
+        if (search_btn.classList.contains('active')){
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function handleSearchFocusIn() {
+        console.log('FOCUS IN');
+        if (seachbarIsActive()){
+          search_active()
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+
+      function handleSearchFocusOut() {
+        console.log('FOCUS OUT');
+        if (seachbarIsActive()){
+          if (searchHasInput())
+            return false;
+          } else {
+            search_inactive();
+          }
+        }
+
+
+      function handleSearchSubmit(event) {
+        console.log('event', event);
+
+        if (seachbarIsActive()){
+          console.log('is active');
+          if (searchHasInput()){
+            console.log('has input');
+            event.preventDefault();
+            //submitSearch();
+            console.log('PREVENTED BUT TRUE');
+          } else {
+            console.log('not sending');
+            event.preventDefault();
+            search_inactive();
+          }
+        } else {
+          event.preventDefault();
+          search_active();
+          search_input.focus();
+          console.log('prevented');
+        }
+      };
+
+
+
+      function initMageSearch() {
+        console.log('initializing search');
+
+        searchbar.onsubmit = handleSearchSubmit;
+
+        // search_input.addEventListener("onmouseenter", handleSearchFocusIn);
+        // search_btn.addEventListener("onmouseenter", handleSearchFocusIn);
+        searchbar.addEventListener("onfocusin", handleSearchFocusIn);
+        //
+        // search_input.addEventListener("onmouseleave", handleSearchFocusOut);
+        // search_btn.addEventListener("onmouseleave", handleSearchFocusOut);
+        searchbar.addEventListener("onfocusout", handleSearchFocusOut);
+
+        // search_btn.addEventListener("onclick", search_active);
+
+
+      }
+</script>
+
+<style>
+body {
+  background: #124288;
+}
+.top-links { padding: 1em 0; }
+#search_mini_form { margin: 0; position: unset;}
+.search-wrapper {  margin: 0; }
+#search_mini_form button.search { z-index: 3; outline: 0; }
+#search_mini_form button.search::before { content: none; display: none; }
+#search.input-text { margin: 0; }
+#search_mini_form label.screen-assist { transform: translateX(-2vh); position: fixed; }
+</style>
+<header class="home">
+  <div class="row">
+    <div class="header-top-wrapper">
+      <div class="logo-wrapper">
+        <h1 class="logo"><span class="screen-assist">KLSecurity</span></h1>
+      </div>
+      <div class="stacked-rows">
+        <div class="banner-contact-phone"><span class="nav-phone-title">TOLL FREE</span> 1-866-867-0306</div>
+        <div class="top-links">
+          <div class="search-wrapper">
+
+
+            <form id="search_mini_form" onsubmit="handleSearchSubmit" method="get" action="http://localhost:8181/catalogsearch/result/">
+              <div class="form-search">
+
+                <button
+                    type="submit" class="search" title="Search"
+                    onfocusin="handleSearchFocusIn"
+                    onmouseover="search_active"
+                    onfocusout="handleSearchFocusOut"
+                    onmouseleave="handleSearchFocusOut"
+                    ></button>
+
+                <input id="search" class="input-text" type="text" name="q" value="" maxlength="256" autocomplete="off">
+
+
+                <label for="search" class="screen-assist">Search</label>
+                <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+              </div>
+            </form>
+            <script>
+
+            const searchbar = document.querySelector('#search_mini_form');
+            const search_input = searchbar.querySelector('.form-search .input-text');
+            const search_btn = searchbar.querySelector('.search-wrapper button');
+            // search_input.addEventListener("onfocus", search_active);
+            // search_btn.addEventListener("onblur", search_inactive);
+            document.onload = initMageSearch();
+            // search_input.addEventListener("onblur", search_inactive);
+            // search_input.addEventListener("onfocus", search_active);
+            // search_input.addEventListener("onfocusin", search_active);
+            // search_input.addEventListener("onfocusout", search_inactive);
+            //
+            // search_btn.addEventListener("onblur", search_inactive);
+            // search_btn.addEventListener("onfocus", search_active);
+            // search_btn.addEventListener("onfocusin", search_active);
+            // search_btn.addEventListener("onfocusout", search_inactive);
+
+            // search_input.onpointerleave
+
+
+            </script>
+          </div>
+          <ul>
+            <li><a href="http://localhost:8181/about">Company</a></li><li>
+            </li><li><a href="http://localhost:8181/index.php/request-a-quote">Resources</a></li>
+            <li><a href="http://localhost:8181/index.php/blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-container">
+      <button id="mobile-menu-btn" class="hamburger hamburger--squeeze">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item level0 nav-1 level-top first classic">
+            <a href="http://localhost:8181/consulting.html" class="level-top"><span>Consulting</span></a>
+          </li>
+          <li class="nav-item level0 nav-2 level-top nav-item--parent mega nav-item--only-blocks parent">
+            <a href="http://localhost:8181/products.html" class="level-top"><span>Products</span><span class="caret">&nbsp;</span></a>
+            <span class="opener">&nbsp;</span>
+            <div class="nav-panel--dropdown nav-panel full-width">
+              <div class="nav-panel-inner">
+                <div class="nav-block nav-block--top std grid-full">
+                  <div id="nav-sub-products" class="submenu">
+                    <div class="submenu-item">
+                      <div class="submenu-item-list-wrap">
+                        <h3>COMPLIANCE PRODUCTS</h3>
+                        <ul class="split-col-list">
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="submenu-item">
+                      <div class="submenu-item-list-wrap">
+                        <h3>BY TYPE / USE</h3>
+                        <ul class="split-col-list">
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item level0 nav-3 level-top nav-item--parent mega nav-item--only-blocks parent">
+            <a href="/solutions-2.html" class="level-top"><span>Solutions</span><span class="caret">&nbsp;</span></a>
+            <span class="opener">&nbsp;</span>
+            <div class="nav-panel--dropdown nav-panel full-width">
+              <div class="nav-panel-inner">
+                <div class="nav-block nav-block--top std grid-full">
+                  <div class="submenu grid-style">
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item level0 nav-4 level-top last classic">
+              <a href="/pricing.html" class="level-top"><span>Pricing</span></a>
+            </li>
+            <a href="/consulting"><button id="nav-get-advice" class="nav-item">GET ADVICE</button></a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>

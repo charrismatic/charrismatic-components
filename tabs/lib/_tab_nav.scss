@@ -1,0 +1,18 @@
+
+.tabs_nav__selector_container {
+  > ul {
+    display: flex;
+    margin: 0;
+  }
+
+  .tab_nav_selector {
+    padding: 1em;
+    background: rgba(255,255,255,.1);
+    cursor: pointer;
+
+    &.active {
+      background: rgba(255,255,255, .2);
+      color: #fff;
+    }
+  }
+}

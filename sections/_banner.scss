@@ -1,0 +1,195 @@
+
+/****************************
+* *      TOP BANNER       * *
+ ****************************/
+section#banner {
+  background-position: center center;
+  background-size: cover;
+  min-height: 500px;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+  padding-top: 3em;
+  position: relative;
+  width: 100%;
+}
+
+section#banner .banner-content-wrap {
+  display: block;
+}
+
+section#banner .banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 2em;
+  padding-top: 0;
+  position: relative;
+  width: 60%;
+  z-index: 2;
+}
+
+@media (max-width: ) {
+  section#banner .banner-text {
+    width: 100%;
+  }
+}
+
+section#banner .banner-text::before {
+  background-image: "";
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 90%;
+  overflow: visible;
+  padding: 10% 0;
+  position: absolute;
+  top: 0;
+  width: 80%;
+  z-index: -1;
+}
+
+@media (max-width: ) {
+  section#banner .banner-text::before {
+    left: 0;
+    opacity: 0.5;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+section#banner h2 {
+  color: white;
+  font-weight: bold;
+  font-size: 4.5em;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+@media (max-width: 1200px) {
+  section#banner h2 {
+    margin-top: 0;
+  }
+}
+
+section#banner p {
+  font-size: 1.3em;
+  margin: 1rem 0 1.5em;
+  color: white;
+}
+
+@media (max-width: ) {
+  section#banner p {
+    max-width: 550px;
+    text-align: justify;
+    text-align-last: start;
+  }
+}
+
+@media (max-width: ) {
+  section#banner p {
+    text-align: left;
+    text-align-last: start;
+    font-size: 1.6em;
+  }
+}
+
+section#banner a {
+  color: white;
+}
+
+section#banner ul {
+  display: flex;
+  width: 120%;
+}
+
+@media (max-width: ) {
+  section#banner ul {
+    width: 100%;
+    padding-bottom: 2em;
+    flex-wrap: wrap;
+    max-width: 450px;
+  }
+  section#banner ul li.pull--mid {
+    order: 2;
+    width: 100%;
+    margin-top: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+section#banner ul li {
+  display: block;
+  flex: 1 1 auto;
+  margin-left: 1em;
+  border: 1px solid white;
+  background: transparent;
+  padding: 0;
+  margin: 0 0.6em;
+}
+
+section#banner ul li:hover {
+  border: 1px solid red;
+  background: red;
+}
+
+section#banner ul li:first-of-type {
+  margin-left: 0;
+}
+
+section#banner ul li a {
+  display: block;
+  padding: 0.8em 0.3em;
+  margin: 0;
+}
+
+section#banner ul li.highlight {
+  background: red;
+  border: 0;
+}
+
+@media (max-width: ) {
+  section#banner ul li {
+    flex: 1 0 auto;
+    margin: 0 0 0 1.5em;
+    padding: 0 0.5em;
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 1200px) {
+  section#banner ul li {
+    margin: 1.6em 0 0 0;
+    width: 100%;
+    padding: 0;
+    flex: 1 0 100%;
+  }
+  section#banner ul li:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: ) {
+  section#banner {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 12px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  section#banner {
+    font-size: 12px;
+    padding-bottom: 2em;
+  }
+  section#banner p {
+    font-size: 1.7em;
+    line-height: 1.5em;
+  }
+}

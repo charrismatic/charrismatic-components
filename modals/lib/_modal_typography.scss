@@ -1,0 +1,75 @@
+
+// MODAL ELEMENT STYLES: COLOR, TYPOGRAPHY, LAYOUT
+.modal {
+  background-color: $modal_content_color;
+  border-radius: 2px;
+  padding: 0;
+  margin: auto;
+
+  h1,h2,h3,h4 { margin-top: 0; }
+
+  .modal__header{
+    background: $modal_header_color;
+    color: $white;
+    font-size: 1.7em;
+    padding: 0.2em 0 0.2em 0;
+  }
+
+  .modal__content {
+    background: $modal_content_color;
+    padding: 0.5em 2em;
+  }
+
+  .modal__footer {
+    background: $modal_footer_color ;
+    border-radius: 0 0 2px 2px;
+    padding: 0.7em 1em ;
+    border-top: 1px solid $grey_10;
+  }
+
+  .submit {
+    width: 130px;
+    border-radius: 3px;
+    padding: 0.7em 0.3em;
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: -0.5rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+
+  // Modal with fixed action footer
+  &.modal__footer-fixed {
+    padding: 0;
+    height: 70%;
+
+    .modal__content {
+      position: absolute;
+      height: calc(100% - 56px);
+      max-height: 100%;
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    .modal__footer {
+      border-top: 1px solid rgba(0, 0, 0, .1);
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &.modal.bottom-sheet {
+    top: auto;
+    bottom: -100%;
+    margin: 0;
+    width: 100%;
+    max-height: 45%;
+    border-radius: 0;
+    will-change: bottom, opacity;
+  }
+}

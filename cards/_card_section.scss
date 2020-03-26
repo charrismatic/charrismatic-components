@@ -1,5 +1,5 @@
 .suggestions {
-  border-bottom: 1px solid $grey_20;
+  border-bottom: 1px solid $white_20;
   justify-content: space-around;
 }
 
@@ -91,7 +91,7 @@ $protip_padding: 1.5em;
 .protip-protip {
   @extend %z_depth_2;
 
-  background-color: $grey_10;
+  background-color: $white_10;
   display: none;
   padding: $protip_padding;
 
@@ -101,7 +101,7 @@ $protip_padding: 1.5em;
     flex: 0 0 auto;
     margin: 0;
     padding: 0 $protip_padding 0 0;
-    border-right: 1px solid $grey_30;
+    border-right: 1px solid $black_30;
   }
 
   .protip-message {

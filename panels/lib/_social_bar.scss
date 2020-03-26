@@ -1,0 +1,16 @@
+
+
+.social-bar {
+  height: 2rem;
+
+  i.svg_icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0 2px;
+    background-size: 65%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

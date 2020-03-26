@@ -1,0 +1,44 @@
+// ACCORDION STYLE TABS 
+.gen-tabs {
+
+  .tab-panels { padding: 15px 0; }
+
+  // ACCORDION STYLE
+  &.accor {
+    .tabs { display: none; }
+
+    .acctab {
+      display: block;
+      margin-bottom: 1px;
+      padding: 0.5em;
+      background-color: #f5f5f5;
+      color: #333333;
+      font-size: 1.4em;
+
+      &:hover,
+      &:focus,
+      &.current {
+        background-color: #e5e5e5;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .tab-panels {
+      padding-top: 0;
+
+      .panel {
+        display: none;
+        margin: 0;
+        padding: 1em;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  &.accor .tab-panels .panel {
+    border-bottom: 1px solid #e5e5e5;
+  }
+}
